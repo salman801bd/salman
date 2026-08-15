@@ -584,13 +584,13 @@ input{
     class="card"
     id="worldTime">
 
-    <h2>🌎 World Time (All Countries & All Zones)</h2>
+    <h2>🌎 World Time (Comprehensive Multi-Zone Database)</h2>
 
     <div class="world-search">
 
         <input
             id="countrySearch"
-            placeholder="Search country, code, capital or timezone..."
+            placeholder="Search country, zone name, or capital..."
             autocomplete="off"
             oninput="filterCountries()"
             onclick="openCountryList()">
@@ -793,148 +793,172 @@ input{
 
 
 /* ==================================================
-   COUNTRY DATABASE (MULTIPLE ZONES COVERED)
+   COUNTRY DATABASE (MULTI-ZONE COMPREHENSIVE LIST)
 ================================================== */
 
 const countries = [
-{ name: "Afghanistan", official: "Islamic Republic of Afghanistan", code: "AF", capital: "Kabul", continent: "Asia", tz: "Asia/Kabul" },
-{ name: "Albania", official: "Republic of Albania", code: "AL", capital: "Tirana", continent: "Europe", tz: "Europe/Tirane" },
-{ name: "Algeria", official: "People's Democratic Republic of Algeria", code: "DZ", capital: "Algiers", continent: "Africa", tz: "Africa/Algiers" },
-{ name: "Andorra", official: "Principality of Andorra", code: "AD", capital: "Andorra la Vella", continent: "Europe", tz: "Europe/Andorra" },
-{ name: "Angola", official: "Republic of Angola", code: "AO", capital: "Luanda", continent: "Africa", tz: "Africa/Luanda" },
-{ name: "Antigua and Barbuda", official: "Antigua and Barbuda", code: "AG", capital: "St. John's", continent: "North America", tz: "America/Antigua" },
-{ name: "Argentina (Buenos Aires)", official: "Argentine Republic (Buenos Aires)", code: "AR", capital: "Buenos Aires", continent: "South America", tz: "America/Argentina/Buenos_Aires" },
-{ name: "Argentina (Catamarca)", official: "Argentine Republic (Catamarca)", code: "AR", capital: "Catamarca", continent: "South America", tz: "America/Argentina/Catamarca" },
-{ name: "Argentina (Cordoba)", official: "Argentine Republic (Cordoba)", code: "AR", capital: "Cordoba", continent: "South America", tz: "America/Argentina/Cordoba" },
-{ name: "Argentina (Jujuy)", official: "Argentine Republic (Jujuy)", code: "AR", capital: "Jujuy", continent: "South America", tz: "America/Argentina/Jujuy" },
-{ name: "Argentina (Mendoza)", official: "Argentine Republic (Mendoza)", code: "AR", capital: "Mendoza", continent: "South America", tz: "America/Argentina/Mendoza" },
-{ name: "Armenia", official: "Republic of Armenia", code: "AM", capital: "Yerevan", continent: "Asia", tz: "Asia/Yerevan" },
-{ name: "Australia (Sydney)", official: "Commonwealth of Australia (Sydney/NSW)", code: "AU", capital: "Sydney", continent: "Australia", tz: "Australia/Sydney" },
-{ name: "Australia (Melbourne)", official: "Commonwealth of Australia (Melbourne/Victoria)", code: "AU", capital: "Melbourne", continent: "Australia", tz: "Australia/Melbourne" },
-{ name: "Australia (Brisbane)", official: "Commonwealth of Australia (Brisbane/Queensland)", code: "AU", capital: "Brisbane", continent: "Australia", tz: "Australia/Brisbane" },
-{ name: "Australia (Perth)", official: "Commonwealth of Australia (Perth/Western Australia)", code: "AU", capital: "Perth", continent: "Australia", tz: "Australia/Perth" },
-{ name: "Australia (Adelaide)", official: "Commonwealth of Australia (Adelaide/South Australia)", code: "AU", capital: "Adelaide", continent: "Australia", tz: "Australia/Adelaide" },
-{ name: "Australia (Hobart)", official: "Commonwealth of Australia (Hobart/Tasmania)", code: "AU", capital: "Hobart", continent: "Australia", tz: "Australia/Hobart" },
-{ name: "Australia (Darwin)", official: "Commonwealth of Australia (Darwin/Northern Territory)", code: "AU", capital: "Darwin", continent: "Australia", tz: "Australia/Darwin" },
-{ name: "Austria", official: "Republic of Austria", code: "AT", capital: "Vienna", continent: "Europe", tz: "Europe/Vienna" },
-{ name: "Azerbaijan", official: "Republic of Azerbaijan", code: "AZ", capital: "Baku", continent: "Asia", tz: "Asia/Baku" },
-{ name: "Bahamas", official: "Commonwealth of the Bahamas", code: "BS", capital: "Nassau", continent: "North America", tz: "America/Nassau" },
-{ name: "Bahrain", official: "Kingdom of Bahrain", code: "BH", capital: "Manama", continent: "Asia", tz: "Asia/Bahrain" },
+/* --- FRANCE (16 time zones) --- */
+{ name: "France", official: "French Republic (Metropolitan France)", code: "FR", capital: "Paris", continent: "Europe", tz: "Europe/Paris" },
+{ name: "France", official: "French Republic (French Polynesia - Tahiti)", code: "FR", capital: "Papeete", continent: "Pacific", tz: "Pacific/Tahiti" },
+{ name: "France", official: "French Republic (Marquesas Islands)", code: "FR", capital: "Nuku Hiva", continent: "Pacific", tz: "Pacific/Marquesas" },
+{ name: "France", official: "French Republic (Gambier Islands)", code: "FR", capital: "Mangareva", continent: "Pacific", tz: "Pacific/Gambier" },
+{ name: "France", official: "French Republic (Clipperton Island)", code: "FR", capital: "Clipperton", continent: "North America", tz: "Pacific/Pitcairn" },
+{ name: "France", official: "French Republic (Guadeloupe)", code: "FR", capital: "Basse-Terre", continent: "North America", tz: "America/Guadeloupe" },
+{ name: "France", official: "French Republic (Martinique)", code: "FR", capital: "Fort-de-France", continent: "North America", tz: "America/Martinique" },
+{ name: "France", official: "French Republic (Saint Barthélemy)", code: "FR", capital: "Gustavia", continent: "North America", tz: "America/St_Barthelemy" },
+{ name: "France", official: "French Republic (Saint Martin)", code: "FR", capital: "Marigot", continent: "North America", tz: "America/Marigot" },
+{ name: "France", official: "French Republic (French Guiana)", code: "FR", capital: "Cayenne", continent: "South America", tz: "America/Cayenne" },
+{ name: "France", official: "French Republic (Saint Pierre and Miquelon)", code: "FR", capital: "Saint-Pierre", continent: "North America", tz: "America/Miquelon" },
+{ name: "France", official: "French Republic (Mayotte)", code: "FR", capital: "Mamoudzou", continent: "Africa", tz: "Indian/Mayotte" },
+{ name: "France", official: "French Republic (Réunion)", code: "FR", capital: "Saint-Denis", continent: "Africa", tz: "Indian/Reunion" },
+{ name: "France", official: "French Republic (Kerguelen Islands - French Southern and Antarctic Lands)", code: "FR", capital: "Port-aux-Français", continent: "Antarctica", tz: "Indian/Kerguelen" },
+{ name: "France", official: "French Republic (New Caledonia)", code: "FR", capital: "Nouméa", continent: "Pacific", tz: "Pacific/Noumea" },
+{ name: "France", official: "French Republic (Wallis and Futuna)", code: "FR", capital: "Mata-Utu", continent: "Pacific", tz: "Pacific/Wallis" },
+
+/* --- RUSSIA (11 time zones) --- */
+{ name: "Russia", official: "Russian Federation (Kaliningrad Time)", code: "RU", capital: "Kaliningrad", continent: "Europe", tz: "Europe/Kaliningrad" },
+{ name: "Russia", official: "Russian Federation (Moscow Time)", code: "RU", capital: "Moscow", continent: "Europe", tz: "Europe/Moscow" },
+{ name: "Russia", official: "Russian Federation (Samara Time)", code: "RU", capital: "Samara", continent: "Europe", tz: "Europe/Samara" },
+{ name: "Russia", official: "Russian Federation (Yekaterinburg Time)", code: "RU", capital: "Yekaterinburg", continent: "Asia", tz: "Asia/Yekaterinburg" },
+{ name: "Russia", official: "Russian Federation (Omsk Time)", code: "RU", capital: "Omsk", continent: "Asia", tz: "Asia/Omsk" },
+{ name: "Russia", official: "Russian Federation (Krasnoyarsk Time)", code: "RU", capital: "Krasnoyarsk", continent: "Asia", tz: "Asia/Krasnoyarsk" },
+{ name: "Russia", official: "Russian Federation (Irkutsk Time)", code: "RU", capital: "Irkutsk", continent: "Asia", tz: "Asia/Irkutsk" },
+{ name: "Russia", official: "Russian Federation (Yakutsk Time)", code: "RU", capital: "Yakutsk", continent: "Asia", tz: "Asia/Yakutsk" },
+{ name: "Russia", official: "Russian Federation (Vladivostok Time)", code: "RU", capital: "Vladivostok", continent: "Asia", tz: "Asia/Vladivostok" },
+{ name: "Russia", official: "Russian Federation (Magadan Time)", code: "RU", capital: "Magadan", continent: "Asia", tz: "Asia/Magadan" },
+{ name: "Russia", official: "Russian Federation (Kamchatka Time)", code: "RU", capital: "Petropavlovsk-Kamchatsky", continent: "Asia", tz: "Asia/Kamchatka" },
+
+/* --- UNITED STATES OF AMERICA (11 time zones) --- */
+{ name: "United States of America", official: "United States of America (Eastern Time)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/New_York" },
+{ name: "United States of America", official: "United States of America (Central Time)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/Chicago" },
+{ name: "United States of America", official: "United States of America (Mountain Time)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/Denver" },
+{ name: "United States of America", official: "United States of America (Pacific Time)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/Los_Angeles" },
+{ name: "United States of America", official: "United States of America (Alaska Time)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/Anchorage" },
+{ name: "United States of America", official: "United States of America (Hawaii-Aleutian Time)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "Pacific/Honolulu" },
+{ name: "United States of America", official: "United States of America (Atlantic Time - Puerto Rico / US Virgin Islands)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/Puerto_Rico" },
+{ name: "United States of America", official: "United States of America (Chamorro Time - Guam / Northern Mariana Islands)", code: "US", capital: "Washington, D.C.", continent: "Pacific", tz: "Pacific/Guam" },
+{ name: "United States of America", official: "United States of America (Samoa Time - American Samoa)", code: "US", capital: "Washington, D.C.", continent: "Pacific", tz: "Pacific/Pago_Pago" },
+{ name: "United States of America", official: "United States of America (Wake Island Time)", code: "US", capital: "Washington, D.C.", continent: "Pacific", tz: "Pacific/Wake" },
+{ name: "United States of America", official: "United States of America (Midway Time)", code: "US", capital: "Washington, D.C.", continent: "Pacific", tz: "Pacific/Midway" },
+
+/* --- UNITED KINGDOM (9 time zones) --- */
+{ name: "United Kingdom", official: "United Kingdom of Great Britain and Northern Ireland (Greenwich Mean Time / London)", code: "GB", capital: "London", continent: "Europe", tz: "Europe/London" },
+{ name: "United Kingdom", official: "United Kingdom (Bermuda Time - Overseas Territory)", code: "GB", capital: "Hamilton", continent: "North America", tz: "Atlantic/Bermuda" },
+{ name: "United Kingdom", official: "United Kingdom (Falkland Islands Time)", code: "GB", capital: "Stanley", continent: "South America", tz: "Atlantic/Stanley" },
+{ name: "United Kingdom", official: "United Kingdom (Gibraltar Time)", code: "GB", capital: "Gibraltar", continent: "Europe", tz: "Europe/Gibraltar" },
+{ name: "United Kingdom", official: "United Kingdom (Cayman Islands Time)", code: "GB", capital: "George Town", continent: "North America", tz: "America/Cayman" },
+{ name: "United Kingdom", official: "United Kingdom (British Indian Ocean Territory Time - Chagos)", code: "GB", capital: "Diego Garcia", continent: "Asia", tz: "Indian/Chagos" },
+{ name: "United Kingdom", official: "United Kingdom (Pitcairn Islands Time)", code: "GB", capital: "Adamstown", continent: "Pacific", tz: "Pacific/Pitcairn" },
+{ name: "United Kingdom", official: "United Kingdom (South Georgia and the South Sandwich Islands Time)", code: "GB", capital: "Grytviken", continent: "Antarctica", tz: "Atlantic/South_Georgia" },
+{ name: "United Kingdom", official: "United Kingdom (Anguilla / Montserrat / British Virgin Islands - Atlantic Time)", code: "GB", capital: "Road Town", continent: "North America", tz: "America/Tortola" },
+
+/* --- AUSTRALIA (9 time zones) --- */
+{ name: "Australia", official: "Commonwealth of Australia (Australian Eastern Standard Time - Sydney/Melbourne/Brisbane)", code: "AU", capital: "Sydney", continent: "Australia", tz: "Australia/Sydney" },
+{ name: "Australia", official: "Commonwealth of Australia (Australian Central Standard Time - Adelaide/Darwin)", code: "AU", capital: "Adelaide", continent: "Australia", tz: "Australia/Adelaide" },
+{ name: "Australia", official: "Commonwealth of Australia (Australian Western Standard Time - Perth)", code: "AU", capital: "Perth", continent: "Australia", tz: "Australia/Perth" },
+{ name: "Australia", official: "Commonwealth of Australia (Lord Howe Standard Time)", code: "AU", capital: "Lord Howe Island", continent: "Australia", tz: "Australia/Lord_Howe" },
+{ name: "Australia", official: "Commonwealth of Australia (Norfolk Island Time)", code: "AU", capital: "Kingston", continent: "Australia", tz: "Pacific/Norfolk" },
+{ name: "Australia", official: "Commonwealth of Australia (Christmas Island Time)", code: "AU", capital: "Flying Fish Cove", continent: "Asia", tz: "Indian/Christmas" },
+{ name: "Australia", official: "Commonwealth of Australia (Cocos Islands Time)", code: "AU", capital: "West Island", continent: "Asia", tz: "Indian/Cocos" },
+{ name: "Australia", official: "Commonwealth of Australia (Heard and McDonald Islands Time)", code: "AU", capital: "Atlas Cove", continent: "Antarctica", tz: "Indian/Kerguelen" },
+{ name: "Australia", official: "Commonwealth of Australia (Australian Antarctic Territory Time - Casey / Mawson)", code: "AU", capital: "Casey Station", continent: "Antarctica", tz: "Antarctica/Casey" },
+
+/* --- CANADA (6 time zones) --- */
+{ name: "Canada", official: "Canada (Pacific Time - Vancouver)", code: "CA", capital: "Vancouver", continent: "North America", tz: "America/Vancouver" },
+{ name: "Canada", official: "Canada (Mountain Time - Edmonton)", code: "CA", capital: "Edmonton", continent: "North America", tz: "America/Edmonton" },
+{ name: "Canada", official: "Canada (Central Time - Winnipeg)", code: "CA", capital: "Winnipeg", continent: "North America", tz: "America/Winnipeg" },
+{ name: "Canada", official: "Canada (Eastern Time - Toronto)", code: "CA", capital: "Toronto", continent: "North America", tz: "America/Toronto" },
+{ name: "Canada", official: "Canada (Atlantic Time - Halifax)", code: "CA", capital: "Halifax", continent: "North America", tz: "America/Halifax" },
+{ name: "Canada", official: "Canada (Newfoundland Time - St. John's)", code: "CA", capital: "St. John's", continent: "North America", tz: "America/St_Johns" },
+
+/* --- DENMARK (5 time zones) --- */
+{ name: "Denmark", official: "Kingdom of Denmark (Central European Time - Copenhagen)", code: "DK", capital: "Copenhagen", continent: "Europe", tz: "Europe/Copenhagen" },
+{ name: "Denmark", official: "Kingdom of Denmark (Faroe Islands - Western European Time)", code: "DK", capital: "Tórshavn", continent: "Europe", tz: "Atlantic/Faroe" },
+{ name: "Denmark", official: "Kingdom of Denmark (West Greenland Time - Nuuk)", code: "DK", capital: "Nuuk", continent: "North America", tz: "America/Nuuk" },
+{ name: "Denmark", official: "Kingdom of Denmark (East Greenland Time - Ittoqqortoormiit)", code: "DK", capital: "Ittoqqortoormiit", continent: "North America", tz: "America/Scoresbysund" },
+{ name: "Denmark", official: "Kingdom of Denmark (Pituffik Space Base Time - Thule Air Base)", code: "DK", capital: "Pituffik", continent: "North America", tz: "America/Thule" },
+
+/* --- NEW ZEALAND (5 time zones) --- */
+{ name: "New Zealand", official: "New Zealand (New Zealand Standard Time - Auckland/Wellington)", code: "NZ", capital: "Wellington", continent: "Pacific", tz: "Pacific/Auckland" },
+{ name: "New Zealand", official: "New Zealand (Chatham Islands Standard Time)", code: "NZ", capital: "Waitangi", continent: "Pacific", tz: "Pacific/Chatham" },
+{ name: "New Zealand", official: "New Zealand (Cook Islands Time - Realm of NZ)", code: "NZ", capital: "Avarua", continent: "Pacific", tz: "Pacific/Rarotonga" },
+{ name: "New Zealand", official: "New Zealand (Niue Time - Realm of NZ)", code: "NZ", capital: "Alofi", continent: "Pacific", tz: "Pacific/Niue" },
+{ name: "New Zealand", official: "New Zealand (Tokelau Time - Realm of NZ)", code: "NZ", capital: "Atafu", continent: "Pacific", tz: "Pacific/Fakaofo" },
+
+/* --- BRAZIL (4 time zones) --- */
+{ name: "Brazil", official: "Federative Republic of Brazil (Fernando de Noronha Time)", code: "BR", capital: "Fernando de Noronha", continent: "South America", tz: "America/Noronha" },
+{ name: "Brazil", official: "Federative Republic of Brazil (Brasília Time / Sao Paulo / Rio de Janeiro)", code: "BR", capital: "Brasília", continent: "South America", tz: "America/Sao_Paulo" },
+{ name: "Brazil", official: "Federative Republic of Brazil (Amazon Time - Manaus)", code: "BR", capital: "Manaus", continent: "South America", tz: "America/Manaus" },
+{ name: "Brazil", official: "Federative Republic of Brazil (Acre Time - Rio Branco)", code: "BR", capital: "Rio Branco", continent: "South America", tz: "America/Rio_Branco" },
+
+/* --- MEXICO (4 time zones) --- */
+{ name: "Mexico", official: "United Mexican States (Southeast Zone - Cancun)", code: "MX", capital: "Cancun", continent: "North America", tz: "America/Cancun" },
+{ name: "Mexico", official: "United Mexican States (Central Zone - Mexico City)", code: "MX", capital: "Mexico City", continent: "North America", tz: "America/Mexico_City" },
+{ name: "Mexico", official: "United Mexican States (Pacific Zone - Mazatlan)", code: "MX", capital: "Mazatlan", continent: "North America", tz: "America/Mazatlan" },
+{ name: "Mexico", official: "United Mexican States (Northwest Zone - Tijuana)", code: "MX", capital: "Tijuana", continent: "North America", tz: "America/Tijuana" },
+
+/* --- CHILE (3 time zones) --- */
+{ name: "Chile", official: "Republic of Chile (Continental Chile Time - Santiago)", code: "CL", capital: "Santiago", continent: "South America", tz: "America/Santiago" },
+{ name: "Chile", official: "Republic of Chile (Easter Island Time - Rapa Nui)", code: "CL", capital: "Hanga Roa", continent: "Pacific", tz: "Pacific/Easter" },
+{ name: "Chile", official: "Republic of Chile (Magallanes and Chilean Antarctica Time - Punta Arenas)", code: "CL", capital: "Punta Arenas", continent: "South America", tz: "America/Punta_Arenas" },
+
+/* --- INDONESIA (3 time zones) --- */
+{ name: "Indonesia", official: "Republic of Indonesia (Western Indonesian Time - Jakarta / WIB)", code: "ID", capital: "Jakarta", continent: "Asia", tz: "Asia/Jakarta" },
+{ name: "Indonesia", official: "Republic of Indonesia (Central Indonesian Time - Makassar / WITA)", code: "ID", capital: "Makassar", continent: "Asia", tz: "Asia/Makassar" },
+{ name: "Indonesia", official: "Republic of Indonesia (Eastern Indonesian Time - Jayapura / WIT)", code: "ID", capital: "Jayapura", continent: "Asia", tz: "Asia/Jayapura" },
+
+/* --- KIRIBATI (3 time zones) --- */
+{ name: "Kiribati", official: "Republic of Kiribati (Gilbert Islands Time - Tarawa)", code: "KI", capital: "Tarawa", continent: "Pacific", tz: "Pacific/Tarawa" },
+{ name: "Kiribati", official: "Republic of Kiribati (Phoenix Islands Time - Kanton)", code: "KI", capital: "Kanton", continent: "Pacific", tz: "Pacific/Kanton" },
+{ name: "Kiribati", official: "Republic of Kiribati (Line Islands Time - Kiritimati / Christmas Island)", code: "KI", capital: "Kiritimati", continent: "Pacific", tz: "Pacific/Kiritimati" },
+
+/* --- PORTUGAL (2 time zones) --- */
+{ name: "Portugal", official: "Portuguese Republic (Western European Time - Lisbon)", code: "PT", capital: "Lisbon", continent: "Europe", tz: "Europe/Lisbon" },
+{ name: "Portugal", official: "Portuguese Republic (Azores Time)", code: "PT", capital: "Ponta Delgada", continent: "Europe", tz: "Atlantic/Azores" },
+
+/* --- SPAIN (2 time zones) --- */
+{ name: "Spain", official: "Kingdom of Spain (Central European Time - Madrid / Mainland)", code: "ES", capital: "Madrid", continent: "Europe", tz: "Europe/Madrid" },
+{ name: "Spain", official: "Kingdom of Spain (Western European Time - Canary Islands)", code: "ES", capital: "Santa Cruz de Tenerife", continent: "Europe", tz: "Atlantic/Canary" },
+
+/* --- DR CONGO (2 time zones) --- */
+{ name: "Democratic Republic of the Congo", official: "Democratic Republic of the Congo (West Africa Time - Kinshasa)", code: "CD", capital: "Kinshasa", continent: "Africa", tz: "Africa/Kinshasa" },
+{ name: "Democratic Republic of the Congo", official: "Democratic Republic of the Congo (Central Africa Time - Lubumbashi)", code: "CD", capital: "Lubumbashi", continent: "Africa", tz: "Africa/Lubumbashi" },
+
+/* --- SOUTH AFRICA (2 time zones) --- */
+{ name: "South Africa", official: "Republic of South Africa (South African Standard Time - Pretoria / Johannesburg)", code: "ZA", capital: "Pretoria", continent: "Africa", tz: "Africa/Johannesburg" },
+{ name: "South Africa", official: "Republic of South Africa (Prince Edward Islands Time)", code: "ZA", capital: "Marion Island", continent: "Africa", tz: "Indian/Mahe" },
+
+/* --- MICRONESIA (2 time zones) --- */
+{ name: "Micronesia", official: "Federated States of Micronesia (Chuuk and Yap Time)", code: "FM", capital: "Palikir", continent: "Pacific", tz: "Pacific/Chuuk" },
+{ name: "Micronesia", official: "Federated States of Micronesia (Kosrae and Pohnpei Time)", code: "FM", capital: "Palikir", continent: "Pacific", tz: "Pacific/Pohnpei" },
+
+/* --- ECUADOR (2 time zones) --- */
+{ name: "Ecuador", official: "Republic of Ecuador (Ecuador Time - Quito / Mainland)", code: "EC", capital: "Quito", continent: "South America", tz: "America/Guayaquil" },
+{ name: "Ecuador", official: "Republic of Ecuador (Galapagos Time)", code: "EC", capital: "Puerto Baquerizo Moreno", continent: "South America", tz: "Pacific/Galapagos" },
+
+/* --- PAPUA NEW GUINEA (2 time zones) --- */
+{ name: "Papua New Guinea", official: "Independent State of Papua New Guinea (Papua New Guinea Time - Port Moresby)", code: "PG", capital: "Port Moresby", continent: "Pacific", tz: "Pacific/Port_Moresby" },
+{ name: "Papua New Guinea", official: "Independent State of Papua New Guinea (Bougainville Standard Time)", code: "PG", capital: "Arawa", continent: "Pacific", tz: "Pacific/Bougainville" },
+
+/* --- NETHERLANDS (2 time zones) --- */
+{ name: "Netherlands", official: "Kingdom of the Netherlands (Central European Time - Amsterdam / European Netherlands)", code: "NL", capital: "Amsterdam", continent: "Europe", tz: "Europe/Amsterdam" },
+{ name: "Netherlands", official: "Kingdom of the Netherlands (Atlantic Standard Time - Caribbean Netherlands / Curaçao / Aruba / Sint Maarten)", code: "NL", capital: "Willemstad", continent: "North America", tz: "America/Curacao" },
+
+/* --- MONGOLIA (2 time zones) --- */
+{ name: "Mongolia", official: "Mongolia (Ulaanbaatar Time - Eastern Mongolia)", code: "MN", capital: "Ulaanbaatar", continent: "Asia", tz: "Asia/Ulaanbaatar" },
+{ name: "Mongolia", official: "Mongolia (Hovd Time - Western Mongolia)", code: "MN", capital: "Hovd", continent: "Asia", tz: "Asia/Hovd" },
+
+/* --- OTHER SINGLE-ZONE COUNTRIES FOR COMPLETENESS --- */
 { name: "Bangladesh", official: "People's Republic of Bangladesh", code: "BD", capital: "Dhaka", continent: "Asia", tz: "Asia/Dhaka" },
-{ name: "Barbados", official: "Barbados", code: "BB", capital: "Bridgetown", continent: "North America", tz: "America/Barbados" },
-{ name: "Belarus", official: "Republic of Belarus", code: "BY", capital: "Minsk", continent: "Europe", tz: "Europe/Minsk" },
-{ name: "Belgium", official: "Kingdom of Belgium", code: "BE", capital: "Brussels", continent: "Europe", tz: "Europe/Brussels" },
-{ name: "Belize", official: "Belize", code: "BZ", capital: "Belmopan", continent: "North America", tz: "America/Belize" },
-{ name: "Benin", official: "Republic of Benin", code: "BJ", capital: "Porto-Novo", continent: "Africa", tz: "Africa/Porto-Novo" },
-{ name: "Bhutan", official: "Kingdom of Bhutan", code: "BT", capital: "Thimphu", continent: "Asia", tz: "Asia/Thimphu" },
-{ name: "Bolivia", official: "Plurinational State of Bolivia", code: "BO", capital: "Sucre", continent: "South America", tz: "America/La_Paz" },
-{ name: "Bosnia and Herzegovina", official: "Bosnia and Herzegovina", code: "BA", capital: "Sarajevo", continent: "Europe", tz: "Europe/Sarajevo" },
-{ name: "Botswana", official: "Republic of Botswana", code: "BW", capital: "Gaborone", continent: "Africa", tz: "Africa/Gaborone" },
-{ name: "Brazil (Sao Paulo)", official: "Federative Republic of Brazil (Sao Paulo)", code: "BR", capital: "Sao Paulo", continent: "South America", tz: "America/Sao_Paulo" },
-{ name: "Brazil (Manaus)", official: "Federative Republic of Brazil (Manaus)", code: "BR", capital: "Manaus", continent: "South America", tz: "America/Manaus" },
-{ name: "Brazil (Rio Branco)", official: "Federative Republic of Brazil (Rio Branco)", code: "BR", capital: "Rio Branco", continent: "South America", tz: "America/Rio_Branco" },
-{ name: "Brunei", official: "Nation of Brunei", code: "BN", capital: "Bandar Seri Begawan", continent: "Asia", tz: "Asia/Brunei" },
-{ name: "Bulgaria", official: "Republic of Bulgaria", code: "BG", capital: "Sofia", continent: "Europe", tz: "Europe/Sofia" },
-{ name: "Burkina Faso", official: "Burkina Faso", code: "BF", capital: "Ouagadougou", continent: "Africa", tz: "Africa/Ouagadougou" },
-{ name: "Burundi", official: "Republic of Burundi", code: "BI", capital: "Gitega", continent: "Africa", tz: "Africa/Bujumbura" },
-{ name: "Cambodia", official: "Kingdom of Cambodia", code: "KH", capital: "Phnom Penh", continent: "Asia", tz: "Asia/Phnom_Penh" },
-{ name: "Cameroon", official: "Republic of Cameroon", code: "CM", capital: "Yaounde", continent: "Africa", tz: "Africa/Douala" },
-{ name: "Canada (Toronto)", official: "Canada (Toronto/Eastern)", code: "CA", capital: "Toronto", continent: "North America", tz: "America/Toronto" },
-{ name: "Canada (Vancouver)", official: "Canada (Vancouver/Pacific)", code: "CA", capital: "Vancouver", continent: "North America", tz: "America/Vancouver" },
-{ name: "Canada (Edmonton)", official: "Canada (Edmonton/Mountain)", code: "CA", capital: "Edmonton", continent: "North America", tz: "America/Edmonton" },
-{ name: "Canada (Winnipeg)", official: "Canada (Winnipeg/Central)", code: "CA", capital: "Winnipeg", continent: "North America", tz: "America/Winnipeg" },
-{ name: "Canada (Halifax)", official: "Canada (Halifax/Atlantic)", code: "CA", capital: "Halifax", continent: "North America", tz: "America/Halifax" },
-{ name: "Canada (St. Johns)", official: "Canada (St. John's/Newfoundland)", code: "CA", capital: "St. John's", continent: "North America", tz: "America/St_Johns" },
-{ name: "Chile (Santiago)", official: "Republic of Chile (Santiago)", code: "CL", capital: "Santiago", continent: "South America", tz: "America/Santiago" },
-{ name: "China", official: "People's Republic of China", code: "CN", capital: "Beijing", continent: "Asia", tz: "Asia/Shanghai" },
-{ name: "Colombia", official: "Republic of Colombia", code: "CO", capital: "Bogota", continent: "South America", tz: "America/Bogota" },
-{ name: "Costa Rica", official: "Republic of Costa Rica", code: "CR", capital: "San Jose", continent: "North America", tz: "America/Costa_Rica" },
-{ name: "Croatia", official: "Republic of Croatia", code: "HR", capital: "Zagreb", continent: "Europe", tz: "Europe/Zagreb" },
-{ name: "Cuba", official: "Republic of Cuba", code: "CU", capital: "Havana", continent: "North America", tz: "America/Havana" },
-{ name: "Cyprus", official: "Republic of Cyprus", code: "CY", capital: "Nicosia", continent: "Europe", tz: "Asia/Nicosia" },
-{ name: "Czech Republic", official: "Czech Republic", code: "CZ", capital: "Prague", continent: "Europe", tz: "Europe/Prague" },
-{ name: "Denmark", official: "Kingdom of Denmark", code: "DK", capital: "Copenhagen", continent: "Europe", tz: "Europe/Copenhagen" },
-{ name: "Dominican Republic", official: "Dominican Republic", code: "DO", capital: "Santo Domingo", continent: "North America", tz: "America/Santo_Domingo" },
-{ name: "Ecuador", official: "Republic of Ecuador", code: "EC", capital: "Quito", continent: "South America", tz: "America/Guayaquil" },
-{ name: "Egypt", official: "Arab Republic of Egypt", code: "EG", capital: "Cairo", continent: "Africa", tz: "Africa/Cairo" },
-{ name: "Estonia", official: "Republic of Estonia", code: "EE", capital: "Tallinn", continent: "Europe", tz: "Europe/Tallinn" },
-{ name: "Ethiopia", official: "Federal Democratic Republic of Ethiopia", code: "ET", capital: "Addis Ababa", continent: "Africa", tz: "Africa/Addis_Ababa" },
-{ name: "Fiji", official: "Republic of Fiji", code: "FJ", capital: "Suva", continent: "Pacific", tz: "Pacific/Fiji" },
-{ name: "Finland", official: "Republic of Finland", code: "FI", capital: "Helsinki", continent: "Europe", tz: "Europe/Helsinki" },
-{ name: "France", official: "French Republic", code: "FR", capital: "Paris", continent: "Europe", tz: "Europe/Paris" },
-{ name: "Georgia", official: "Georgia", code: "GE", capital: "Tbilisi", continent: "Asia", tz: "Asia/Tbilisi" },
-{ name: "Germany", official: "Federal Republic of Germany", code: "DE", capital: "Berlin", continent: "Europe", tz: "Europe/Berlin" },
-{ name: "Ghana", official: "Republic of Ghana", code: "GH", capital: "Accra", continent: "Africa", tz: "Africa/Accra" },
-{ name: "Greece", official: "Hellenic Republic", code: "GR", capital: "Athens", continent: "Europe", tz: "Europe/Athens" },
-{ name: "Hungary", official: "Hungary", code: "HU", capital: "Budapest", continent: "Europe", tz: "Europe/Budapest" },
-{ name: "Iceland", official: "Republic of Iceland", code: "IS", capital: "Reykjavik", continent: "Europe", tz: "Atlantic/Reykjavik" },
 { name: "India", official: "Republic of India", code: "IN", capital: "New Delhi", continent: "Asia", tz: "Asia/Kolkata" },
-{ name: "Indonesia (Jakarta)", official: "Republic of Indonesia (Jakarta/WIB)", code: "ID", capital: "Jakarta", continent: "Asia", tz: "Asia/Jakarta" },
-{ name: "Indonesia (Makassar)", official: "Republic of Indonesia (Makassar/WITA)", code: "ID", capital: "Makassar", continent: "Asia", tz: "Asia/Makassar" },
-{ name: "Indonesia (Jayapura)", official: "Republic of Indonesia (Jayapura/WIT)", code: "ID", capital: "Jayapura", continent: "Asia", tz: "Asia/Jayapura" },
-{ name: "Iran", official: "Islamic Republic of Iran", code: "IR", capital: "Tehran", continent: "Asia", tz: "Asia/Tehran" },
-{ name: "Iraq", official: "Republic of Iraq", code: "IQ", capital: "Baghdad", continent: "Asia", tz: "Asia/Baghdad" },
-{ name: "Ireland", official: "Republic of Ireland", code: "IE", capital: "Dublin", continent: "Europe", tz: "Europe/Dublin" },
-{ name: "Israel", official: "State of Israel", code: "IL", capital: "Jerusalem", continent: "Asia", tz: "Asia/Jerusalem" },
-{ name: "Italy", official: "Italian Republic", code: "IT", capital: "Rome", continent: "Europe", tz: "Europe/Rome" },
 { name: "Japan", official: "Japan", code: "JP", capital: "Tokyo", continent: "Asia", tz: "Asia/Tokyo" },
-{ name: "Jordan", official: "Hashemite Kingdom of Jordan", code: "JO", capital: "Amman", continent: "Asia", tz: "Asia/Amman" },
-{ name: "Kazakhstan (Almaty)", official: "Republic of Kazakhstan (Almaty)", code: "KZ", capital: "Almaty", continent: "Asia", tz: "Asia/Almaty" },
-{ name: "Kazakhstan (Aqtau)", official: "Republic of Kazakhstan (Aqtau)", code: "KZ", capital: "Aqtau", continent: "Asia", tz: "Asia/Aqtau" },
-{ name: "Kenya", official: "Republic of Kenya", code: "KE", capital: "Nairobi", continent: "Africa", tz: "Africa/Nairobi" },
-{ name: "Kuwait", official: "State of Kuwait", code: "KW", capital: "Kuwait City", continent: "Asia", tz: "Asia/Kuwait" },
-{ name: "Latvia", official: "Republic of Latvia", code: "LV", capital: "Riga", continent: "Europe", tz: "Europe/Riga" },
-{ name: "Lebanon", official: "Lebanese Republic", code: "LB", capital: "Beirut", continent: "Asia", tz: "Asia/Beirut" },
-{ name: "Libya", official: "Libya", code: "LY", capital: "Tripoli", continent: "Africa", tz: "Africa/Tripoli" },
-{ name: "Malaysia", official: "Malaysia", code: "MY", capital: "Kuala Lumpur", continent: "Asia", tz: "Asia/Kuala_Lumpur" },
-{ name: "Maldives", official: "Republic of Maldives", code: "MV", capital: "Male", continent: "Asia", tz: "Indian/Maldives" },
-{ name: "Mexico (Mexico City)", official: "United Mexican States (Mexico City)", code: "MX", capital: "Mexico City", continent: "North America", tz: "America/Mexico_City" },
-{ name: "Mexico (Cancun)", official: "United Mexican States (Cancun)", code: "MX", capital: "Cancun", continent: "North America", tz: "America/Cancun" },
-{ name: "Mexico (Tijuana)", official: "United Mexican States (Tijuana)", code: "MX", capital: "Tijuana", continent: "North America", tz: "America/Tijuana" },
-{ name: "Morocco", official: "Kingdom of Morocco", code: "MA", capital: "Rabat", continent: "Africa", tz: "Africa/Casablanca" },
-{ name: "Netherlands", official: "Kingdom of the Netherlands", code: "NL", capital: "Amsterdam", continent: "Europe", tz: "Europe/Amsterdam" },
-{ name: "New Zealand", official: "New Zealand", code: "NZ", capital: "Wellington", continent: "Pacific", tz: "Pacific/Auckland" },
-{ name: "Nigeria", official: "Federal Republic of Nigeria", code: "NG", capital: "Abuja", continent: "Africa", tz: "Africa/Lagos" },
-{ name: "Norway", official: "Kingdom of Norway", code: "NO", capital: "Oslo", continent: "Europe", tz: "Europe/Oslo" },
-{ name: "Oman", official: "Sultanate of Oman", code: "OM", capital: "Muscat", continent: "Asia", tz: "Asia/Muscat" },
-{ name: "Pakistan", official: "Islamic Republic of Pakistan", code: "PK", capital: "Islamabad", continent: "Asia", tz: "Asia/Karachi" },
-{ name: "Palestine", official: "State of Palestine", code: "PS", capital: "Ramallah", continent: "Asia", tz: "Asia/Gaza" },
-{ name: "Panama", official: "Republic of Panama", code: "PA", capital: "Panama City", continent: "North America", tz: "America/Panama" },
-{ name: "Peru", official: "Republic of Peru", code: "PE", capital: "Lima", continent: "South America", tz: "America/Lima" },
-{ name: "Philippines", official: "Republic of the Philippines", code: "PH", capital: "Manila", continent: "Asia", tz: "Asia/Manila" },
-{ name: "Poland", official: "Republic of Poland", code: "PL", capital: "Warsaw", continent: "Europe", tz: "Europe/Warsaw" },
-{ name: "Portugal", official: "Portuguese Republic", code: "PT", capital: "Lisbon", continent: "Europe", tz: "Europe/Lisbon" },
-{ name: "Qatar", official: "State of Qatar", code: "QA", capital: "Doha", continent: "Asia", tz: "Asia/Qatar" },
-{ name: "Romania", official: "Romania", code: "RO", capital: "Bucharest", continent: "Europe", tz: "Europe/Bucharest" },
-{ name: "Russia (Moscow)", official: "Russian Federation (Moscow)", code: "RU", capital: "Moscow", continent: "Europe", tz: "Europe/Moscow" },
-{ name: "Russia (Vladivostok)", official: "Russian Federation (Vladivostok)", code: "RU", capital: "Vladivostok", continent: "Asia", tz: "Asia/Vladivostok" },
-{ name: "Russia (Yekaterinburg)", official: "Russian Federation (Yekaterinburg)", code: "RU", capital: "Yekaterinburg", continent: "Asia", tz: "Asia/Yekaterinburg" },
-{ name: "Saudi Arabia", official: "Kingdom of Saudi Arabia", code: "SA", capital: "Riyadh", continent: "Asia", tz: "Asia/Riyadh" },
-{ name: "Serbia", official: "Republic of Serbia", code: "RS", capital: "Belgrade", continent: "Europe", tz: "Europe/Belgrade" },
-{ name: "Singapore", official: "Republic of Singapore", code: "SG", capital: "Singapore", continent: "Asia", tz: "Asia/Singapore" },
-{ name: "South Africa", official: "Republic of South Africa", code: "ZA", capital: "Pretoria", continent: "Africa", tz: "Africa/Johannesburg" },
+{ name: "Germany", official: "Federal Republic of Germany", code: "DE", capital: "Berlin", continent: "Europe", tz: "Europe/Berlin" },
+{ name: "Italy", official: "Italian Republic", code: "IT", capital: "Rome", continent: "Europe", tz: "Europe/Rome" },
+{ name: "Argentina", official: "Argentine Republic", code: "AR", capital: "Buenos Aires", continent: "South America", tz: "America/Argentina/Buenos_Aires" },
+{ name: "China", official: "People's Republic of China", code: "CN", capital: "Beijing", continent: "Asia", tz: "Asia/Shanghai" },
 { name: "South Korea", official: "Republic of Korea", code: "KR", capital: "Seoul", continent: "Asia", tz: "Asia/Seoul" },
-{ name: "Spain", official: "Kingdom of Spain", code: "ES", capital: "Madrid", continent: "Europe", tz: "Europe/Madrid" },
-{ name: "Sri Lanka", official: "Democratic Socialist Republic of Sri Lanka", code: "LK", capital: "Sri Jayawardenepura Kotte", continent: "Asia", tz: "Asia/Colombo" },
-{ name: "Sweden", official: "Kingdom of Sweden", code: "SE", capital: "Stockholm", continent: "Europe", tz: "Europe/Stockholm" },
-{ name: "Switzerland", official: "Swiss Confederation", code: "CH", capital: "Bern", continent: "Europe", tz: "Europe/Zurich" },
-{ name: "Syria", official: "Syrian Arab Republic", code: "SY", capital: "Damascus", continent: "Asia", tz: "Asia/Damascus" },
-{ name: "Taiwan", official: "Republic of China (Taiwan)", code: "TW", capital: "Taipei", continent: "Asia", tz: "Asia/Taipei" },
-{ name: "Thailand", official: "Kingdom of Thailand", code: "TH", capital: "Bangkok", continent: "Asia", tz: "Asia/Bangkok" },
 { name: "Turkey", official: "Republic of Turkey", code: "TR", capital: "Ankara", continent: "Europe", tz: "Europe/Istanbul" },
-{ name: "Ukraine", official: "Ukraine", code: "UA", capital: "Kyiv", continent: "Europe", tz: "Europe/Kyiv" },
-{ name: "United Arab Emirates", official: "United Arab Emirates", code: "AE", capital: "Abu Dhabi", continent: "Asia", tz: "Asia/Dubai" },
-{ name: "United Kingdom", official: "United Kingdom of Great Britain and Northern Ireland", code: "GB", capital: "London", continent: "Europe", tz: "Europe/London" },
-{ name: "United States of America (New York)", official: "United States of America (New York/Eastern)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/New_York" },
-{ name: "United States of America (Los Angeles)", official: "United States of America (Los Angeles/Pacific)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/Los_Angeles" },
-{ name: "United States of America (Chicago)", official: "United States of America (Chicago/Central)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/Chicago" },
-{ name: "United States of America (Denver)", official: "United States of America (Denver/Mountain)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/Denver" },
-{ name: "United States of America (Anchorage)", official: "United States of America (Anchorage/Alaska)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "America/Anchorage" },
-{ name: "United States of America (Honolulu)", official: "United States of America (Honolulu/Hawaii)", code: "US", capital: "Washington, D.C.", continent: "North America", tz: "Pacific/Honolulu" },
-{ name: "Uruguay", official: "Oriental Republic of Uruguay", code: "UY", capital: "Montevideo", continent: "South America", tz: "America/Montevideo" },
-{ name: "Venezuela", official: "Bolivarian Republic of Venezuela", code: "VE", capital: "Caracas", continent: "South America", tz: "America/Caracas" },
-{ name: "Vietnam", official: "Socialist Republic of Vietnam", code: "VN", capital: "Hanoi", continent: "Asia", tz: "Asia/Ho_Chi_Minh" },
-{ name: "Yemen", official: "Republic of Yemen", code: "YE", capital: "Sana'a", continent: "Asia", tz: "Asia/Aden" }
+{ name: "United Arab Emirates", official: "United Arab Emirates", code: "AE", capital: "Abu Dhabi", continent: "Asia", tz: "Asia/Dubai" }
 ];
 
 
@@ -1036,8 +1060,7 @@ function filterCountries(){
         const option = document.createElement("div");
         option.className = "country-option";
 
-        // ড্রপডাউনে সাধারণ নাম (যেখানে এখন United States of America দেখা যাবে)
-        option.innerHTML = "🌎 <b>" + escapeHTML(item.name) + "</b> [" + escapeHTML(item.code) + "] — " + escapeHTML(item.capital) + " <small style='color:var(--muted);'>(" + escapeHTML(item.continent) + ")</small>";
+        option.innerHTML = "🌎 <b>" + escapeHTML(item.name) + "</b> [" + escapeHTML(item.code) + "] — " + escapeHTML(item.capital) + " <small style='color:var(--muted);'>(" + escapeHTML(item.official) + ")</small>";
 
         option.onclick = function(){
             selectCountry(item);
@@ -1061,7 +1084,6 @@ function selectCountry(item){
 
     document.getElementById("selectedCountry").style.display = "block";
     
-    // ক্লিক করার পর অফিসিয়াল পুরো নাম দেখাবে
     document.getElementById("countryName").textContent = "🌎 " + item.official + " (" + item.code + ")";
 
     if(activeWorldInterval) clearInterval(activeWorldInterval);
