@@ -45,22 +45,16 @@ body{
 
 header{
     height:65px;
-
     position:fixed;
     top:0;
     left:0;
     right:0;
-
     background:var(--card);
-
     border-bottom:1px solid var(--border);
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:0 20px;
-
     z-index:1000;
 }
 
@@ -77,16 +71,11 @@ header{
 .icon-btn{
     width:40px;
     height:40px;
-
     border:1px solid var(--border);
-
     background:var(--card);
     color:var(--text);
-
     border-radius:9px;
-
     cursor:pointer;
-
     font-size:18px;
 }
 
@@ -95,40 +84,26 @@ header{
 
 .sidebar{
     position:fixed;
-
     top:65px;
     left:0;
-
     width:220px;
     height:calc(100vh - 65px);
-
     background:var(--card);
-
     border-right:1px solid var(--border);
-
     padding:15px;
-
     z-index:900;
 }
 
 .nav{
     width:100%;
-
     border:0;
-
     background:transparent;
     color:var(--text);
-
     text-align:left;
-
     padding:12px;
-
     border-radius:8px;
-
     cursor:pointer;
-
     font-size:14px;
-
     margin-bottom:4px;
 }
 
@@ -142,9 +117,7 @@ header{
 
 main{
     margin-left:220px;
-
     padding:90px 25px 30px;
-
     max-width:1350px;
 }
 
@@ -166,10 +139,7 @@ main{
 
 .grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:18px;
 }
 
@@ -178,19 +148,14 @@ main{
 
 .card{
     background:var(--card);
-
     border:1px solid var(--border);
-
     border-radius:14px;
-
     padding:18px;
-
     box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
 
 .card h2{
     font-size:18px;
-
     margin-bottom:15px;
 }
 
@@ -199,13 +164,11 @@ main{
 
 .clock{
     font-size:38px;
-
     font-weight:bold;
 }
 
 .date{
     color:var(--muted);
-
     margin-top:5px;
 }
 
@@ -219,40 +182,27 @@ main{
 
 .world-search input{
     width:100%;
-
     padding:11px 13px;
-
     border:1px solid var(--border);
-
     background:var(--card);
     color:var(--text);
-
     border-radius:9px;
-
     outline:none;
 }
 
 .country-list{
     max-height:180px;
-
     overflow-y:auto;
-
     border:1px solid var(--border);
-
     border-radius:9px;
-
     background:var(--card);
-
     display:none;
 }
 
 .country-option{
     padding:10px 12px;
-
     cursor:pointer;
-
     border-bottom:1px solid var(--border);
-
     font-size:14px;
 }
 
@@ -266,39 +216,28 @@ main{
 
 .selected-country{
     display:none;
-
     margin-top:12px;
-
     padding:15px;
-
     border-radius:10px;
-
     background:var(--bg);
-
     border:1px solid var(--border);
 }
 
 .country-name{
     font-size:20px;
-
     font-weight:bold;
-
     margin-bottom:8px;
 }
 
 .country-info{
     color:var(--muted);
-
     font-size:14px;
-
     line-height:1.8;
 }
 
 .country-time{
     margin-top:10px;
-
     font-size:28px;
-
     font-weight:bold;
 }
 
@@ -307,20 +246,13 @@ main{
 
 textarea{
     width:100%;
-
     min-height:180px;
-
     resize:vertical;
-
     border:1px solid var(--border);
-
     background:var(--card);
     color:var(--text);
-
     border-radius:8px;
-
     padding:11px;
-
     outline:none;
 }
 
@@ -329,20 +261,15 @@ textarea{
 
 .todo-input{
     display:flex;
-
     gap:8px;
 }
 
 input{
     border:1px solid var(--border);
-
     background:var(--card);
     color:var(--text);
-
     border-radius:8px;
-
     padding:11px;
-
     outline:none;
 }
 
@@ -352,17 +279,11 @@ input{
 
 .primary{
     border:0;
-
     background:var(--primary);
-
     color:var(--bg);
-
     border-radius:8px;
-
     padding:0 15px;
-
     cursor:pointer;
-
     font-weight:bold;
 }
 
@@ -372,13 +293,9 @@ input{
 
 .todo{
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
     padding:10px 0;
-
     border-bottom:1px solid var(--border);
 }
 
@@ -388,19 +305,14 @@ input{
 
 .todo.done span{
     text-decoration:line-through;
-
     color:var(--muted);
 }
 
 .delete{
     border:0;
-
     background:none;
-
     color:#e33;
-
     cursor:pointer;
-
     font-size:16px;
 }
 
@@ -413,38 +325,25 @@ input{
 
 .calc-display{
     width:100%;
-
     height:55px;
-
     margin-bottom:10px;
-
     text-align:right;
-
     font-size:25px;
 }
 
 .calc-buttons{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:7px;
 }
 
 .calc-buttons button{
     height:48px;
-
     border:1px solid var(--border);
-
     background:var(--bg);
-
     color:var(--text);
-
     border-radius:8px;
-
     cursor:pointer;
-
     font-size:16px;
 }
 
@@ -457,35 +356,24 @@ input{
 
 .timer{
     font-size:45px;
-
     font-weight:bold;
-
     text-align:center;
-
     padding:15px;
 }
 
 .timer-controls{
     display:flex;
-
     justify-content:center;
-
     gap:8px;
-
     flex-wrap:wrap;
 }
 
 .timer-controls button{
     padding:10px 15px;
-
     border:1px solid var(--border);
-
     background:var(--bg);
-
     color:var(--text);
-
     border-radius:8px;
-
     cursor:pointer;
 }
 
@@ -494,7 +382,6 @@ input{
 
 .search-box{
     display:flex;
-
     gap:8px;
 }
 
@@ -513,35 +400,24 @@ input{
 
     .sidebar{
         width:100%;
-
         height:55px;
-
         top:65px;
-
         display:flex;
-
         overflow-x:auto;
-
         padding:6px;
-
         border-right:0;
-
         border-bottom:1px solid var(--border);
     }
 
     .nav{
         width:auto;
-
         white-space:nowrap;
-
         padding:9px 12px;
-
         margin:0;
     }
 
     main{
         margin-left:0;
-
         padding:135px 12px 25px;
     }
 
@@ -685,7 +561,7 @@ input{
 
 <section class="card">
 
-    <h2>🕐 Your Local Time</h2>
+    <h2 id="localTitle">🕐 Local Time</h2>
 
     <div
         class="clock"
@@ -708,13 +584,13 @@ input{
     class="card"
     id="worldTime">
 
-    <h2>🌎 World Time</h2>
+    <h2>🌎 World Time (All Countries & All Zones)</h2>
 
     <div class="world-search">
 
         <input
             id="countrySearch"
-            placeholder="Search country or capital..."
+            placeholder="Search country, capital, continent or timezone..."
             autocomplete="off"
             oninput="filterCountries()"
             onclick="openCountryList()">
@@ -917,398 +793,585 @@ input{
 
 
 /* ==================================================
-   COUNTRY / TIMEZONE DATABASE
+   COMPREHENSIVE GLOBAL TIMEZONE DATABASE (ALL COUNTRIES + ALL ZONES)
 ================================================== */
 
 const countries = [
-
-{
-country:"Bangladesh",
-capital:"Dhaka",
-tz:"Asia/Dhaka"
-},
-
-{
-country:"India",
-capital:"New Delhi",
-tz:"Asia/Kolkata"
-},
-
-{
-country:"Pakistan",
-capital:"Islamabad",
-tz:"Asia/Karachi"
-},
-
-{
-country:"Nepal",
-capital:"Kathmandu",
-tz:"Asia/Kathmandu"
-},
-
-{
-country:"Sri Lanka",
-capital:"Sri Jayawardenepura Kotte",
-tz:"Asia/Colombo"
-},
-
-{
-country:"Bhutan",
-capital:"Thimphu",
-tz:"Asia/Thimphu"
-},
-
-{
-country:"Maldives",
-capital:"Malé",
-tz:"Indian/Maldives"
-},
-
-{
-country:"United Arab Emirates",
-capital:"Abu Dhabi",
-tz:"Asia/Dubai"
-},
-
-{
-country:"Saudi Arabia",
-capital:"Riyadh",
-tz:"Asia/Riyadh"
-},
-
-{
-country:"Qatar",
-capital:"Doha",
-tz:"Asia/Qatar"
-},
-
-{
-country:"Kuwait",
-capital:"Kuwait City",
-tz:"Asia/Kuwait"
-},
-
-{
-country:"Oman",
-capital:"Muscat",
-tz:"Asia/Muscat"
-},
-
-{
-country:"Turkey",
-capital:"Ankara",
-tz:"Europe/Istanbul"
-},
-
-{
-country:"United Kingdom",
-capital:"London",
-tz:"Europe/London"
-},
-
-{
-country:"France",
-capital:"Paris",
-tz:"Europe/Paris"
-},
-
-{
-country:"Germany",
-capital:"Berlin",
-tz:"Europe/Berlin"
-},
-
-{
-country:"Italy",
-capital:"Rome",
-tz:"Europe/Rome"
-},
-
-{
-country:"Spain",
-capital:"Madrid",
-tz:"Europe/Madrid"
-},
-
-{
-country:"Russia",
-capital:"Moscow",
-tz:"Europe/Moscow"
-},
-
-{
-country:"United States",
-capital:"Washington, D.C.",
-tz:"America/New_York"
-},
-
-{
-country:"Canada",
-capital:"Ottawa",
-tz:"America/Toronto"
-},
-
-{
-country:"Mexico",
-capital:"Mexico City",
-tz:"America/Mexico_City"
-},
-
-{
-country:"Brazil",
-capital:"Brasília",
-tz:"America/Sao_Paulo"
-},
-
-{
-country:"Argentina",
-capital:"Buenos Aires",
-tz:"America/Argentina/Buenos_Aires"
-},
-
-{
-country:"Australia",
-capital:"Canberra",
-tz:"Australia/Sydney"
-},
-
-{
-country:"New Zealand",
-capital:"Wellington",
-tz:"Pacific/Auckland"
-},
-
-{
-country:"Japan",
-capital:"Tokyo",
-tz:"Asia/Tokyo"
-},
-
-{
-country:"China",
-capital:"Beijing",
-tz:"Asia/Shanghai"
-},
-
-{
-country:"South Korea",
-capital:"Seoul",
-tz:"Asia/Seoul"
-},
-
-{
-country:"Singapore",
-capital:"Singapore",
-tz:"Asia/Singapore"
-},
-
-{
-country:"Malaysia",
-capital:"Kuala Lumpur",
-tz:"Asia/Kuala_Lumpur"
-},
-
-{
-country:"Indonesia",
-capital:"Jakarta",
-tz:"Asia/Jakarta"
-},
-
-{
-country:"Thailand",
-capital:"Bangkok",
-tz:"Asia/Bangkok"
-},
-
-{
-country:"Philippines",
-capital:"Manila",
-tz:"Asia/Manila"
-},
-
-{
-country:"South Africa",
-capital:"Pretoria",
-tz:"Africa/Johannesburg"
-},
-
-{
-country:"Egypt",
-capital:"Cairo",
-tz:"Africa/Cairo"
-},
-
-{
-country:"Nigeria",
-capital:"Abuja",
-tz:"Africa/Lagos"
-},
-
-{
-country:"Kenya",
-capital:"Nairobi",
-tz:"Africa/Nairobi"
-},
-
-{
-country:"Morocco",
-capital:"Rabat",
-tz:"Africa/Casablanca"
-},
-
-{
-country:"Israel",
-capital:"Jerusalem",
-tz:"Asia/Jerusalem"
-},
-
-{
-country:"Iraq",
-capital:"Baghdad",
-tz:"Asia/Baghdad"
-},
-
-{
-country:"Iran",
-capital:"Tehran",
-tz:"Asia/Tehran"
-},
-
-{
-country:"Afghanistan",
-capital:"Kabul",
-tz:"Asia/Kabul"
-},
-
-{
-country:"Myanmar",
-capital:"Naypyidaw",
-tz:"Asia/Yangon"
-},
-
-{
-country:"Vietnam",
-capital:"Hanoi",
-tz:"Asia/Ho_Chi_Minh"
-},
-
-{
-country:"Portugal",
-capital:"Lisbon",
-tz:"Europe/Lisbon"
-},
-
-{
-country:"Greece",
-capital:"Athens",
-tz:"Europe/Athens"
-},
-
-{
-country:"Switzerland",
-capital:"Bern",
-tz:"Europe/Zurich"
-},
-
-{
-country:"Netherlands",
-capital:"Amsterdam",
-tz:"Europe/Amsterdam"
-},
-
-{
-country:"Sweden",
-capital:"Stockholm",
-tz:"Europe/Stockholm"
-},
-
-{
-country:"Norway",
-capital:"Oslo",
-tz:"Europe/Oslo"
-},
-
-{
-country:"Denmark",
-capital:"Copenhagen",
-tz:"Europe/Copenhagen"
-},
-
-{
-country:"Finland",
-capital:"Helsinki",
-tz:"Europe/Helsinki"
-},
-
-{
-country:"Ireland",
-capital:"Dublin",
-tz:"Europe/Dublin"
-},
-
-{
-country:"Ukraine",
-capital:"Kyiv",
-tz:"Europe/Kyiv"
-},
-
-{
-country:"Poland",
-capital:"Warsaw",
-tz:"Europe/Warsaw"
-},
-
-{
-country:"Czech Republic",
-capital:"Prague",
-tz:"Europe/Prague"
-},
-
-{
-country:"Austria",
-capital:"Vienna",
-tz:"Europe/Vienna"
-}
-
+// Afghanistan
+{ country: "Afghanistan", capital: "Kabul", continent: "Asia", tz: "Asia/Kabul" },
+// Albania
+{ country: "Albania", capital: "Tirana", continent: "Europe", tz: "Europe/Tirane" },
+// Algeria
+{ country: "Algeria", capital: "Algiers", continent: "Africa", tz: "Africa/Algiers" },
+// Andorra
+{ country: "Andorra", capital: "Andorra la Vella", continent: "Europe", tz: "Europe/Andorra" },
+// Angola
+{ country: "Angola", capital: "Luanda", continent: "Africa", tz: "Africa/Luanda" },
+// Antigua and Barbuda
+{ country: "Antigua and Barbuda", capital: "St. John's", continent: "North America", tz: "America/Antigua" },
+// Argentina
+{ country: "Argentina", capital: "Buenos Aires", continent: "South America", tz: "America/Argentina/Buenos_Aires" },
+{ country: "Argentina (Catamarca)", capital: "San Fernando del Valle de Catamarca", continent: "South America", tz: "America/Argentina/Catamarca" },
+{ country: "Argentina (Cordoba)", capital: "Córdoba", continent: "South America", tz: "America/Argentina/Cordoba" },
+{ country: "Argentina (Jujuy)", capital: "San Salvador de Jujuy", continent: "South America", tz: "America/Argentina/Jujuy" },
+{ country: "Argentina (La Rioja)", capital: "La Rioja", continent: "South America", tz: "America/Argentina/La_Rioja" },
+{ country: "Argentina (Mendoza)", capital: "Mendoza", continent: "South America", tz: "America/Argentina/Mendoza" },
+{ country: "Argentina (Rio Gallegos)", capital: "Río Gallegos", continent: "South America", tz: "America/Argentina/Rio_Gallegos" },
+{ country: "Argentina (Salta)", capital: "Salta", continent: "South America", tz: "America/Argentina/Salta" },
+{ country: "Argentina (San Juan)", capital: "San Juan", continent: "South America", tz: "America/Argentina/San_Juan" },
+{ country: "Argentina (San Luis)", capital: "San Luis", continent: "South America", tz: "America/Argentina/San_Luis" },
+{ country: "Argentina (Tucuman)", capital: "San Miguel de Tucumán", continent: "South America", tz: "America/Argentina/Tucuman" },
+{ country: "Argentina (Ushuaia)", capital: "Ushuaia", continent: "South America", tz: "America/Argentina/Ushuaia" },
+// Armenia
+{ country: "Armenia", capital: "Yerevan", continent: "Asia", tz: "Asia/Yerevan" },
+// Australia
+{ country: "Australia (Sydney/NSW)", capital: "Sydney", continent: "Australia", tz: "Australia/Sydney" },
+{ country: "Australia (Melbourne/Victoria)", capital: "Melbourne", continent: "Australia", tz: "Australia/Melbourne" },
+{ country: "Australia (Brisbane/Queensland)", capital: "Brisbane", continent: "Australia", tz: "Australia/Brisbane" },
+{ country: "Australia (Adelaide/South Australia)", capital: "Adelaide", continent: "Australia", tz: "Australia/Adelaide" },
+{ country: "Australia (Perth/Western Australia)", capital: "Perth", continent: "Australia", tz: "Australia/Perth" },
+{ country: "Australia (Hobart/Tasmania)", capital: "Hobart", continent: "Australia", tz: "Australia/Hobart" },
+{ country: "Australia (Darwin/Northern Territory)", capital: "Darwin", continent: "Australia", tz: "Australia/Darwin" },
+{ country: "Australia (Perth/Eucla)", capital: "Eucla", continent: "Australia", tz: "Australia/Eucla" },
+{ country: "Australia (Lord Howe Island)", capital: "Lord Howe", continent: "Australia", tz: "Australia/Lord_Howe" },
+{ country: "Australia (Broken Hill)", capital: "Broken Hill", continent: "Australia", tz: "Australia/Broken_Hill" },
+{ country: "Australia (Currie/King Island)", capital: "Currie", continent: "Australia", tz: "Australia/Currie" },
+// Austria
+{ country: "Austria", capital: "Vienna", continent: "Europe", tz: "Europe/Vienna" },
+// Azerbaijan
+{ country: "Azerbaijan", capital: "Baku", continent: "Asia", tz: "Asia/Baku" },
+// Bahamas
+{ country: "Bahamas", capital: "Nassau", continent: "North America", tz: "America/Nassau" },
+// Bahrain
+{ country: "Bahrain", capital: "Manama", continent: "Asia", tz: "Asia/Bahrain" },
+// Bangladesh
+{ country: "Bangladesh", capital: "Dhaka", continent: "Asia", tz: "Asia/Dhaka" },
+// Barbados
+{ country: "Barbados", capital: "Bridgetown", continent: "North America", tz: "America/Barbados" },
+// Belarus
+{ country: "Belarus", capital: "Minsk", continent: "Europe", tz: "Europe/Minsk" },
+// Belgium
+{ country: "Belgium", capital: "Brussels", continent: "Europe", tz: "Europe/Brussels" },
+// Belize
+{ country: "Belize", capital: "Belmopan", continent: "North America", tz: "America/Belize" },
+// Benin
+{ country: "Benin", capital: "Porto-Novo", continent: "Africa", tz: "Africa/Porto-Novo" },
+// Bhutan
+{ country: "Bhutan", capital: "Thimphu", continent: "Asia", tz: "Asia/Thimphu" },
+// Bolivia
+{ country: "Bolivia", capital: "Sucre", continent: "South America", tz: "America/La_Paz" },
+// Bosnia and Herzegovina
+{ country: "Bosnia and Herzegovina", capital: "Sarajevo", continent: "Europe", tz: "Europe/Sarajevo" },
+// Botswana
+{ country: "Botswana", capital: "Gaborone", continent: "Africa", tz: "Africa/Gaborone" },
+// Brazil
+{ country: "Brazil (Sao Paulo)", capital: "São Paulo", continent: "South America", tz: "America/Sao_Paulo" },
+{ country: "Brazil (Rio Branco)", capital: "Rio Branco", continent: "South America", tz: "America/Rio_Branco" },
+{ country: "Brazil (Manaus)", capital: "Manaus", continent: "South America", tz: "America/Manaus" },
+{ country: "Brazil (Belem)", capital: "Belém", continent: "South America", tz: "America/Belem" },
+{ country: "Brazil (Fortaleza)", capital: "Fortaleza", continent: "South America", tz: "America/Fortaleza" },
+{ country: "Brazil (Recife)", capital: "Recife", continent: "South America", tz: "America/Recife" },
+{ country: "Brazil (Araguaina)", capital: "Araguaína", continent: "South America", tz: "America/Araguaina" },
+{ country: "Brazil (Boa Vista)", capital: "Boa Vista", continent: "South America", tz: "America/Boa_Vista" },
+{ country: "Brazil (Campo Grande)", capital: "Campo Grande", continent: "South America", tz: "America/Campo_Grande" },
+{ country: "Brazil (Cuiaba)", capital: "Cuiabá", continent: "South America", tz: "America/Cuiaba" },
+{ country: "Brazil (Eirunepe)", capital: "Eirunepé", continent: "South America", tz: "America/Eirunepe" },
+{ country: "Brazil (Maceio)", capital: "Maceió", continent: "South America", tz: "America/Maceio" },
+{ country: "Brazil (Noronha)", capital: "Fernando de Noronha", continent: "South America", tz: "America/Noronha" },
+{ country: "Brazil (Porto Velho)", capital: "Porto Velho", continent: "South America", tz: "America/Porto_Velho" },
+{ country: "Brazil (Santarem)", capital: "Santarém", continent: "South America", tz: "America/Santarem" },
+// Brunei
+{ country: "Brunei", capital: "Bandar Seri Begawan", continent: "Asia", tz: "Asia/Brunei" },
+// Bulgaria
+{ country: "Bulgaria", capital: "Sofia", continent: "Europe", tz: "Europe/Sofia" },
+// Burkina Faso
+{ country: "Burkina Faso", capital: "Ouagadougou", continent: "Africa", tz: "Africa/Ouagadougou" },
+// Burundi
+{ country: "Burundi", capital: "Gitega", continent: "Africa", tz: "Africa/Bujumbura" },
+// Cabo Verde
+{ country: "Cabo Verde", capital: "Praia", continent: "Africa", tz: "Atlantic/Cape_Verde" },
+// Cambodia
+{ country: "Cambodia", capital: "Phnom Penh", continent: "Asia", tz: "Asia/Phnom_Penh" },
+// Cameroon
+{ country: "Cameroon", capital: "Yaoundé", continent: "Africa", tz: "Africa/Douala" },
+// Canada
+{ country: "Canada (Toronto/Eastern)", capital: "Toronto", continent: "North America", tz: "America/Toronto" },
+{ country: "Canada (Vancouver/Pacific)", capital: "Vancouver", continent: "North America", tz: "America/Vancouver" },
+{ country: "Canada (Edmonton/Mountain)", capital: "Edmonton", continent: "North America", tz: "America/Edmonton" },
+{ country: "Canada (Winnipeg/Central)", capital: "Winnipeg", continent: "North America", tz: "America/Winnipeg" },
+{ country: "Canada (Halifax/Atlantic)", capital: "Halifax", continent: "North America", tz: "America/Halifax" },
+{ country: "Canada (St. John's/Newfoundland)", capital: "St. John's", continent: "North America", tz: "America/St_Johns" },
+{ country: "Canada (Regina/Saskatchewan)", capital: "Regina", continent: "North America", tz: "America/Regina" },
+{ country: "Canada (Whitehorse/Yukon)", capital: "Whitehorse", continent: "North America", tz: "America/Whitehorse" },
+{ country: "Canada (Yellowknife/Northwest)", capital: "Yellowknife", continent: "North America", tz: "America/Yellowknife" },
+{ country: "Canada (Iqaluit/Nunavut)", capital: "Iqaluit", continent: "North America", tz: "America/Iqaluit" },
+{ country: "Canada (Glace Bay)", capital: "Glace Bay", continent: "North America", tz: "America/Glace_Bay" },
+{ country: "Canada (Goose Bay)", capital: "Goose Bay", continent: "North America", tz: "America/Goose_Bay" },
+{ country: "Canada (Moncton)", capital: "Moncton", continent: "North America", tz: "America/Moncton" },
+{ country: "Canada (Creston)", capital: "Creston", continent: "North America", tz: "America/Creston" },
+{ country: "Canada (Dawson Creek)", capital: "Dawson Creek", continent: "North America", tz: "America/Dawson_Creek" },
+{ country: "Canada (Rankin Inlet)", capital: "Rankin Inlet", continent: "North America", tz: "America/Rankin_Inlet" },
+{ country: "Canada (Resolute)", capital: "Resolute", continent: "North America", tz: "America/Resolute" },
+{ country: "Canada (Swift Current)", capital: "Swift Current", continent: "North America", tz: "America/Swift_Current" },
+{ country: "Canada (Atikokan)", capital: "Atikokan", continent: "North America", tz: "America/Atikokan" },
+// Central African Republic
+{ country: "Central African Republic", capital: "Bangui", continent: "Africa", tz: "Africa/Bangui" },
+// Chad
+{ country: "Chad", capital: "N'Djamena", continent: "Africa", tz: "Africa/Ndjamena" },
+// Chile
+{ country: "Chile (Santiago)", capital: "Santiago", continent: "South America", tz: "America/Santiago" },
+{ country: "Chile (Punta Arenas)", capital: "Punta Arenas", continent: "South America", tz: "America/Punta_Arenas" },
+{ country: "Chile (Easter Island)", capital: "Hanga Roa", continent: "Pacific", tz: "Pacific/Easter" },
+// China
+{ country: "China (Beijing Standard Time)", capital: "Beijing", continent: "Asia", tz: "Asia/Shanghai" },
+// Colombia
+{ country: "Colombia", capital: "Bogotá", continent: "South America", tz: "America/Bogota" },
+// Comoros
+{ country: "Comoros", capital: "Moroni", continent: "Africa", tz: "Indian/Comoro" },
+// Congo (Congo-Brazzaville)
+{ country: "Congo", capital: "Brazzaville", continent: "Africa", tz: "Africa/Brazzaville" },
+// Congo (Democratic Republic)
+{ country: "Democratic Republic of the Congo (Kinshasa)", capital: "Kinshasa", continent: "Africa", tz: "Africa/Kinshasa" },
+{ country: "Democratic Republic of the Congo (Lubumbashi)", capital: "Lubumbashi", continent: "Africa", tz: "Africa/Lubumbashi" },
+// Costa Rica
+{ country: "Costa Rica", capital: "San José", continent: "North America", tz: "America/Costa_Rica" },
+// Cote d'Ivoire
+{ country: "Côte d'Ivoire", capital: "Yamoussoukro", continent: "Africa", tz: "Africa/Abidjan" },
+// Croatia
+{ country: "Croatia", capital: "Zagreb", continent: "Europe", tz: "Europe/Zagreb" },
+// Cuba
+{ country: "Cuba", capital: "Havana", continent: "North America", tz: "America/Havana" },
+// Cyprus
+{ country: "Cyprus", capital: "Nicosia", continent: "Europe", tz: "Asia/Nicosia" },
+// Czechia (Czech Republic)
+{ country: "Czech Republic", capital: "Prague", continent: "Europe", tz: "Europe/Prague" },
+// Denmark
+{ country: "Denmark", capital: "Copenhagen", continent: "Europe", tz: "Europe/Copenhagen" },
+// Djibouti
+{ country: "Djibouti", capital: "Djibouti", continent: "Africa", tz: "Africa/Djibouti" },
+// Dominica
+{ country: "Dominica", capital: "Roseau", continent: "North America", tz: "America/Dominica" },
+// Dominican Republic
+{ country: "Dominican Republic", capital: "Santo Domingo", continent: "North America", tz: "America/Santo_Domingo" },
+// Ecuador
+{ country: "Ecuador (Quito)", capital: "Quito", continent: "South America", tz: "America/Guayaquil" },
+{ country: "Ecuador (Galapagos)", capital: "Puerto Baquerizo Moreno", continent: "Pacific", tz: "Pacific/Galapagos" },
+// Egypt
+{ country: "Egypt", capital: "Cairo", continent: "Africa", tz: "Africa/Cairo" },
+// El Salvador
+{ country: "El Salvador", capital: "San Salvador", continent: "North America", tz: "America/El_Salvador" },
+// Equatorial Guinea
+{ country: "Equatorial Guinea", capital: "Malabo", continent: "Africa", tz: "Africa/Malabo" },
+// Eritrea
+{ country: "Eritrea", capital: "Asmara", continent: "Africa", tz: "Africa/Asmara" },
+// Estonia
+{ country: "Estonia", capital: "Tallinn", continent: "Europe", tz: "Europe/Tallinn" },
+// Eswatini
+{ country: "Eswatini", capital: "Mbabane", continent: "Africa", tz: "Africa/Mbabane" },
+// Ethiopia
+{ country: "Ethiopia", capital: "Addis Ababa", continent: "Africa", tz: "Africa/Addis_Ababa" },
+// Fiji
+{ country: "Fiji", capital: "Suva", continent: "Pacific", tz: "Pacific/Fiji" },
+// Finland
+{ country: "Finland", capital: "Helsinki", continent: "Europe", tz: "Europe/Helsinki" },
+// France
+{ country: "France", capital: "Paris", continent: "Europe", tz: "Europe/Paris" },
+// Gabon
+{ country: "Gabon", capital: "Libreville", continent: "Africa", tz: "Africa/Libreville" },
+// Gambia
+{ country: "Gambia", capital: "Banjul", continent: "Africa", tz: "Africa/Banjul" },
+// Georgia
+{ country: "Georgia", capital: "Tbilisi", continent: "Asia", tz: "Asia/Tbilisi" },
+// Germany
+{ country: "Germany", capital: "Berlin", continent: "Europe", tz: "Europe/Berlin" },
+// Ghana
+{ country: "Ghana", capital: "Accra", continent: "Africa", tz: "Africa/Accra" },
+// Greece
+{ country: "Greece", capital: "Athens", continent: "Europe", tz: "Europe/Athens" },
+// Grenada
+{ country: "Grenada", capital: "St. George's", continent: "North America", tz: "America/Grenada" },
+// Guatemala
+{ country: "Guatemala", capital: "Guatemala City", continent: "North America", tz: "America/Guatemala" },
+// Guinea
+{ country: "Guinea", capital: "Conakry", continent: "Africa", tz: "Africa/Conakry" },
+// Guinea-Bissau
+{ country: "Guinea-Bissau", capital: "Bissau", continent: "Africa", tz: "Africa/Bissau" },
+// Guyana
+{ country: "Guyana", capital: "Georgetown", continent: "South America", tz: "America/Guyana" },
+// Haiti
+{ country: "Haiti", capital: "Port-au-Prince", continent: "North America", tz: "America/Port-au-Prince" },
+// Honduras
+{ country: "Honduras", capital: "Tegucigalpa", continent: "North America", tz: "America/Tegucigalpa" },
+// Hungary
+{ country: "Hungary", capital: "Budapest", continent: "Europe", tz: "Europe/Budapest" },
+// Iceland
+{ country: "Iceland", capital: "Reykjavík", continent: "Europe", tz: "Atlantic/Reykjavik" },
+// India
+{ country: "India", capital: "New Delhi", continent: "Asia", tz: "Asia/Kolkata" },
+// Indonesia
+{ country: "Indonesia (Jakarta/Western)", capital: "Jakarta", continent: "Asia", tz: "Asia/Jakarta" },
+{ country: "Indonesia (Bali/Central)", capital: "Denpasar", continent: "Asia", tz: "Asia/Makassar" },
+{ country: "Indonesia (Papua/Eastern)", capital: "Jayapura", continent: "Asia", tz: "Asia/Jayapura" },
+{ country: "Indonesia (Pontianak)", capital: "Pontianak", continent: "Asia", tz: "Asia/Pontianak" },
+// Iran
+{ country: "Iran", capital: "Tehran", continent: "Asia", tz: "Asia/Tehran" },
+// Iraq
+{ country: "Iraq", capital: "Baghdad", continent: "Asia", tz: "Asia/Baghdad" },
+// Ireland
+{ country: "Ireland", capital: "Dublin", continent: "Europe", tz: "Europe/Dublin" },
+// Israel
+{ country: "Israel", capital: "Jerusalem", continent: "Asia", tz: "Asia/Jerusalem" },
+// Italy
+{ country: "Italy", capital: "Rome", continent: "Europe", tz: "Europe/Rome" },
+// Jamaica
+{ country: "Jamaica", capital: "Kingston", continent: "North America", tz: "America/Jamaica" },
+// Japan
+{ country: "Japan", capital: "Tokyo", continent: "Asia", tz: "Asia/Tokyo" },
+// Jordan
+{ country: "Jordan", capital: "Amman", continent: "Asia", tz: "Asia/Amman" },
+// Kazakhstan
+{ country: "Kazakhstan (Almaty)", capital: "Almaty", continent: "Asia", tz: "Asia/Almaty" },
+{ country: "Kazakhstan (Aqtau)", capital: "Aqtau", continent: "Asia", tz: "Asia/Aqtau" },
+{ country: "Kazakhstan (Aqtobe)", capital: "Aqtobe", continent: "Asia", tz: "Asia/Aqtobe" },
+{ country: "Kazakhstan (Atyrau)", capital: "Atyrau", continent: "Asia", tz: "Asia/Atyrau" },
+{ country: "Kazakhstan (Oral)", capital: "Oral", continent: "Asia", tz: "Asia/Oral" },
+{ country: "Kazakhstan (Qostanay)", capital: "Qostanay", continent: "Asia", tz: "Asia/Qostanay" },
+{ country: "Kazakhstan (Qyzylorda)", capital: "Qyzylorda", continent: "Asia", tz: "Asia/Qyzylorda" },
+{ country: "Kazakhstan (Aqtobe/Temtau)", capital: "Temirtau", continent: "Asia", tz: "Asia/Aqtobe" },
+// Kenya
+{ country: "Kenya", capital: "Nairobi", continent: "Africa", tz: "Africa/Nairobi" },
+// Kiribati
+{ country: "Kiribati (Tarawa)", capital: "Tarawa", continent: "Pacific", tz: "Pacific/Tarawa" },
+{ country: "Kiribati (Kanton)", capital: "Kanton", continent: "Pacific", tz: "Pacific/Kanton" },
+{ country: "Kiribati (Kiritimati)", capital: "Kiritimati", continent: "Pacific", tz: "Pacific/Kiritimati" },
+// Kuwait
+{ country: "Kuwait", capital: "Kuwait City", continent: "Asia", tz: "Asia/Kuwait" },
+// Kyrgyzstan
+{ country: "Kyrgyzstan", capital: "Bishkek", continent: "Asia", tz: "Asia/Bishkek" },
+// Laos
+{ country: "Laos", capital: "Vientiane", continent: "Asia", tz: "Asia/Vientiane" },
+// Latvia
+{ country: "Latvia", capital: "Riga", continent: "Europe", tz: "Europe/Riga" },
+// Lebanon
+{ country: "Lebanon", capital: "Beirut", continent: "Asia", tz: "Asia/Beirut" },
+// Lesotho
+{ country: "Lesotho", capital: "Maseru", continent: "Africa", tz: "Africa/Maseru" },
+// Liberia
+{ country: "Liberia", capital: "Monrovia", continent: "Africa", tz: "Africa/Monrovia" },
+// Libya
+{ country: "Libya", capital: "Tripoli", continent: "Africa", tz: "Africa/Tripoli" },
+// Liechtenstein
+{ country: "Liechtenstein", capital: "Vaduz", continent: "Europe", tz: "Europe/Vaduz" },
+// Lithuania
+{ country: "Lithuania", capital: "Vilnius", continent: "Europe", tz: "Europe/Vilnius" },
+// Luxembourg
+{ country: "Luxembourg", capital: "Luxembourg", continent: "Europe", tz: "Europe/Luxembourg" },
+// Madagascar
+{ country: "Madagascar", capital: "Antananarivo", continent: "Africa", tz: "Indian/Antananarivo" },
+// Malawi
+{ country: "Malawi", capital: "Lilongwe", continent: "Africa", tz: "Africa/Blantyre" },
+// Malaysia
+{ country: "Malaysia", capital: "Kuala Lumpur", continent: "Asia", tz: "Asia/Kuala_Lumpur" },
+{ country: "Malaysia (Borneo/Kuching)", capital: "Kuching", continent: "Asia", tz: "Asia/Kuching" },
+// Maldives
+{ country: "Maldives", capital: "Malé", continent: "Asia", tz: "Indian/Maldives" },
+// Mali
+{ country: "Mali", capital: "Bamako", continent: "Africa", tz: "Africa/Bamako" },
+// Malta
+{ country: "Malta", capital: "Valletta", continent: "Europe", tz: "Europe/Malta" },
+// Marshall Islands
+{ country: "Marshall Islands (Majuro)", capital: "Majuro", continent: "Pacific", tz: "Pacific/Majuro" },
+{ country: "Marshall Islands (Kwajalein)", capital: "Kwajalein", continent: "Pacific", tz: "Pacific/Kwajalein" },
+// Mauritania
+{ country: "Mauritania", capital: "Nouakchott", continent: "Africa", tz: "Africa/Nouakchott" },
+// Mauritius
+{ country: "Mauritius", capital: "Port Louis", continent: "Africa", tz: "Indian/Mauritius" },
+// Mexico
+{ country: "Mexico (Mexico City/Central)", capital: "Mexico City", continent: "North America", tz: "America/Mexico_City" },
+{ country: "Mexico (Tijuana/Pacific)", capital: "Tijuana", continent: "North America", tz: "America/Tijuana" },
+{ country: "Mexico (Cancun/Eastern)", capital: "Cancún", continent: "North America", tz: "America/Cancun" },
+{ country: "Mexico (Chihuahua/Mountain)", capital: "Chihuahua", continent: "North America", tz: "America/Chihuahua" },
+{ country: "Mexico (Hermosillo)", capital: "Hermosillo", continent: "North America", tz: "America/Hermosillo" },
+{ country: "Mexico (Mazatlan)", capital: "Mazatlán", continent: "North America", tz: "America/Mazatlan" },
+{ country: "Mexico (Merida)", capital: "Mérida", continent: "North America", tz: "America/Merida" },
+{ country: "Mexico (Monterrey)", capital: "Monterrey", continent: "North America", tz: "America/Monterrey" },
+{ country: "Mexico (Matamoros)", capital: "Matamoros", continent: "North America", tz: "America/Matamoros" },
+{ country: "Mexico (Ojinaga)", capital: "Ojinaga", continent: "North America", tz: "America/Ojinaga" },
+{ country: "Mexico (Bahia de Banderas)", capital: "Bahía de Banderas", continent: "North America", tz: "America/Bahia_Banderas" },
+// Micronesia
+{ country: "Micronesia (Pohnpei)", capital: "Palikir", continent: "Pacific", tz: "Pacific/Pohnpei" },
+{ country: "Micronesia (Chuuk)", capital: "Weno", continent: "Pacific", tz: "Pacific/Chuuk" },
+{ country: "Micronesia (Kosrae)", capital: "Tofol", continent: "Pacific", tz: "Pacific/Kosrae" },
+// Moldova
+{ country: "Moldova", capital: "Chisinau", continent: "Europe", tz: "Europe/Chisinau" },
+// Monaco
+{ country: "Monaco", capital: "Monaco", continent: "Europe", tz: "Europe/Monaco" },
+// Mongolia
+{ country: "Mongolia (Ulaanbaatar)", capital: "Ulaanbaatar", continent: "Asia", tz: "Asia/Ulaanbaatar" },
+{ country: "Mongolia (Hovd)", capital: "Khovd", continent: "Asia", tz: "Asia/Hovd" },
+{ country: "Mongolia (Choibalsan)", capital: "Choibalsan", continent: "Asia", tz: "Asia/Choibalsan" },
+// Montenegro
+{ country: "Montenegro", capital: "Podgorica", continent: "Europe", tz: "Europe/Podgorica" },
+// Morocco
+{ country: "Morocco", capital: "Rabat", continent: "Africa", tz: "Africa/Casablanca" },
+// Mozambique
+{ country: "Mozambique", capital: "Maputo", continent: "Africa", tz: "Africa/Maputo" },
+// Myanmar (Burma)
+{ country: "Myanmar", capital: "Naypyidaw", continent: "Asia", tz: "Asia/Yangon" },
+// Namibia
+{ country: "Namibia", capital: "Windhoek", continent: "Africa", tz: "Africa/Windhoek" },
+// Nauru
+{ country: "Nauru", capital: "Yaren", continent: "Pacific", tz: "Pacific/Nauru" },
+// Nepal
+{ country: "Nepal", capital: "Kathmandu", continent: "Asia", tz: "Asia/Kathmandu" },
+// Netherlands
+{ country: "Netherlands", capital: "Amsterdam", continent: "Europe", tz: "Europe/Amsterdam" },
+// New Zealand
+{ country: "New Zealand (Auckland/Wellington)", capital: "Wellington", continent: "Pacific", tz: "Pacific/Auckland" },
+{ country: "New Zealand (Chatham Islands)", capital: "Waitangi", continent: "Pacific", tz: "Pacific/Chatham" },
+// Nicaragua
+{ country: "Nicaragua", capital: "Managua", continent: "North America", tz: "America/Managua" },
+// Niger
+{ country: "Niger", capital: "Niamey", continent: "Africa", tz: "Africa/Niamey" },
+// Nigeria
+{ country: "Nigeria", capital: "Abuja", continent: "Africa", tz: "Africa/Lagos" },
+// North Korea
+{ country: "North Korea", capital: "Pyongyang", continent: "Asia", tz: "Asia/Pyongyang" },
+// North Macedonia
+{ country: "North Macedonia", capital: "Skopje", continent: "Europe", tz: "Europe/Skopje" },
+// Norway
+{ country: "Norway", capital: "Oslo", continent: "Europe", tz: "Europe/Oslo" },
+// Oman
+{ country: "Oman", capital: "Muscat", continent: "Asia", tz: "Asia/Muscat" },
+// Pakistan
+{ country: "Pakistan", capital: "Islamabad", continent: "Asia", tz: "Asia/Karachi" },
+// Palau
+{ country: "Palau", capital: "Ngerulmud", continent: "Pacific", tz: "Pacific/Palau" },
+// Palestine
+{ country: "Palestine", capital: "Ramallah", continent: "Asia", tz: "Asia/Gaza" },
+// Panama
+{ country: "Panama", capital: "Panama City", continent: "North America", tz: "America/Panama" },
+// Papua New Guinea
+{ country: "Papua New Guinea (Port Moresby)", capital: "Port Moresby", continent: "Pacific", tz: "Pacific/Port_Moresby" },
+{ country: "Papua New Guinea (Bougainville)", capital: "Arawa", continent: "Pacific", tz: "Pacific/Bougainville" },
+// Paraguay
+{ country: "Paraguay", capital: "Asunción", continent: "South America", tz: "America/Asuncion" },
+// Peru
+{ country: "Peru", capital: "Lima", continent: "South America", tz: "America/Lima" },
+// Philippines
+{ country: "Philippines", capital: "Manila", continent: "Asia", tz: "Asia/Manila" },
+// Poland
+{ country: "Poland", capital: "Warsaw", continent: "Europe", tz: "Europe/Warsaw" },
+// Portugal
+{ country: "Portugal (Lisbon)", capital: "Lisbon", continent: "Europe", tz: "Europe/Lisbon" },
+{ country: "Portugal (Azores)", capital: "Ponta Delgada", continent: "Europe", tz: "Atlantic/Azores" },
+{ country: "Portugal (Madeira)", capital: "Funchal", continent: "Europe", tz: "Atlantic/Madeira" },
+// Qatar
+{ country: "Qatar", capital: "Doha", continent: "Asia", tz: "Asia/Qatar" },
+// Romania
+{ country: "Romania", capital: "Bucharest", continent: "Europe", tz: "Europe/Bucharest" },
+// Russia
+{ country: "Russia (Moscow)", capital: "Moscow", continent: "Europe", tz: "Europe/Moscow" },
+{ country: "Russia (Kaliningrad)", capital: "Kaliningrad", continent: "Europe", tz: "Europe/Kaliningrad" },
+{ country: "Russia (Samara)", capital: "Samara", continent: "Europe", tz: "Europe/Samara" },
+{ country: "Russia (Yekaterinburg)", capital: "Yekaterinburg", continent: "Asia", tz: "Asia/Yekaterinburg" },
+{ country: "Russia (Omsk)", capital: "Omsk", continent: "Asia", tz: "Asia/Omsk" },
+{ country: "Russia (Krasnoyarsk)", capital: "Krasnoyarsk", continent: "Asia", tz: "Asia/Krasnoyarsk" },
+{ country: "Russia (Irkutsk)", capital: "Irkutsk", continent: "Asia", tz: "Asia/Irkutsk" },
+{ country: "Russia (Yakutsk)", capital: "Yakutsk", continent: "Asia", tz: "Asia/Yakutsk" },
+{ country: "Russia (Vladivostok)", capital: "Vladivostok", continent: "Asia", tz: "Asia/Vladivostok" },
+{ country: "Russia (Magadan)", capital: "Magadan", continent: "Asia", tz: "Asia/Magadan" },
+{ country: "Russia (Kamchatka)", capital: "Petropavlovsk-Kamchatsky", continent: "Asia", tz: "Asia/Kamchatka" },
+{ country: "Russia (Novosibirsk)", capital: "Novosibirsk", continent: "Asia", tz: "Asia/Novosibirsk" },
+{ country: "Russia (Barnaul)", capital: "Barnaul", continent: "Asia", tz: "Asia/Barnaul" },
+{ country: "Russia (Tomsk)", capital: "Tomsk", continent: "Asia", tz: "Asia/Tomsk" },
+{ country: "Russia (Novokuznetsk)", capital: "Novokuznetsk", continent: "Asia", tz: "Asia/Novokuznetsk" },
+{ country: "Russia (Khandyga)", capital: "Khandyga", continent: "Asia", tz: "Asia/Khandyga" },
+{ country: "Russia (Ust-Nera)", capital: "Ust-Nera", continent: "Asia", tz: "Asia/Ust-Nera" },
+{ country: "Russia (Sakhalin)", capital: "Yuzhno-Sakhalinsk", continent: "Asia", tz: "Asia/Sakhalin" },
+{ country: "Russia (Srednekolymsk)", capital: "Srednekolymsk", continent: "Asia", tz: "Asia/Srednekolymsk" },
+{ country: "Russia (Anadyr)", capital: "Anadyr", continent: "Asia", tz: "Asia/Anadyr" },
+{ country: "Russia (Chita)", capital: "Chita", continent: "Asia", tz: "Asia/Chita" },
+// Rwanda
+{ country: "Rwanda", capital: "Kigali", continent: "Africa", tz: "Africa/Kigali" },
+// Saint Kitts and Nevis
+{ country: "Saint Kitts and Nevis", capital: "Basseterre", continent: "North America", tz: "America/St_Kitts" },
+// Saint Lucia
+{ country: "Saint Lucia", capital: "Castries", continent: "North America", tz: "America/St_Lucia" },
+// Saint Vincent and the Grenadines
+{ country: "Saint Vincent and the Grenadines", capital: "Kingstown", continent: "North America", tz: "America/St_Vincent" },
+// Samoa
+{ country: "Samoa", capital: "Apia", continent: "Pacific", tz: "Pacific/Apia" },
+// San Marino
+{ country: "San Marino", capital: "San Marino", continent: "Europe", tz: "Europe/San_Marino" },
+// Sao Tome and Principe
+{ country: "Sao Tome and Principe", capital: "São Tomé", continent: "Africa", tz: "Africa/Sao_Tome" },
+// Saudi Arabia
+{ country: "Saudi Arabia", capital: "Riyadh", continent: "Asia", tz: "Asia/Riyadh" },
+// Senegal
+{ country: "Senegal", capital: "Dakar", continent: "Africa", tz: "Africa/Dakar" },
+// Serbia
+{ country: "Serbia", capital: "Belgrade", continent: "Europe", tz: "Europe/Belgrade" },
+// Seychelles
+{ country: "Seychelles", capital: "Victoria", continent: "Africa", tz: "Indian/Mahe" },
+// Sierra Leone
+{ country: "Sierra Leone", capital: "Freetown", continent: "Africa", tz: "Africa/Freetown" },
+// Singapore
+{ country: "Singapore", capital: "Singapore", continent: "Asia", tz: "Asia/Singapore" },
+// Slovakia
+{ country: "Slovakia", capital: "Bratislava", continent: "Europe", tz: "Europe/Bratislava" },
+// Slovenia
+{ country: "Slovenia", capital: "Ljubljana", continent: "Europe", tz: "Europe/Ljubljana" },
+// Solomon Islands
+{ country: "Solomon Islands", capital: "Honiara", continent: "Pacific", tz: "Pacific/Guadalcanal" },
+// Somalia
+{ country: "Somalia", capital: "Mogadishu", continent: "Africa", tz: "Africa/Mogadishu" },
+// South Africa
+{ country: "South Africa", capital: "Pretoria", continent: "Africa", tz: "Africa/Johannesburg" },
+// South Korea
+{ country: "South Korea", capital: "Seoul", continent: "Asia", tz: "Asia/Seoul" },
+// South Sudan
+{ country: "South Sudan", capital: "Juba", continent: "Africa", tz: "Africa/Juba" },
+// Spain
+{ country: "Spain (Madrid/Mainland)", capital: "Madrid", continent: "Europe", tz: "Europe/Madrid" },
+{ country: "Spain (Canary Islands)", capital: "Las Palmas", continent: "Europe", tz: "Atlantic/Canary" },
+// Sri Lanka
+{ country: "Sri Lanka", capital: "Sri Jayawardenepura Kotte", continent: "Asia", tz: "Asia/Colombo" },
+// Sudan
+{ country: "Sudan", capital: "Khartoum", continent: "Africa", tz: "Africa/Khartoum" },
+// Suriname
+{ country: "Suriname", capital: "Paramaribo", continent: "South America", tz: "America/Paramaribo" },
+// Sweden
+{ country: "Sweden", capital: "Stockholm", continent: "Europe", tz: "Europe/Stockholm" },
+// Switzerland
+{ country: "Switzerland", capital: "Bern", continent: "Europe", tz: "Europe/Zurich" },
+// Syria
+{ country: "Syria", capital: "Damascus", continent: "Asia", tz: "Asia/Damascus" },
+// Taiwan
+{ country: "Taiwan", capital: "Taipei", continent: "Asia", tz: "Asia/Taipei" },
+// Tajikistan
+{ country: "Tajikistan", capital: "Dushanbe", continent: "Asia", tz: "Asia/Dushanbe" },
+// Tanzania
+{ country: "Tanzania", capital: "Dodoma", continent: "Africa", tz: "Africa/Dar_es_Salaam" },
+// Thailand
+{ country: "Thailand", capital: "Bangkok", continent: "Asia", tz: "Asia/Bangkok" },
+// Timor-Leste
+{ country: "Timor-Leste", capital: "Dili", continent: "Asia", tz: "Asia/Dili" },
+// Togo
+{ country: "Togo", capital: "Lomé", continent: "Africa", tz: "Africa/Lome" },
+// Tonga
+{ country: "Tonga", capital: "Nukuʻalofa", continent: "Pacific", tz: "Pacific/Tongatapu" },
+// Trinidad and Tobago
+{ country: "Trinidad and Tobago", capital: "Port of Spain", continent: "North America", tz: "America/Port_of_Spain" },
+// Tunisia
+{ country: "Tunisia", capital: "Tunis", continent: "Africa", tz: "Africa/Tunis" },
+// Turkey
+{ country: "Turkey", capital: "Ankara", continent: "Europe", tz: "Europe/Istanbul" },
+// Turkmenistan
+{ country: "Turkmenistan", capital: "Ashgabat", continent: "Asia", tz: "Asia/Ashgabat" },
+// Tuvalu
+{ country: "Tuvalu", capital: "Funafuti", continent: "Pacific", tz: "Pacific/Funafuti" },
+// Uganda
+{ country: "Uganda", capital: "Kampala", continent: "Africa", tz: "Africa/Kampala" },
+// Ukraine
+{ country: "Ukraine (Kyiv)", capital: "Kyiv", continent: "Europe", tz: "Europe/Kyiv" },
+{ country: "Ukraine (Simferopol)", capital: "Simferopol", continent: "Europe", tz: "Europe/Simferopol" },
+// United Arab Emirates
+{ country: "United Arab Emirates", capital: "Abu Dhabi", continent: "Asia", tz: "Asia/Dubai" },
+// United Kingdom
+{ country: "United Kingdom (London)", capital: "London", continent: "Europe", tz: "Europe/London" },
+// United States
+{ country: "United States (New York/Eastern)", capital: "Washington, D.C.", continent: "North America", tz: "America/New_York" },
+{ country: "United States (Chicago/Central)", capital: "Chicago", continent: "North America", tz: "America/Chicago" },
+{ country: "United States (Denver/Mountain)", capital: "Denver", continent: "North America", tz: "America/Denver" },
+{ country: "United States (Phoenix/Arizona Mountain)", capital: "Phoenix", continent: "North America", tz: "America/Phoenix" },
+{ country: "United States (Los Angeles/Pacific)", capital: "Los Angeles", continent: "North America", tz: "America/Los_Angeles" },
+{ country: "United States (Anchorage/Alaska)", capital: "Anchorage", continent: "North America", tz: "America/Anchorage" },
+{ country: "United States (Honolulu/Hawaii)", capital: "Honolulu", continent: "Pacific", tz: "Pacific/Honolulu" },
+{ country: "United States (Adak/Aleutian Islands)", capital: "Adak", continent: "North America", tz: "America/Adak" },
+{ country: "United States (Boise)", capital: "Boise", continent: "North America", tz: "America/Boise" },
+{ country: "United States (Detroit)", capital: "Detroit", continent: "North America", tz: "America/Detroit" },
+{ country: "United States (Indiana - Indianapolis)", capital: "Indianapolis", continent: "North America", tz: "America/Indiana/Indianapolis" },
+{ country: "United States (Indiana - Knox)", capital: "Knox", continent: "North America", tz: "America/Indiana/Knox" },
+{ country: "United States (Indiana - Marengo)", capital: "Marengo", continent: "North America", tz: "America/Indiana/Marengo" },
+{ country: "United States (Indiana - Petersburg)", capital: "Petersburg", continent: "North America", tz: "America/Indiana/Petersburg" },
+{ country: "United States (Indiana - Tell City)", capital: "Tell City", continent: "North America", tz: "America/Indiana/Tell_City" },
+{ country: "United States (Indiana - Vevay)", capital: "Vevay", continent: "North America", tz: "America/Indiana/Vevay" },
+{ country: "United States (Indiana - Vincennes)", capital: "Vincennes", continent: "North America", tz: "America/Indiana/Vincennes" },
+{ country: "United States (Indiana - Winamac)", capital: "Winamac", continent: "North America", tz: "America/Indiana/Winamac" },
+{ country: "United States (Kentucky - Louisville)", capital: "Louisville", continent: "North America", tz: "America/Kentucky/Louisville" },
+{ country: "United States (Kentucky - Monticello)", capital: "Monticello", continent: "North America", tz: "America/Kentucky/Monticello" },
+{ country: "United States (North Dakota - Beulah)", capital: "Beulah", continent: "North America", tz: "America/North_Dakota/Beulah" },
+{ country: "United States (North Dakota - Center)", capital: "Center", continent: "North America", tz: "America/North_Dakota/Center" },
+{ country: "United States (North Dakota - New Salem)", capital: "New Salem", continent: "North America", tz: "America/North_Dakota/New_Salem" },
+{ country: "United States (Menominee)", capital: "Menominee", continent: "North America", tz: "America/Menominee" },
+{ country: "United States (Metlakatla)", capital: "Metlakatla", continent: "North America", tz: "America/Metlakatla" },
+{ country: "United States (Nome)", capital: "Nome", continent: "North America", tz: "America/Nome" },
+{ country: "United States (Sitka)", capital: "Sitka", continent: "North America", tz: "America/Sitka" },
+{ country: "United States (Yakutat)", capital: "Yakutat", continent: "North America", tz: "America/Yakutat" },
+// Uruguay
+{ country: "Uruguay", capital: "Montevideo", continent: "South America", tz: "America/Montevideo" },
+// Uzbekistan
+{ country: "Uzbekistan (Tashkent)", capital: "Tashkent", continent: "Asia", tz: "Asia/Tashkent" },
+{ country: "Uzbekistan (Samarkand)", capital: "Samarkand", continent: "Asia", tz: "Asia/Samarkand" },
+// Vanuatu
+{ country: "Vanuatu", capital: "Port Vila", continent: "Pacific", tz: "Pacific/Efate" },
+// Vatican City
+{ country: "Vatican City", capital: "Vatican City", continent: "Europe", tz: "Europe/Vatican" },
+// Venezuela
+{ country: "Venezuela", capital: "Caracas", continent: "South America", tz: "America/Caracas" },
+// Vietnam
+{ country: "Vietnam", capital: "Hanoi", continent: "Asia", tz: "Asia/Ho_Chi_Minh" },
+// Yemen
+{ country: "Yemen", capital: "Sana'a", continent: "Asia", tz: "Asia/Aden" },
+// Zambia
+{ country: "Zambia", capital: "Lusaka", continent: "Africa", tz: "Africa/Lusaka" },
+// Zimbabwe
+{ country: "Zimbabwe", capital: "Harare", continent: "Africa", tz: "Africa/Harare" }
 ];
 
 
 /* ==================================================
-   LOCAL CLOCK — 12 HOUR
+   AUTO-DETECTED LOCAL CLOCK & LOCATION
 ================================================== */
+
+const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 function updateClock(){
 
-    const now=new Date();
+    const now = new Date();
 
-    document.getElementById("clock")
-        .textContent=
-        now.toLocaleTimeString(
-            undefined,
-            {
-                hour:"numeric",
-                minute:"2-digit",
-                second:"2-digit",
-                hour12:true
-            }
-        );
+    const timeString = new Intl.DateTimeFormat(
+        undefined,
+        {
+            timeZone: userTimeZone,
+            hour: "numeric",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        }
+    ).format(now);
 
-    document.getElementById("date")
-        .textContent=
-        now.toLocaleDateString(
-            undefined,
-            {
-                weekday:"long",
-                year:"numeric",
-                month:"long",
-                day:"numeric"
-            }
-        );
+    const dateString = new Intl.DateTimeFormat(
+        undefined,
+        {
+            timeZone: userTimeZone,
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        }
+    ).format(now);
 
+    document.getElementById("clock").textContent = timeString;
+    document.getElementById("date").textContent = dateString;
+    
+    // Update local title header with detected location region
+    const tzShortName = userTimeZone.split('/').pop().replace('_', ' ');
+    document.getElementById("localTitle").innerHTML = `🕐 Local Time (${tzShortName})`;
 }
 
-setInterval(updateClock,1000);
-
+setInterval(updateClock, 1000);
 updateClock();
 
 
@@ -1317,222 +1380,130 @@ updateClock();
    WORLD TIME SEARCH
 ================================================== */
 
-const countrySearch=
-    document.getElementById("countrySearch");
-
-const countryList=
-    document.getElementById("countryList");
+const countrySearch = document.getElementById("countrySearch");
+const countryList = document.getElementById("countryList");
 
 
 function openCountryList(){
-
     filterCountries();
-
-    countryList.style.display="block";
-
+    countryList.style.display = "block";
 }
 
 
 function filterCountries(){
 
-    const query=
-        countrySearch.value
-        .toLowerCase()
-        .trim();
+    const query = countrySearch.value.toLowerCase().trim();
 
-    const filtered=
-        countries.filter(function(item){
+    const filtered = countries.filter(function(item){
+        return (
+            item.country.toLowerCase().includes(query) ||
+            item.capital.toLowerCase().includes(query) ||
+            item.continent.toLowerCase().includes(query) ||
+            item.tz.toLowerCase().includes(query)
+        );
+    });
 
-            return(
-                item.country
-                .toLowerCase()
-                .includes(query)
-                ||
-                item.capital
-                .toLowerCase()
-                .includes(query)
-            );
-
-        });
-
-
-    countryList.innerHTML="";
-
+    countryList.innerHTML = "";
 
     filtered.forEach(function(item){
 
-        const option=
-            document.createElement("div");
+        const option = document.createElement("div");
+        option.className = "country-option";
 
-        option.className=
-            "country-option";
+        option.innerHTML = "🌎 <b>" + escapeHTML(item.country) + "</b> — " + escapeHTML(item.capital) + " <small style='color:var(--muted);'>(" + escapeHTML(item.continent) + ")</small>";
 
-        option.innerHTML=
-            "🌎 <b>"+
-            escapeHTML(item.country)+
-            "</b> — "+
-            escapeHTML(item.capital);
-
-        option.onclick=function(){
-
+        option.onclick = function(){
             selectCountry(item);
-
         };
 
         countryList.appendChild(option);
 
     });
 
-
-    countryList.style.display=
-        filtered.length ? "block":"none";
+    countryList.style.display = filtered.length ? "block" : "none";
 
 }
 
 
+let activeWorldInterval = null;
+
 function selectCountry(item){
 
-    countrySearch.value=
-        item.country;
+    countrySearch.value = item.country;
+    countryList.style.display = "none";
 
-    countryList.style.display=
-        "none";
+    document.getElementById("selectedCountry").style.display = "block";
+    document.getElementById("countryName").textContent = "🌎 " + item.country;
 
-
-    document.getElementById(
-        "selectedCountry"
-    ).style.display="block";
-
-
-    document.getElementById(
-        "countryName"
-    ).textContent=
-        "🌎 "+item.country;
-
+    if(activeWorldInterval) clearInterval(activeWorldInterval);
 
     updateWorldTime(item);
 
-    setInterval(
-        function(){
-            updateWorldTime(item);
-        },
-        1000
-    );
+    activeWorldInterval = setInterval(function(){
+        updateWorldTime(item);
+    }, 1000);
 
 }
 
 
 function updateWorldTime(item){
 
-    const now=
-        new Date();
+    const now = new Date();
 
-
-    const time=
-        new Intl.DateTimeFormat(
-            "en-US",
-            {
-                timeZone:item.tz,
-
-                hour:"numeric",
-                minute:"2-digit",
-                second:"2-digit",
-
-                hour12:true
-            }
-        ).format(now);
-
-
-    const date=
-        new Intl.DateTimeFormat(
-            "en-US",
-            {
-                timeZone:item.tz,
-
-                weekday:"long",
-                year:"numeric",
-                month:"long",
-                day:"numeric"
-            }
-        ).format(now);
-
-
-    const offset=
-        getGMTOffset(
-            now,
-            item.tz
-        );
-
-
-    document.getElementById(
-        "countryInfo"
-    ).innerHTML=
-        "Capital: <b>"+
-        escapeHTML(item.capital)+
-        "</b><br>"+
-        "GMT: <b>"+
-        offset+
-        "</b><br>"+
-        "Date: <b>"+
-        date+
-        "</b>";
-
-
-    document.getElementById(
-        "countryTime"
-    ).textContent=
-        time;
-
-}
-
-
-function getGMTOffset(date,tz){
-
-    const parts=
-        new Intl.DateTimeFormat(
-            "en-US",
-            {
-                timeZone:tz,
-
-                timeZoneName:"longOffset"
-            }
-        ).formatToParts(date);
-
-
-    const part=
-        parts.find(
-            p=>p.type==="timeZoneName"
-        );
-
-
-    if(!part) return "GMT";
-
-
-    return part.value
-        .replace("GMT","GMT");
-
-}
-
-
-/* Close country list */
-
-document.addEventListener(
-    "click",
-    function(event){
-
-        if(
-            !event.target.closest(
-                ".world-search"
-            )
-        ){
-
-            countryList.style.display=
-                "none";
-
+    const time = new Intl.DateTimeFormat(
+        "en-US",
+        {
+            timeZone: item.tz,
+            hour: "numeric",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
         }
+    ).format(now);
 
+    const date = new Intl.DateTimeFormat(
+        "en-US",
+        {
+            timeZone: item.tz,
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        }
+    ).format(now);
+
+    const offset = getGMTOffset(now, item.tz);
+
+    document.getElementById("countryInfo").innerHTML =
+        "Capital / Region: <b>" + escapeHTML(item.capital) + "</b><br>" +
+        "Continent: <b>" + escapeHTML(item.continent) + "</b><br>" +
+        "Timezone ID: <b>" + escapeHTML(item.tz) + "</b><br>" +
+        "GMT Offset: <b>" + offset + "</b><br>" +
+        "Date: <b>" + date + "</b>";
+
+    document.getElementById("countryTime").textContent = time;
+
+}
+
+
+function getGMTOffset(date, tz){
+    const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: tz,
+        timeZoneName: "longOffset"
+    }).formatToParts(date);
+
+    const part = parts.find(p => p.type === "timeZoneName");
+    if(!part) return "GMT";
+    return part.value.replace("GMT", "GMT");
+}
+
+
+/* Close country list on outside click */
+document.addEventListener("click", function(event){
+    if(!event.target.closest(".world-search")){
+        countryList.style.display = "none";
     }
-);
+});
 
 
 
@@ -1541,38 +1512,15 @@ document.addEventListener(
 ================================================== */
 
 function toggleDark(){
-
     document.body.classList.toggle("dark");
-
-    const dark=
-        document.body.classList.contains(
-            "dark"
-        );
-
-    localStorage.setItem(
-        "darkMode",
-        dark
-    );
-
-    document.getElementById(
-        "themeBtn"
-    ).textContent=
-        dark ? "☀️":"🌙";
-
+    const dark = document.body.classList.contains("dark");
+    localStorage.setItem("darkMode", dark);
+    document.getElementById("themeBtn").textContent = dark ? "☀️" : "🌙";
 }
 
-
-if(
-    localStorage.getItem("darkMode")
-    ==="true"
-){
-
+if(localStorage.getItem("darkMode") === "true"){
     document.body.classList.add("dark");
-
-    document.getElementById(
-        "themeBtn"
-    ).textContent="☀️";
-
+    document.getElementById("themeBtn").textContent = "☀️";
 }
 
 
@@ -1581,28 +1529,12 @@ if(
    NOTES
 ================================================== */
 
-const notes=
-    document.getElementById(
-        "notesBox"
-    );
+const notes = document.getElementById("notesBox");
+notes.value = localStorage.getItem("salmanNotes") || "";
 
-notes.value=
-    localStorage.getItem(
-        "salmanNotes"
-    ) || "";
-
-
-notes.addEventListener(
-    "input",
-    function(){
-
-        localStorage.setItem(
-            "salmanNotes",
-            notes.value
-        );
-
-    }
-);
+notes.addEventListener("input", function(){
+    localStorage.setItem("salmanNotes", notes.value);
+});
 
 
 
@@ -1610,141 +1542,55 @@ notes.addEventListener(
    TODO
 ================================================== */
 
-let todos=
-    JSON.parse(
-        localStorage.getItem(
-            "salmanTodos"
-        ) || "[]"
-    );
-
+let todos = JSON.parse(localStorage.getItem("salmanTodos") || "[]");
 
 function saveTodos(){
-
-    localStorage.setItem(
-        "salmanTodos",
-        JSON.stringify(todos)
-    );
-
+    localStorage.setItem("salmanTodos", JSON.stringify(todos));
 }
-
 
 function renderTodos(){
+    const list = document.getElementById("todoList");
+    list.innerHTML = "";
 
-    const list=
-        document.getElementById(
-            "todoList"
-        );
+    todos.forEach(function(todo, index){
+        const div = document.createElement("div");
+        div.className = "todo" + (todo.done ? " done" : "");
 
-    list.innerHTML="";
-
-
-    todos.forEach(
-        function(todo,index){
-
-            const div=
-                document.createElement(
-                    "div"
-                );
-
-            div.className=
-                "todo"+
-                (
-                    todo.done
-                    ? " done"
-                    : ""
-                );
-
-
-            div.innerHTML=`
-
-                <input
-                    type="checkbox"
-                    ${todo.done?"checked":""}
-                    onchange="toggleTodo(${index})">
-
-                <span>
-                    ${escapeHTML(todo.text)}
-                </span>
-
-                <button
-                    class="delete"
-                    onclick="deleteTodo(${index})">
-                    ✕
-                </button>
-
-            `;
-
-            list.appendChild(div);
-
-        }
-    );
-
+        div.innerHTML = `
+            <input type="checkbox" ${todo.done ? "checked" : ""} onchange="toggleTodo(${index})">
+            <span>${escapeHTML(todo.text)}</span>
+            <button class="delete" onclick="deleteTodo(${index})">✕</button>
+        `;
+        list.appendChild(div);
+    });
 }
-
 
 function addTodo(){
-
-    const input=
-        document.getElementById(
-            "todoInput"
-        );
-
-    const text=
-        input.value.trim();
-
+    const input = document.getElementById("todoInput");
+    const text = input.value.trim();
     if(!text) return;
 
-
-    todos.push({
-
-        text:text,
-        done:false
-
-    });
-
-
-    input.value="";
-
+    todos.push({ text: text, done: false });
+    input.value = "";
     saveTodos();
-
     renderTodos();
-
 }
-
 
 function todoEnter(event){
-
-    if(event.key==="Enter"){
-
-        addTodo();
-
-    }
-
+    if(event.key === "Enter") addTodo();
 }
-
 
 function toggleTodo(index){
-
-    todos[index].done=
-        !todos[index].done;
-
+    todos[index].done = !todos[index].done;
     saveTodos();
-
     renderTodos();
-
 }
-
 
 function deleteTodo(index){
-
-    todos.splice(index,1);
-
+    todos.splice(index, 1);
     saveTodos();
-
     renderTodos();
-
 }
-
 
 renderTodos();
 
@@ -1755,71 +1601,27 @@ renderTodos();
 ================================================== */
 
 function addCalc(value){
-
-    document.getElementById(
-        "calcDisplay"
-    ).value += value;
-
+    document.getElementById("calcDisplay").value += value;
 }
-
 
 function clearCalc(){
-
-    document.getElementById(
-        "calcDisplay"
-    ).value="";
-
+    document.getElementById("calcDisplay").value = "";
 }
-
 
 function backCalc(){
-
-    const display=
-        document.getElementById(
-            "calcDisplay"
-        );
-
-    display.value=
-        display.value.slice(0,-1);
-
+    const display = document.getElementById("calcDisplay");
+    display.value = display.value.slice(0, -1);
 }
 
-
 function calculate(){
-
-    const display=
-        document.getElementById(
-            "calcDisplay"
-        );
-
+    const display = document.getElementById("calcDisplay");
     try{
-
-        const expression=
-            display.value;
-
-        if(
-            !/^[0-9+\-*/%.() ]+$/
-            .test(expression)
-        ){
-
-            throw new Error();
-
-        }
-
-        display.value=
-            Function(
-                '"use strict";return ('+
-                expression+
-                ')'
-            )();
-
+        const expression = display.value;
+        if(!/^[0-9+\-*/%.() ]+$/.test(expression)) throw new Error();
+        display.value = Function('"use strict";return (' + expression + ')')();
+    }catch{
+        display.value = "Error";
     }
-    catch{
-
-        display.value="Error";
-
-    }
-
 }
 
 
@@ -1828,91 +1630,40 @@ function calculate(){
    TIMER
 ================================================== */
 
-let timeLeft=300;
-
-let timer=null;
-
+let timeLeft = 300;
+let timer = null;
 
 function updateTimer(){
-
-    const minutes=
-        Math.floor(
-            timeLeft/60
-        )
-        .toString()
-        .padStart(2,"0");
-
-
-    const seconds=
-        (timeLeft%60)
-        .toString()
-        .padStart(2,"0");
-
-
-    document.getElementById(
-        "timerDisplay"
-    ).textContent=
-        minutes+":"+seconds;
-
+    const minutes = Math.floor(timeLeft / 60).toString().padStart(2, "0");
+    const seconds = (timeLeft % 60).toString().padStart(2, "0");
+    document.getElementById("timerDisplay").textContent = minutes + ":" + seconds;
 }
-
 
 function startTimer(){
-
     if(timer) return;
-
-
-    timer=
-        setInterval(
-            function(){
-
-                if(timeLeft<=0){
-
-                    clearInterval(timer);
-
-                    timer=null;
-
-                    alert(
-                        "⏰ Time's up!"
-                    );
-
-                    return;
-
-                }
-
-
-                timeLeft--;
-
-                updateTimer();
-
-            },
-            1000
-        );
-
+    timer = setInterval(function(){
+        if(timeLeft <= 0){
+            clearInterval(timer);
+            timer = null;
+            alert("⏰ Time's up!");
+            return;
+        }
+        timeLeft--;
+        updateTimer();
+    }, 1000);
 }
-
 
 function pauseTimer(){
-
     clearInterval(timer);
-
-    timer=null;
-
+    timer = null;
 }
-
 
 function resetTimer(){
-
     clearInterval(timer);
-
-    timer=null;
-
-    timeLeft=300;
-
+    timer = null;
+    timeLeft = 300;
     updateTimer();
-
 }
-
 
 updateTimer();
 
@@ -1923,33 +1674,13 @@ updateTimer();
 ================================================== */
 
 function googleSearch(){
-
-    const query=
-        document.getElementById(
-            "googleInput"
-        ).value.trim();
-
+    const query = document.getElementById("googleInput").value.trim();
     if(!query) return;
-
-
-    window.open(
-        "https://www.google.com/search?q="+
-        encodeURIComponent(query),
-
-        "_blank"
-    );
-
+    window.open("https://www.google.com/search?q=" + encodeURIComponent(query), "_blank");
 }
 
-
 function googleEnter(event){
-
-    if(event.key==="Enter"){
-
-        googleSearch();
-
-    }
-
+    if(event.key === "Enter") googleSearch();
 }
 
 
@@ -1959,35 +1690,14 @@ function googleEnter(event){
 ================================================== */
 
 function focusSection(id){
-
-    const element=
-        document.getElementById(id);
-
+    const element = document.getElementById(id);
     if(element){
-
-        element.scrollIntoView({
-
-            behavior:"smooth",
-
-            block:"center"
-
-        });
-
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
     }
-
 }
 
-
 function showAll(){
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 
@@ -1997,17 +1707,12 @@ function showAll(){
 ================================================== */
 
 function escapeHTML(text){
-
-    const div=
-        document.createElement("div");
-
-    div.textContent=text;
-
+    const div = document.createElement("div");
+    div.textContent = text;
     return div.innerHTML;
-
 }
 
 </script>
 
 </body>
-   </html>
+</html>
