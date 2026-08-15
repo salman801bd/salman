@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>MyAI</title>
+<title>LifeHub</title>
 
 <style>
 *{
@@ -14,636 +14,1086 @@
     font-family:Arial,sans-serif;
 }
 
+:root{
+    --bg:#f5f7fb;
+    --card:#fff;
+    --text:#111;
+    --muted:#777;
+    --border:#ddd;
+    --primary:#111;
+}
+
+body.dark{
+    --bg:#151515;
+    --card:#222;
+    --text:#fff;
+    --muted:#aaa;
+    --border:#444;
+    --primary:#fff;
+}
+
 body{
-    background:#fff;
-    color:#111;
-    height:100vh;
-    overflow:hidden;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    transition:.2s;
+}
+
+/* HEADER */
+
+header{
+    height:65px;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 20px;
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.header-right{
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn{
+    width:40px;
+    height:40px;
+
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+
+    border-radius:9px;
+
+    cursor:pointer;
+    font-size:18px;
 }
 
 /* SIDEBAR */
 
 .sidebar{
     position:fixed;
+
+    top:65px;
     left:0;
-    top:0;
-    width:260px;
-    height:100vh;
-    background:#f7f7f8;
-    padding:12px;
-    border-right:1px solid #ddd;
-    z-index:1000;
+
+    width:220px;
+    height:calc(100vh - 65px);
+
+    background:var(--card);
+
+    border-right:1px solid var(--border);
+
+    padding:15px;
+
+    z-index:900;
 }
 
-.new-chat{
+.nav{
     width:100%;
-    padding:12px;
-    background:#fff;
-    border:1px solid #ddd;
-    border-radius:8px;
-    cursor:pointer;
+
+    border:0;
+    background:transparent;
+
+    color:var(--text);
+
     text-align:left;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
     font-size:14px;
+
+    margin-bottom:4px;
 }
 
-.new-chat:hover{
-    background:#eee;
+.nav:hover,
+.nav.active{
+    background:var(--bg);
 }
 
 /* MAIN */
 
-.main{
-    margin-left:260px;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
+main{
+    margin-left:220px;
+
+    padding:90px 25px 30px;
+
+    max-width:1300px;
 }
 
-/* HEADER */
-
-.header{
-    height:60px;
-    display:flex;
-    align-items:center;
-    padding:0 20px;
-    border-bottom:1px solid #eee;
+.page-title{
+    margin-bottom:20px;
 }
 
-.menu{
-    display:none;
-    border:none;
-    background:none;
-    font-size:24px;
-    cursor:pointer;
+.page-title h1{
+    font-size:28px;
 }
 
-.logo{
-    font-size:20px;
+.page-title p{
+    color:var(--muted);
+    margin-top:5px;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:18px;
+}
+
+/* CARD */
+
+.card{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:18px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+}
+
+.card h2{
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+/* CLOCK */
+
+.clock{
+    font-size:38px;
     font-weight:bold;
 }
 
-/* CHAT */
-
-.chat-container{
-    flex:1;
-    overflow-y:auto;
-    padding:30px 20px 150px;
+.date{
+    color:var(--muted);
+    margin-top:5px;
 }
 
-.chat{
-    max-width:850px;
-    margin:auto;
-}
+/* TODO */
 
-.welcome{
-    text-align:center;
-    margin-top:18vh;
-}
-
-.welcome h1{
-    font-size:32px;
-    margin-bottom:10px;
-}
-
-.welcome p{
-    color:#777;
-}
-
-.message{
+.todo-input{
     display:flex;
-    gap:14px;
-    margin-bottom:28px;
-    line-height:1.6;
+    gap:8px;
 }
 
-.avatar{
-    width:32px;
-    height:32px;
-    min-width:32px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#111;
-    color:#fff;
-    font-size:11px;
-}
+input,
+textarea{
+    width:100%;
 
-.user{
-    background:#ddd;
-    color:#111;
-}
+    border:1px solid var(--border);
 
-.text{
-    flex:1;
-    white-space:pre-wrap;
-    word-break:break-word;
-}
+    background:var(--card);
+    color:var(--text);
 
-/* INPUT */
+    border-radius:8px;
 
-.input-area{
-    position:fixed;
-    left:260px;
-    right:0;
-    bottom:0;
-    padding:30px 20px 15px;
-    background:linear-gradient(transparent,#fff 30%);
-}
+    padding:11px;
 
-.input-box{
-    max-width:850px;
-    margin:auto;
-    display:flex;
-    align-items:flex-end;
-    background:white;
-    border:1px solid #ccc;
-    border-radius:18px;
-    padding:8px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    outline:none;
 }
 
 textarea{
-    flex:1;
-    border:none;
-    outline:none;
-    resize:none;
-    padding:10px;
-    font-size:15px;
-    max-height:140px;
+    min-height:180px;
+    resize:vertical;
 }
 
-.send{
-    width:40px;
-    height:40px;
-    border:none;
-    border-radius:50%;
-    background:#111;
-    color:white;
+.primary{
+    border:0;
+
+    background:var(--primary);
+
+    color:
+        var(--bg);
+
+    border-radius:8px;
+
+    padding:0 15px;
+
     cursor:pointer;
-    font-size:18px;
+
+    font-weight:bold;
 }
 
-.send:disabled{
-    opacity:.4;
-    cursor:not-allowed;
+.todo-list{
+    margin-top:15px;
 }
 
-.note{
+.todo{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.todo span{
+    flex:1;
+}
+
+.todo.done span{
+    text-decoration:line-through;
+    color:var(--muted);
+}
+
+.delete{
+    border:0;
+    background:none;
+    color:#e33;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* CALCULATOR */
+
+.calculator{
+    max-width:350px;
+}
+
+.calc-display{
+    width:100%;
+    height:55px;
+
+    margin-bottom:10px;
+
+    text-align:right;
+
+    font-size:25px;
+}
+
+.calc-buttons{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:7px;
+}
+
+.calc-buttons button{
+    height:48px;
+
+    border:1px solid var(--border);
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+.calc-buttons button:hover{
+    opacity:.7;
+}
+
+/* TIMER */
+
+.timer{
+    font-size:45px;
+    font-weight:bold;
     text-align:center;
-    font-size:11px;
-    color:#888;
-    margin-top:7px;
+    padding:15px;
+}
+
+.timer-controls{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+}
+
+.timer-controls button{
+    padding:10px 15px;
+    border:1px solid var(--border);
+    background:var(--bg);
+    color:var(--text);
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* SEARCH */
+
+.search-box{
+    display:flex;
+    gap:8px;
+}
+
+.search-box button{
+    height:42px;
 }
 
 /* MOBILE */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
     .sidebar{
-        transform:translateX(-100%);
-        transition:.2s;
+        width:100%;
+        height:55px;
+
+        top:65px;
+
+        display:flex;
+
+        overflow-x:auto;
+
+        padding:6px;
+
+        border-right:0;
+        border-bottom:1px solid var(--border);
     }
 
-    .sidebar.open{
-        transform:translateX(0);
+    .nav{
+        width:auto;
+        white-space:nowrap;
+
+        padding:9px 12px;
+
+        margin:0;
     }
 
-    .main{
+    main{
         margin-left:0;
+
+        padding:135px 12px 25px;
     }
 
-    .header{
-        height:58px;
-        gap:12px;
+    .grid{
+        grid-template-columns:1fr;
     }
 
-    .menu{
-        display:block;
+    .page-title h1{
+        font-size:24px;
     }
 
-    .input-area{
-        left:0;
-        padding:25px 10px 12px;
+    .clock{
+        font-size:30px;
     }
 
-    .chat-container{
-        padding:20px 12px 145px;
+}
+
+@media(max-width:400px){
+
+    header{
+        padding:0 12px;
     }
 
-    .welcome h1{
-        font-size:25px;
+    .logo{
+        font-size:20px;
     }
 
-    .message{
-        font-size:14px;
+    .card{
+        padding:14px;
     }
+
 }
 </style>
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        LifeHub
+    </div>
+
+    <div class="header-right">
+
+        <button
+            class="icon-btn"
+            onclick="toggleDark()"
+            id="themeBtn">
+            🌙
+        </button>
+
+    </div>
+
+</header>
+
 
 <!-- SIDEBAR -->
 
-<div class="sidebar" id="sidebar">
+<nav class="sidebar">
 
-    <button class="new-chat" onclick="newChat()">
-        ＋ New chat
+    <button
+        class="nav active"
+        onclick="showAll()">
+        🏠 Dashboard
     </button>
 
-</div>
+    <button
+        class="nav"
+        onclick="focusSection('notes')">
+        📝 Notes
+    </button>
+
+    <button
+        class="nav"
+        onclick="focusSection('todo')">
+        ✅ Tasks
+    </button>
+
+    <button
+        class="nav"
+        onclick="focusSection('calculator')">
+        🧮 Calculator
+    </button>
+
+    <button
+        class="nav"
+        onclick="focusSection('timer')">
+        ⏱️ Timer
+    </button>
+
+    <button
+        class="nav"
+        onclick="focusSection('search')">
+        🔎 Search
+    </button>
+
+</nav>
 
 
 <!-- MAIN -->
 
-<div class="main">
+<main>
 
-    <header class="header">
+    <div class="page-title">
 
-        <button class="menu" onclick="toggleMenu()">
-            ☰
-        </button>
+        <h1>
+            LifeHub
+        </h1>
 
-        <div class="logo">
-            MyAI
-        </div>
-
-    </header>
-
-
-    <div class="chat-container" id="container">
-
-        <div class="welcome" id="welcome">
-
-            <h1>
-                How can I help you?
-            </h1>
-
-            <p>
-                Ask me anything.
-            </p>
-
-        </div>
-
-        <div class="chat" id="chat"></div>
+        <p>
+            Your simple all-in-one utility dashboard.
+        </p>
 
     </div>
 
 
-    <div class="input-area">
+    <div class="grid">
 
-        <div class="input-box">
+
+        <!-- CLOCK -->
+
+        <section class="card">
+
+            <h2>🕐 Clock</h2>
+
+            <div
+                class="clock"
+                id="clock">
+                00:00:00
+            </div>
+
+            <div
+                class="date"
+                id="date">
+            </div>
+
+        </section>
+
+
+
+        <!-- SEARCH -->
+
+        <section
+            class="card"
+            id="search">
+
+            <h2>🔎 Quick Search</h2>
+
+            <div class="search-box">
+
+                <input
+                    id="googleInput"
+                    placeholder="Search Google...">
+
+                <button
+                    class="primary"
+                    onclick="googleSearch()">
+                    Search
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- NOTES -->
+
+        <section
+            class="card"
+            id="notes">
+
+            <h2>📝 Notes</h2>
 
             <textarea
-                id="input"
-                rows="1"
-                placeholder="Message MyAI..."
-                onkeydown="keyDown(event)">
+                id="notesBox"
+                placeholder="Write your notes here...">
             </textarea>
 
-            <button
-                class="send"
-                id="send"
-                onclick="sendMessage()">
+        </section>
 
-                ↑
 
-            </button>
 
-        </div>
+        <!-- TODO -->
 
-        <div class="note">
-            MyAI may make mistakes. Check important information.
-        </div>
+        <section
+            class="card"
+            id="todo">
+
+            <h2>✅ To-Do List</h2>
+
+            <div class="todo-input">
+
+                <input
+                    id="todoInput"
+                    placeholder="Add a task..."
+                    onkeydown="todoEnter(event)">
+
+                <button
+                    class="primary"
+                    onclick="addTodo()">
+                    Add
+                </button>
+
+            </div>
+
+            <div
+                class="todo-list"
+                id="todoList">
+            </div>
+
+        </section>
+
+
+
+        <!-- CALCULATOR -->
+
+        <section
+            class="card calculator"
+            id="calculator">
+
+            <h2>🧮 Calculator</h2>
+
+            <input
+                class="calc-display"
+                id="calcDisplay"
+                readonly>
+
+            <div class="calc-buttons">
+
+                <button onclick="clearCalc()">C</button>
+                <button onclick="backCalc()">⌫</button>
+                <button onclick="addCalc('%')">%</button>
+                <button onclick="addCalc('/')">÷</button>
+
+                <button onclick="addCalc('7')">7</button>
+                <button onclick="addCalc('8')">8</button>
+                <button onclick="addCalc('9')">9</button>
+                <button onclick="addCalc('*')">×</button>
+
+                <button onclick="addCalc('4')">4</button>
+                <button onclick="addCalc('5')">5</button>
+                <button onclick="addCalc('6')">6</button>
+                <button onclick="addCalc('-')">−</button>
+
+                <button onclick="addCalc('1')">1</button>
+                <button onclick="addCalc('2')">2</button>
+                <button onclick="addCalc('3')">3</button>
+                <button onclick="addCalc('+')">+</button>
+
+                <button onclick="addCalc('0')">0</button>
+                <button onclick="addCalc('.')">.</button>
+                <button onclick="calculate()">=</button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TIMER -->
+
+        <section
+            class="card"
+            id="timer">
+
+            <h2>⏱️ 5-Minute Timer</h2>
+
+            <div
+                class="timer"
+                id="timerDisplay">
+                05:00
+            </div>
+
+            <div class="timer-controls">
+
+                <button onclick="startTimer()">
+                    ▶ Start
+                </button>
+
+                <button onclick="pauseTimer()">
+                    ⏸ Pause
+                </button>
+
+                <button onclick="resetTimer()">
+                    ↻ Reset
+                </button>
+
+            </div>
+
+        </section>
+
 
     </div>
 
-</div>
+</main>
+
 
 
 <script>
 
-/*
-==================================================
-PUT YOUR API KEY HERE
-==================================================
+/* ================= CLOCK ================= */
 
-IMPORTANT:
-This single-file method exposes your API key
-to anyone who opens the website.
+function updateClock(){
 
-For testing only.
+    const now = new Date();
 
-==================================================
-*/
+    document.getElementById("clock")
+        .textContent =
+        now.toLocaleTimeString();
 
-const API_KEY = "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";
+    document.getElementById("date")
+        .textContent =
+        now.toLocaleDateString(
+            undefined,
+            {
+                weekday:"long",
+                year:"numeric",
+                month:"long",
+                day:"numeric"
+            }
+        );
+}
 
+setInterval(updateClock,1000);
 
-/*
-==================================================
-AI MODEL
-==================================================
-*/
-
-const MODEL = "gpt-4o-mini";
-
-
-/*
-==================================================
-CHAT MEMORY
-==================================================
-*/
-
-let messages = [];
+updateClock();
 
 
-/*
-==================================================
-SEND MESSAGE
-==================================================
-*/
+/* ================= DARK MODE ================= */
 
-async function sendMessage(){
+function toggleDark(){
+
+    document.body.classList.toggle("dark");
+
+    const dark =
+        document.body.classList.contains("dark");
+
+    localStorage.setItem(
+        "darkMode",
+        dark
+    );
+
+    document.getElementById("themeBtn")
+        .textContent =
+        dark ? "☀️" : "🌙";
+}
+
+
+if(localStorage.getItem("darkMode")==="true"){
+
+    document.body.classList.add("dark");
+
+    document.getElementById("themeBtn")
+        .textContent="☀️";
+
+}
+
+
+/* ================= NOTES ================= */
+
+const notes =
+    document.getElementById("notesBox");
+
+notes.value =
+    localStorage.getItem("lifeNotes") || "";
+
+notes.addEventListener(
+    "input",
+    function(){
+
+        localStorage.setItem(
+            "lifeNotes",
+            notes.value
+        );
+
+    }
+);
+
+
+/* ================= TODO ================= */
+
+let todos =
+    JSON.parse(
+        localStorage.getItem("lifeTodos") || "[]"
+    );
+
+
+function saveTodos(){
+
+    localStorage.setItem(
+        "lifeTodos",
+        JSON.stringify(todos)
+    );
+
+}
+
+
+function renderTodos(){
+
+    const list =
+        document.getElementById("todoList");
+
+    list.innerHTML="";
+
+
+    todos.forEach(
+        function(todo,index){
+
+            const div =
+                document.createElement("div");
+
+            div.className =
+                "todo" +
+                (todo.done ? " done" : "");
+
+
+            div.innerHTML = `
+
+                <input
+                    type="checkbox"
+                    ${todo.done ? "checked" : ""}
+                    onchange="toggleTodo(${index})">
+
+                <span>
+                    ${escapeHTML(todo.text)}
+                </span>
+
+                <button
+                    class="delete"
+                    onclick="deleteTodo(${index})">
+                    ✕
+                </button>
+
+            `;
+
+            list.appendChild(div);
+
+        }
+    );
+
+}
+
+
+function addTodo(){
 
     const input =
-        document.getElementById("input");
-
-    const send =
-        document.getElementById("send");
+        document.getElementById("todoInput");
 
     const text =
         input.value.trim();
 
-    if(!text || send.disabled){
-        return;
-    }
+    if(!text) return;
 
-
-    document
-    .getElementById("welcome")
-    .style.display="none";
-
-
-    addMessage(
-        "You",
-        text,
-        true
-    );
-
-
-    messages.push({
-        role:"user",
-        content:text
+    todos.push({
+        text:text,
+        done:false
     });
-
 
     input.value="";
 
-    send.disabled=true;
+    saveTodos();
+    renderTodos();
+
+}
 
 
-    const loading =
-        addMessage(
-            "AI",
-            "Thinking...",
-            false
+function todoEnter(event){
+
+    if(event.key==="Enter"){
+        addTodo();
+    }
+
+}
+
+
+function toggleTodo(index){
+
+    todos[index].done =
+        !todos[index].done;
+
+    saveTodos();
+    renderTodos();
+
+}
+
+
+function deleteTodo(index){
+
+    todos.splice(index,1);
+
+    saveTodos();
+    renderTodos();
+
+}
+
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent=text;
+
+    return div.innerHTML;
+
+}
+
+renderTodos();
+
+
+/* ================= CALCULATOR ================= */
+
+function addCalc(value){
+
+    document.getElementById(
+        "calcDisplay"
+    ).value += value;
+
+}
+
+
+function clearCalc(){
+
+    document.getElementById(
+        "calcDisplay"
+    ).value="";
+
+}
+
+
+function backCalc(){
+
+    const display =
+        document.getElementById(
+            "calcDisplay"
         );
 
+    display.value =
+        display.value.slice(0,-1);
+
+}
+
+
+function calculate(){
+
+    const display =
+        document.getElementById(
+            "calcDisplay"
+        );
 
     try{
 
-        const response =
-        await fetch(
-            "https://api.openai.com/v1/chat/completions",
-            {
-                method:"POST",
+        const expression =
+            display.value;
 
-                headers:{
-                    "Content-Type":
-                        "application/json",
-
-                    "Authorization":
-                        "Bearer " + API_KEY
-                },
-
-                body:JSON.stringify({
-
-                    model:MODEL,
-
-                    messages:messages,
-
-                    temperature:0.7
-
-                })
-            }
-        );
-
-
-        const data =
-            await response.json();
-
-
-        if(!response.ok){
-
-            throw new Error(
-                data.error?.message ||
-                "API request failed"
-            );
-
+        if(!/^[0-9+\-*/%.() ]+$/.test(expression)){
+            throw new Error();
         }
 
+        display.value =
+            Function(
+                '"use strict";return (' +
+                expression +
+                ')'
+            )();
 
-        const answer =
-            data.choices[0]
-            .message
-            .content;
+    }catch{
+
+        display.value="Error";
+
+    }
+
+}
 
 
-        loading.textContent =
-            answer;
+/* ================= TIMER ================= */
+
+let timeLeft=300;
+let timer=null;
 
 
-        messages.push({
+function updateTimer(){
 
-            role:"assistant",
+    const minutes =
+        Math.floor(timeLeft/60)
+        .toString()
+        .padStart(2,"0");
 
-            content:answer
+    const seconds =
+        (timeLeft%60)
+        .toString()
+        .padStart(2,"0");
 
+    document.getElementById(
+        "timerDisplay"
+    ).textContent =
+        minutes + ":" + seconds;
+
+}
+
+
+function startTimer(){
+
+    if(timer) return;
+
+    timer =
+        setInterval(
+            function(){
+
+                if(timeLeft<=0){
+
+                    clearInterval(timer);
+
+                    timer=null;
+
+                    alert("⏰ Time's up!");
+
+                    return;
+
+                }
+
+                timeLeft--;
+
+                updateTimer();
+
+            },
+            1000
+        );
+
+}
+
+
+function pauseTimer(){
+
+    clearInterval(timer);
+
+    timer=null;
+
+}
+
+
+function resetTimer(){
+
+    clearInterval(timer);
+
+    timer=null;
+
+    timeLeft=300;
+
+    updateTimer();
+
+}
+
+
+updateTimer();
+
+
+/* ================= GOOGLE SEARCH ================= */
+
+function googleSearch(){
+
+    const query =
+        document.getElementById(
+            "googleInput"
+        ).value.trim();
+
+    if(!query) return;
+
+    window.open(
+        "https://www.google.com/search?q=" +
+        encodeURIComponent(query),
+        "_blank"
+    );
+
+}
+
+
+/* ================= NAVIGATION ================= */
+
+function focusSection(id){
+
+    const element =
+        document.getElementById(id);
+
+    if(element){
+
+        element.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
         });
 
-
-    }catch(error){
-
-        loading.textContent =
-            "Error: " + error.message;
-
-        console.error(error);
-
-    }
-
-
-    send.disabled=false;
-
-
-    scrollBottom();
-
-}
-
-
-/*
-==================================================
-ADD MESSAGE
-==================================================
-*/
-
-function addMessage(
-    name,
-    text,
-    isUser
-){
-
-    const chat =
-        document.getElementById("chat");
-
-
-    const message =
-        document.createElement("div");
-
-    message.className="message";
-
-
-    const avatar =
-        document.createElement("div");
-
-    avatar.className =
-        isUser
-        ? "avatar user"
-        : "avatar";
-
-
-    avatar.textContent =
-        isUser ? "You" : "AI";
-
-
-    const content =
-        document.createElement("div");
-
-    content.className="text";
-
-    content.textContent=text;
-
-
-    message.appendChild(avatar);
-
-    message.appendChild(content);
-
-    chat.appendChild(message);
-
-
-    scrollBottom();
-
-
-    return content;
-
-}
-
-
-/*
-==================================================
-ENTER KEY
-==================================================
-*/
-
-function keyDown(event){
-
-    if(
-        event.key==="Enter" &&
-        !event.shiftKey
-    ){
-
-        event.preventDefault();
-
-        sendMessage();
-
     }
 
 }
 
 
-/*
-==================================================
-NEW CHAT
-==================================================
-*/
+function showAll(){
 
-function newChat(){
-
-    messages=[];
-
-    document
-    .getElementById("chat")
-    .innerHTML="";
-
-
-    document
-    .getElementById("welcome")
-    .style.display="block";
-
-
-    document
-    .getElementById("input")
-    .value="";
-
-
-    closeMenu();
-
-}
-
-
-/*
-==================================================
-SCROLL
-==================================================
-*/
-
-function scrollBottom(){
-
-    const container =
-        document.getElementById("container");
-
-    container.scrollTo({
-
-        top:container.scrollHeight,
-
+    window.scrollTo({
+        top:0,
         behavior:"smooth"
-
     });
-
-}
-
-
-/*
-==================================================
-MOBILE MENU
-==================================================
-*/
-
-function toggleMenu(){
-
-    document
-    .getElementById("sidebar")
-    .classList.toggle("open");
-
-}
-
-
-function closeMenu(){
-
-    document
-    .getElementById("sidebar")
-    .classList.remove("open");
 
 }
 
