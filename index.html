@@ -1,1079 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>SALMAN</title>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
-:root{
-    --bg:#f5f7fb;
-    --card:#fff;
-    --text:#111;
-    --muted:#777;
-    --border:#ddd;
-    --primary:#111;
-    --danger:#e33;
-}
-
-body.dark{
-    --bg:#151515;
-    --card:#222;
-    --text:#fff;
-    --muted:#aaa;
-    --border:#444;
-    --primary:#fff;
-}
-
-body{
-    background:var(--bg);
-    color:var(--text);
-    min-height:100vh;
-    transition:.2s;
-}
-
-
-/* ================= HEADER ================= */
-
-header{
-    height:65px;
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    background:var(--card);
-    border-bottom:1px solid var(--border);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 20px;
-    z-index:1000;
-}
-
-.logo{
-    font-size:23px;
-    font-weight:bold;
-}
-
-.header-right{
-    display:flex;
-    gap:8px;
-}
-
-.icon-btn{
-    width:40px;
-    height:40px;
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
-    border-radius:9px;
-    cursor:pointer;
-    font-size:18px;
-}
-
-
-/* ================= SIDEBAR ================= */
-
-.sidebar{
-    position:fixed;
-    top:65px;
-    left:0;
-    width:220px;
-    height:calc(100vh - 65px);
-    background:var(--card);
-    border-right:1px solid var(--border);
-    padding:15px;
-    z-index:900;
-}
-
-.nav{
-    width:100%;
-    border:0;
-    background:transparent;
-    color:var(--text);
-    text-align:left;
-    padding:12px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:14px;
-    margin-bottom:4px;
-}
-
-.nav:hover,
-.nav.active{
-    background:var(--bg);
-}
-
-
-/* ================= MAIN ================= */
-
-main{
-    margin-left:220px;
-    padding:90px 25px 30px;
-    max-width:1500px;
-}
-
-.page-title{
-    margin-bottom:20px;
-}
-
-.page-title h1{
-    font-size:28px;
-}
-
-.page-title p{
-    color:var(--muted);
-    margin-top:5px;
-}
-
-
-/* ================= GRID ================= */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:18px;
-}
-
-
-/* ================= CARD ================= */
-
-.card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:18px;
-    box-shadow:0 3px 12px rgba(0,0,0,.05);
-}
-
-.card h2{
-    font-size:18px;
-    margin-bottom:15px;
-}
-
-
-/* ================= LOCAL TIME ================= */
-
-.local-location{
-    color:var(--muted);
-    font-size:14px;
-    margin-top:6px;
-}
-
-.local-zone{
-    color:var(--muted);
-    font-size:13px;
-    margin-top:4px;
-}
-
-.clock{
-    font-size:38px;
-    font-weight:bold;
-    margin-top:8px;
-}
-
-.date{
-    color:var(--muted);
-    margin-top:5px;
-}
-
-
-/* ================= WORLD TIME ================= */
-
-.world-search{
-    position:relative;
-    margin-bottom:12px;
-}
-
-.world-search input{
-    width:100%;
-    padding:11px 13px;
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
-    border-radius:9px;
-    outline:none;
-}
-
-.country-list{
-    max-height:320px;
-    overflow-y:auto;
-    border:1px solid var(--border);
-    border-radius:9px;
-    background:var(--card);
-    display:none;
-}
-
-.country-option{
-    padding:11px 12px;
-    cursor:pointer;
-    border-bottom:1px solid var(--border);
-    font-size:14px;
-}
-
-.country-option:last-child{
-    border-bottom:0;
-}
-
-.country-option:hover{
-    background:var(--bg);
-}
-
-.country-option strong{
-    display:block;
-    font-size:15px;
-}
-
-.country-option small{
-    color:var(--muted);
-}
-
-.world-results{
-    display:none;
-    margin-top:12px;
-}
-
-.world-results-title{
-    color:var(--muted);
-    font-size:13px;
-    margin-bottom:8px;
-}
-
-.timezone-card{
-    border:1px solid var(--border);
-    background:var(--bg);
-    border-radius:10px;
-    padding:14px;
-    margin-bottom:9px;
-}
-
-.timezone-name{
-    font-weight:bold;
-    font-size:16px;
-}
-
-.timezone-location{
-    color:var(--muted);
-    font-size:13px;
-    margin-top:4px;
-}
-
-.timezone-time{
-    font-size:27px;
-    font-weight:bold;
-    margin-top:9px;
-}
-
-.timezone-date{
-    color:var(--muted);
-    font-size:13px;
-    margin-top:4px;
-}
-
-.timezone-offset{
-    color:var(--muted);
-    font-size:13px;
-    margin-top:4px;
-}
-
-
-/* ================= NOTES ================= */
-
-textarea{
-    width:100%;
-    min-height:180px;
-    resize:vertical;
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
-    border-radius:8px;
-    padding:11px;
-    outline:none;
-}
-
-
-/* ================= TODO ================= */
-
-.todo-input{
-    display:flex;
-    gap:8px;
-}
-
-input{
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
-    border-radius:8px;
-    padding:11px;
-    outline:none;
-}
-
-.todo-input input{
-    width:100%;
-}
-
-.primary{
-    border:0;
-    background:var(--primary);
-    color:var(--bg);
-    border-radius:8px;
-    padding:0 15px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.todo-list{
-    margin-top:15px;
-}
-
-.todo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.todo span{
-    flex:1;
-}
-
-.todo.done span{
-    text-decoration:line-through;
-    color:var(--muted);
-}
-
-.delete{
-    border:0;
-    background:none;
-    color:var(--danger);
-    cursor:pointer;
-    font-size:16px;
-}
-
-
-/* ================= CALCULATOR ================= */
-
-.calculator{
-    max-width:350px;
-}
-
-.calc-display{
-    width:100%;
-    height:55px;
-    margin-bottom:10px;
-    text-align:right;
-    font-size:25px;
-}
-
-.calc-buttons{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:7px;
-}
-
-.calc-buttons button{
-    height:48px;
-    border:1px solid var(--border);
-    background:var(--bg);
-    color:var(--text);
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-.calc-buttons button:hover{
-    opacity:.7;
-}
-
-
-/* ================= TIMER ================= */
-
-.timer{
-    font-size:45px;
-    font-weight:bold;
-    text-align:center;
-    padding:15px;
-}
-
-.timer-controls{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    flex-wrap:wrap;
-}
-
-.timer-controls button{
-    padding:10px 15px;
-    border:1px solid var(--border);
-    background:var(--bg);
-    color:var(--text);
-    border-radius:8px;
-    cursor:pointer;
-}
-
-
-/* ================= SEARCH ================= */
-
-.search-box{
-    display:flex;
-    gap:8px;
-}
-
-.search-box input{
-    width:100%;
-}
-
-.search-box button{
-    height:42px;
-}
-
-
-/* ================= STATUS ================= */
-
-.loading{
-    color:var(--muted);
-    font-size:14px;
-    padding:8px 0;
-}
-
-.error{
-    color:#d33;
-    font-size:14px;
-    padding:8px 0;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:800px){
-
-    .sidebar{
-        width:100%;
-        height:55px;
-        top:65px;
-        display:flex;
-        overflow-x:auto;
-        padding:6px;
-        border-right:0;
-        border-bottom:1px solid var(--border);
-    }
-
-    .nav{
-        width:auto;
-        white-space:nowrap;
-        padding:9px 12px;
-        margin:0;
-    }
-
-    main{
-        margin-left:0;
-        padding:135px 12px 25px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .page-title h1{
-        font-size:24px;
-    }
-
-    .clock{
-        font-size:30px;
-    }
-
-    .timezone-time{
-        font-size:25px;
-    }
-
-}
-
-@media(max-width:400px){
-
-    header{
-        padding:0 12px;
-    }
-
-    .logo{
-        font-size:20px;
-    }
-
-    .card{
-        padding:14px;
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- ================= HEADER ================= -->
-
-<header>
-
-    <div class="logo">
-        SALMAN
-    </div>
-
-    <div class="header-right">
-
-        <button
-            class="icon-btn"
-            onclick="toggleDark()"
-            id="themeBtn">
-            🌙
-        </button>
-
-    </div>
-
-</header>
-
-
-
-<!-- ================= SIDEBAR ================= -->
-
-<nav class="sidebar">
-
-    <button
-        class="nav active"
-        onclick="showAll()">
-        🏠 Dashboard
-    </button>
-
-    <button
-        class="nav"
-        onclick="focusSection('worldTime')">
-        🌎 World Time
-    </button>
-
-    <button
-        class="nav"
-        onclick="focusSection('notes')">
-        📝 Notes
-    </button>
-
-    <button
-        class="nav"
-        onclick="focusSection('todo')">
-        ✅ Tasks
-    </button>
-
-    <button
-        class="nav"
-        onclick="focusSection('calculator')">
-        🧮 Calculator
-    </button>
-
-    <button
-        class="nav"
-        onclick="focusSection('timer')">
-        ⏱️ Timer
-    </button>
-
-    <button
-        class="nav"
-        onclick="focusSection('search')">
-        🔎 Search
-    </button>
-
-</nav>
-
-
-
-<!-- ================= MAIN ================= -->
-
-<main>
-
-
-<div class="page-title">
-
-    <h1>SALMAN</h1>
-
-    <p>
-        Your personal all-in-one utility dashboard.
-    </p>
-
-</div>
-
-
-
-<div class="grid">
-
-
-<!-- ================= LOCAL CLOCK ================= -->
-
-<section class="card">
-
-    <h2>🕐 Your Local Time</h2>
-
-    <div
-        class="clock"
-        id="clock">
-        Loading...
-    </div>
-
-    <div
-        class="date"
-        id="date">
-    </div>
-
-    <div
-        class="local-location"
-        id="localLocation">
-        Detecting your location...
-    </div>
-
-    <div
-        class="local-zone"
-        id="localZone">
-    </div>
-
-</section>
-
-
-
-<!-- ================= WORLD TIME ================= -->
-
-<section
-    class="card"
-    id="worldTime">
-
-    <h2>🌎 World Time</h2>
-
-    <div class="world-search">
-
-        <input
-            id="countrySearch"
-            placeholder="Search any country or capital..."
-            autocomplete="off"
-            oninput="filterCountries()"
-            onclick="openCountryList()">
-
-    </div>
-
-    <div
-        class="country-list"
-        id="countryList">
-    </div>
-
-    <div
-        class="world-results"
-        id="worldResults">
-
-        <div
-            class="world-results-title"
-            id="worldResultsTitle">
-        </div>
-
-        <div id="timezoneResults"></div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= NOTES ================= -->
-
-<section
-    class="card"
-    id="notes">
-
-    <h2>📝 Notes</h2>
-
-    <textarea
-        id="notesBox"
-        placeholder="Write your notes here...">
-    </textarea>
-
-</section>
-
-
-
-<!-- ================= TODO ================= -->
-
-<section
-    class="card"
-    id="todo">
-
-    <h2>✅ To-Do List</h2>
-
-    <div class="todo-input">
-
-        <input
-            id="todoInput"
-            placeholder="Add a task..."
-            onkeydown="todoEnter(event)">
-
-        <button
-            class="primary"
-            onclick="addTodo()">
-            Add
-        </button>
-
-    </div>
-
-    <div
-        class="todo-list"
-        id="todoList">
-    </div>
-
-</section>
-
-
-
-<!-- ================= CALCULATOR ================= -->
-
-<section
-    class="card calculator"
-    id="calculator">
-
-    <h2>🧮 Calculator</h2>
-
-    <input
-        class="calc-display"
-        id="calcDisplay"
-        readonly>
-
-    <div class="calc-buttons">
-
-        <button onclick="clearCalc()">C</button>
-        <button onclick="backCalc()">⌫</button>
-        <button onclick="addCalc('%')">%</button>
-        <button onclick="addCalc('/')">÷</button>
-
-        <button onclick="addCalc('7')">7</button>
-        <button onclick="addCalc('8')">8</button>
-        <button onclick="addCalc('9')">9</button>
-        <button onclick="addCalc('*')">×</button>
-
-        <button onclick="addCalc('4')">4</button>
-        <button onclick="addCalc('5')">5</button>
-        <button onclick="addCalc('6')">6</button>
-        <button onclick="addCalc('-')">−</button>
-
-        <button onclick="addCalc('1')">1</button>
-        <button onclick="addCalc('2')">2</button>
-        <button onclick="addCalc('3')">3</button>
-        <button onclick="addCalc('+')">+</button>
-
-        <button onclick="addCalc('0')">0</button>
-        <button onclick="addCalc('.')">.</button>
-        <button onclick="calculate()">=</button>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= TIMER ================= -->
-
-<section
-    class="card"
-    id="timer">
-
-    <h2>⏱️ 5-Minute Timer</h2>
-
-    <div
-        class="timer"
-        id="timerDisplay">
-        05:00
-    </div>
-
-    <div class="timer-controls">
-
-        <button onclick="startTimer()">
-            ▶ Start
-        </button>
-
-        <button onclick="pauseTimer()">
-            ⏸ Pause
-        </button>
-
-        <button onclick="resetTimer()">
-            ↻ Reset
-        </button>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= GOOGLE SEARCH ================= -->
-
-<section
-    class="card"
-    id="search">
-
-    <h2>🔎 Quick Search</h2>
-
-    <div class="search-box">
-
-        <input
-            id="googleInput"
-            placeholder="Search Google..."
-            onkeydown="googleEnter(event)">
-
-        <button
-            class="primary"
-            onclick="googleSearch()">
-            Search
-        </button>
-
-    </div>
-
-</section>
-
-
-</div>
-
-</main>
-
-
-
 <script>
 
-
 /* ==================================================
-   GLOBAL VARIABLES
+   STATIC COUNTRY + TIMEZONE DATABASE
+   NO API REQUIRED
+
+   195 SOVEREIGN COUNTRIES
+   MULTIPLE TIMEZONES ARE ALL INCLUDED
 ================================================== */
 
-let countries = [];
-
-let selectedCountry = null;
-
-let worldTimer = null;
-
-let localTimezone =
-    Intl.DateTimeFormat().resolvedOptions().timeZone;
+const countries = [{"country":"Afghanistan","code":"AF","timezones":["Asia/Kabul"]},{"country":"Albania","code":"AL","timezones":["Europe/Tirane"]},{"country":"Algeria","code":"DZ","timezones":["Africa/Algiers"]},{"country":"Andorra","code":"AD","timezones":["Europe/Andorra"]},{"country":"Angola","code":"AO","timezones":["Africa/Luanda"]},{"country":"Antigua and Barbuda","code":"AG","timezones":["America/Antigua"]},{"country":"Argentina","code":"AR","timezones":["America/Argentina/Buenos_Aires","America/Argentina/Cordoba","America/Argentina/Salta","America/Argentina/Jujuy","America/Argentina/Tucuman","America/Argentina/Catamarca","America/Argentina/La_Rioja","America/Argentina/San_Juan","America/Argentina/Mendoza","America/Argentina/San_Luis","America/Argentina/Rio_Gallegos","America/Argentina/Ushuaia"]},{"country":"Armenia","code":"AM","timezones":["Asia/Yerevan"]},{"country":"Australia","code":"AU","timezones":["Australia/Lord_Howe","Antarctica/Macquarie","Australia/Hobart","Australia/Melbourne","Australia/Sydney","Australia/Broken_Hill","Australia/Brisbane","Australia/Lindeman","Australia/Adelaide","Australia/Darwin","Australia/Perth","Australia/Eucla"]},{"country":"Austria","code":"AT","timezones":["Europe/Vienna"]},{"country":"Azerbaijan","code":"AZ","timezones":["Asia/Baku"]},{"country":"Bahamas","code":"BS","timezones":["America/Nassau"]},{"country":"Bahrain","code":"BH","timezones":["Asia/Bahrain"]},{"country":"Bangladesh","code":"BD","timezones":["Asia/Dhaka"]},{"country":"Barbados","code":"BB","timezones":["America/Barbados"]},{"country":"Belarus","code":"BY","timezones":["Europe/Minsk"]},{"country":"Belgium","code":"BE","timezones":["Europe/Brussels"]},{"country":"Belize","code":"BZ","timezones":["America/Belize"]},{"country":"Benin","code":"BJ","timezones":["Africa/Porto-Novo"]},{"country":"Bhutan","code":"BT","timezones":["Asia/Thimphu"]},{"country":"Bolivia","code":"BO","timezones":["America/La_Paz"]},{"country":"Bosnia and Herzegovina","code":"BA","timezones":["Europe/Sarajevo"]},{"country":"Botswana","code":"BW","timezones":["Africa/Gaborone"]},{"country":"Brazil","code":"BR","timezones":["America/Noronha","America/Belem","America/Fortaleza","America/Recife","America/Araguaina","America/Maceio","America/Bahia","America/Sao_Paulo","America/Campo_Grande","America/Cuiaba","America/Santarem","America/Porto_Velho","America/Boa_Vista","America/Manaus","America/Eirunepe","America/Rio_Branco"]},{"country":"Brunei","code":"BN","timezones":["Asia/Brunei"]},{"country":"Bulgaria","code":"BG","timezones":["Europe/Sofia"]},{"country":"Burkina Faso","code":"BF","timezones":["Africa/Ouagadougou"]},{"country":"Burundi","code":"BI","timezones":["Africa/Bujumbura"]},{"country":"Cabo Verde","code":"CV","timezones":["Atlantic/Cape_Verde"]},{"country":"Cambodia","code":"KH","timezones":["Asia/Phnom_Penh"]},{"country":"Cameroon","code":"CM","timezones":["Africa/Douala"]},{"country":"Canada","code":"CA","timezones":["America/St_Johns","America/Halifax","America/Glace_Bay","America/Moncton","America/Goose_Bay","America/Blanc-Sablon","America/Toronto","America/Nipigon","America/Thunder_Bay","America/Iqaluit","America/Pangnirtung","America/Resolute","America/Atikokan","America/Winnipeg","America/Rainy_River","America/Rankin_Inlet","America/Regina","America/Swift_Current","America/Edmonton","America/Cambridge_Bay","America/Inuvik","America/Dawson_Creek","America/Fort_Nelson","America/Creston","America/Dawson","America/Whitehorse","America/Vancouver"]},{"country":"Central African Republic","code":"CF","timezones":["Africa/Bangui"]},{"country":"Chad","code":"TD","timezones":["Africa/Ndjamena"]},{"country":"Chile","code":"CL","timezones":["America/Santiago","Pacific/Easter"]},{"country":"China","code":"CN","timezones":["Asia/Shanghai"]},{"country":"Colombia","code":"CO","timezones":["America/Bogota"]},{"country":"Comoros","code":"KM","timezones":["Indian/Comoro"]},{"country":"Republic of the Congo","code":"CG","timezones":["Africa/Brazzaville"]},{"country":"Democratic Republic of the Congo","code":"CD","timezones":["Africa/Kinshasa","Africa/Lubumbashi"]},{"country":"Costa Rica","code":"CR","timezones":["America/Costa_Rica"]},{"country":"Côte d'Ivoire","code":"CI","timezones":["Africa/Abidjan"]},{"country":"Croatia","code":"HR","timezones":["Europe/Zagreb"]},{"country":"Cuba","code":"CU","timezones":["America/Havana"]},{"country":"Cyprus","code":"CY","timezones":["Asia/Nicosia"]},{"country":"Czechia","code":"CZ","timezones":["Europe/Prague"]},{"country":"Denmark","code":"DK","timezones":["Europe/Copenhagen"]},{"country":"Djibouti","code":"DJ","timezones":["Africa/Djibouti"]},{"country":"Dominica","code":"DM","timezones":["America/Dominica"]},{"country":"Dominican Republic","code":"DO","timezones":["America/Santo_Domingo"]},{"country":"Ecuador","code":"EC","timezones":["America/Guayaquil","Pacific/Galapagos"]},{"country":"Egypt","code":"EG","timezones":["Africa/Cairo"]},{"country":"El Salvador","code":"SV","timezones":["America/El_Salvador"]},{"country":"Equatorial Guinea","code":"GQ","timezones":["Africa/Malabo"]},{"country":"Eritrea","code":"ER","timezones":["Africa/Asmara"]},{"country":"Estonia","code":"EE","timezones":["Europe/Tallinn"]},{"country":"Eswatini","code":"SZ","timezones":["Africa/Mbabane"]},{"country":"Ethiopia","code":"ET","timezones":["Africa/Addis_Ababa"]},{"country":"Fiji","code":"FJ","timezones":["Pacific/Fiji"]},{"country":"Finland","code":"FI","timezones":["Europe/Helsinki"]},{"country":"France","code":"FR","timezones":["Europe/Paris"]},{"country":"Gabon","code":"GA","timezones":["Africa/Libreville"]},{"country":"Gambia","code":"GM","timezones":["Africa/Banjul"]},{"country":"Georgia","code":"GE","timezones":["Asia/Tbilisi"]},{"country":"Germany","code":"DE","timezones":["Europe/Berlin"]},{"country":"Ghana","code":"GH","timezones":["Africa/Accra"]},{"country":"Greece","code":"GR","timezones":["Europe/Athens"]},{"country":"Grenada","code":"GD","timezones":["America/Grenada"]},{"country":"Guatemala","code":"GT","timezones":["America/Guatemala"]},{"country":"Guinea","code":"GN","timezones":["Africa/Conakry"]},{"country":"Guinea-Bissau","code":"GW","timezones":["Africa/Bissau"]},{"country":"Guyana","code":"GY","timezones":["America/Guyana"]},{"country":"Haiti","code":"HT","timezones":["America/Port-au-Prince"]},{"country":"Honduras","code":"HN","timezones":["America/Tegucigalpa"]},{"country":"Hungary","code":"HU","timezones":["Europe/Budapest"]},{"country":"Iceland","code":"IS","timezones":["Atlantic/Reykjavik"]},{"country":"India","code":"IN","timezones":["Asia/Kolkata"]},{"country":"Indonesia","code":"ID","timezones":["Asia/Jakarta","Asia/Pontianak","Asia/Makassar","Asia/Jayapura"]},{"country":"Iran","code":"IR","timezones":["Asia/Tehran"]},{"country":"Iraq","code":"IQ","timezones":["Asia/Baghdad"]},{"country":"Ireland","code":"IE","timezones":["Europe/Dublin"]},{"country":"Israel","code":"IL","timezones":["Asia/Jerusalem"]},{"country":"Italy","code":"IT","timezones":["Europe/Rome"]},{"country":"Jamaica","code":"JM","timezones":["America/Jamaica"]},{"country":"Japan","code":"JP","timezones":["Asia/Tokyo"]},{"country":"Jordan","code":"JO","timezones":["Asia/Amman"]},{"country":"Kazakhstan","code":"KZ","timezones":["Asia/Almaty","Asia/Qyzylorda","Asia/Aqtobe","Asia/Aqtau","Asia/Oral"]},{"country":"Kenya","code":"KE","timezones":["Africa/Nairobi"]},{"country":"Kiribati","code":"KI","timezones":["Pacific/Tarawa","Pacific/Kanton","Pacific/Kiritimati"]},{"country":"North Korea","code":"KP","timezones":["Asia/Pyongyang"]},{"country":"South Korea","code":"KR","timezones":["Asia/Seoul"]},{"country":"Kuwait","code":"KW","timezones":["Asia/Kuwait"]},{"country":"Kyrgyzstan","code":"KG","timezones":["Asia/Bishkek"]},{"country":"Laos","code":"LA","timezones":["Asia/Vientiane"]},{"country":"Latvia","code":"LV","timezones":["Europe/Riga"]},{"country":"Lebanon","code":"LB","timezones":["Asia/Beirut"]},{"country":"Lesotho","code":"LS","timezones":["Africa/Maseru"]},{"country":"Liberia","code":"LR","timezones":["Africa/Monrovia"]},{"country":"Libya","code":"LY","timezones":["Africa/Tripoli"]},{"country":"Liechtenstein","code":"LI","timezones":["Europe/Vaduz"]},{"country":"Lithuania","code":"LT","timezones":["Europe/Vilnius"]},{"country":"Luxembourg","code":"LU","timezones":["Europe/Luxembourg"]},{"country":"Madagascar","code":"MG","timezones":["Indian/Antananarivo"]},{"country":"Malawi","code":"MW","timezones":["Africa/Blantyre"]},{"country":"Malaysia","code":"MY","timezones":["Asia/Kuala_Lumpur","Asia/Kuching"]},{"country":"Maldives","code":"MV","timezones":["Indian/Maldives"]},{"country":"Mali","code":"ML","timezones":["Africa/Bamako"]},{"country":"Malta","code":"MT","timezones":["Europe/Malta"]},{"country":"Marshall Islands","code":"MH","timezones":["Pacific/Majuro","Pacific/Kwajalein"]},{"country":"Mauritania","code":"MR","timezones":["Africa/Nouakchott"]},{"country":"Mauritius","code":"MU","timezones":["Indian/Mauritius"]},{"country":"Mexico","code":"MX","timezones":["America/Mexico_City","America/Cancun","America/Merida","America/Monterrey","America/Matamoros","America/Chihuahua","America/Ciudad_Juarez","America/Ojinaga","America/Hermosillo","America/Mazatlan","America/Bahia_Banderas"]},{"country":"Micronesia","code":"FM","timezones":["Pacific/Chuuk","Pacific/Pohnpei","Pacific/Kosrae"]},{"country":"Moldova","code":"MD","timezones":["Europe/Chisinau"]},{"country":"Monaco","code":"MC","timezones":["Europe/Monaco"]},{"country":"Mongolia","code":"MN","timezones":["Asia/Ulaanbaatar","Asia/Hovd","Asia/Choibalsan"]},{"country":"Montenegro","code":"ME","timezones":["Europe/Podgorica"]},{"country":"Morocco","code":"MA","timezones":["Africa/Casablanca"]},{"country":"Mozambique","code":"MZ","timezones":["Africa/Maputo"]},{"country":"Myanmar","code":"MM","timezones":["Asia/Yangon"]},{"country":"Namibia","code":"NA","timezones":["Africa/Windhoek"]},{"country":"Nauru","code":"NR","timezones":["Pacific/Nauru"]},{"country":"Nepal","code":"NP","timezones":["Asia/Kathmandu"]},{"country":"Netherlands","code":"NL","timezones":["Europe/Amsterdam"]},{"country":"New Zealand","code":"NZ","timezones":["Pacific/Auckland","Pacific/Chatham"]},{"country":"Nicaragua","code":"NI","timezones":["America/Managua"]},{"country":"Niger","code":"NE","timezones":["Africa/Niamey"]},{"country":"Nigeria","code":"NG","timezones":["Africa/Lagos"]},{"country":"North Macedonia","code":"MK","timezones":["Europe/Skopje"]},{"country":"Norway","code":"NO","timezones":["Europe/Oslo"]},{"country":"Oman","code":"OM","timezones":["Asia/Muscat"]},{"country":"Pakistan","code":"PK","timezones":["Asia/Karachi"]},{"country":"Palau","code":"PW","timezones":["Pacific/Palau"]},{"country":"Palestine","code":"PS","timezones":["Asia/Gaza","Asia/Hebron"]},{"country":"Panama","code":"PA","timezones":["America/Panama"]},{"country":"Papua New Guinea","code":"PG","timezones":["Pacific/Port_Moresby","Pacific/Bougainville"]},{"country":"Paraguay","code":"PY","timezones":["America/Asuncion"]},{"country":"Peru","code":"PE","timezones":["America/Lima"]},{"country":"Philippines","code":"PH","timezones":["Asia/Manila"]},{"country":"Poland","code":"PL","timezones":["Europe/Warsaw"]},{"country":"Portugal","code":"PT","timezones":["Europe/Lisbon","Atlantic/Madeira","Atlantic/Azores"]},{"country":"Qatar","code":"QA","timezones":["Asia/Qatar"]},{"country":"Romania","code":"RO","timezones":["Europe/Bucharest"]},{"country":"Russia","code":"RU","timezones":["Europe/Kaliningrad","Europe/Moscow","Europe/Simferopol","Europe/Kirov","Europe/Astrakhan","Europe/Volgograd","Europe/Saratov","Europe/Ulyanovsk","Europe/Samara","Asia/Yekaterinburg","Asia/Omsk","Asia/Novosibirsk","Asia/Barnaul","Asia/Tomsk","Asia/Novokuznetsk","Asia/Krasnoyarsk","Asia/Irkutsk","Asia/Chita","Asia/Yakutsk","Asia/Khandyga","Asia/Vladivostok","Asia/Ust-Nera","Asia/Magadan","Asia/Sakhalin","Asia/Srednekolymsk","Asia/Kamchatka","Asia/Anadyr"]},{"country":"Rwanda","code":"RW","timezones":["Africa/Kigali"]},{"country":"Saint Kitts and Nevis","code":"KN","timezones":["America/St_Kitts"]},{"country":"Saint Lucia","code":"LC","timezones":["America/St_Lucia"]},{"country":"Saint Vincent and the Grenadines","code":"VC","timezones":["America/St_Vincent"]},{"country":"Samoa","code":"WS","timezones":["Pacific/Apia"]},{"country":"San Marino","code":"SM","timezones":["Europe/San_Marino"]},{"country":"São Tomé and Príncipe","code":"ST","timezones":["Africa/Sao_Tome"]},{"country":"Saudi Arabia","code":"SA","timezones":["Asia/Riyadh"]},{"country":"Senegal","code":"SN","timezones":["Africa/Dakar"]},{"country":"Serbia","code":"RS","timezones":["Europe/Belgrade"]},{"country":"Seychelles","code":"SC","timezones":["Indian/Mahe"]},{"country":"Sierra Leone","code":"SL","timezones":["Africa/Freetown"]},{"country":"Singapore","code":"SG","timezones":["Asia/Singapore"]},{"country":"Slovakia","code":"SK","timezones":["Europe/Bratislava"]},{"country":"Slovenia","code":"SI","timezones":["Europe/Ljubljana"]},{"country":"Solomon Islands","code":"SB","timezones":["Pacific/Guadalcanal"]},{"country":"Somalia","code":"SO","timezones":["Africa/Mogadishu"]},{"country":"South Africa","code":"ZA","timezones":["Africa/Johannesburg"]},{"country":"South Sudan","code":"SS","timezones":["Africa/Juba"]},{"country":"Spain","code":"ES","timezones":["Europe/Madrid","Africa/Ceuta","Atlantic/Canary"]},{"country":"Sri Lanka","code":"LK","timezones":["Asia/Colombo"]},{"country":"Sudan","code":"SD","timezones":["Africa/Khartoum"]},{"country":"Suriname","code":"SR","timezones":["America/Paramaribo"]},{"country":"Sweden","code":"SE","timezones":["Europe/Stockholm"]},{"country":"Switzerland","code":"CH","timezones":["Europe/Zurich"]},{"country":"Syria","code":"SY","timezones":["Asia/Damascus"]},{"country":"Tajikistan","code":"TJ","timezones":["Asia/Dushanbe"]},{"country":"Tanzania","code":"TZ","timezones":["Africa/Dar_es_Salaam"]},{"country":"Thailand","code":"TH","timezones":["Asia/Bangkok"]},{"country":"Timor-Leste","code":"TL","timezones":["Asia/Dili"]},{"country":"Togo","code":"TG","timezones":["Africa/Lome"]},{"country":"Tonga","code":"TO","timezones":["Pacific/Tongatapu"]},{"country":"Trinidad and Tobago","code":"TT","timezones":["America/Port_of_Spain"]},{"country":"Tunisia","code":"TN","timezones":["Africa/Tunis"]},{"country":"Turkey","code":"TR","timezones":["Europe/Istanbul"]},{"country":"Turkmenistan","code":"TM","timezones":["Asia/Ashgabat"]},{"country":"Tuvalu","code":"TV","timezones":["Pacific/Funafuti"]},{"country":"Uganda","code":"UG","timezones":["Africa/Kampala"]},{"country":"Ukraine","code":"UA","timezones":["Europe/Simferopol","Europe/Kyiv"]},{"country":"United Arab Emirates","code":"AE","timezones":["Asia/Dubai"]},{"country":"United Kingdom","code":"GB","timezones":["Europe/London"]},{"country":"United States","code":"US","timezones":["America/New_York","America/Detroit","America/Kentucky/Louisville","America/Kentucky/Monticello","America/Indiana/Indianapolis","America/Indiana/Knox","America/Indiana/Marengo","America/Indiana/Petersburg","America/Indiana/Tell_City","America/Indiana/Vevay","America/Indiana/Vincennes","America/Indiana/Winamac","America/Chicago","America/Indiana/Tell_City","America/Denver","America/Boise","America/Phoenix","America/Los_Angeles","America/Anchorage","America/Adak","Pacific/Honolulu"]},{"country":"Uruguay","code":"UY","timezones":["America/Montevideo"]},{"country":"Uzbekistan","code":"UZ","timezones":["Asia/Samarkand","Asia/Tashkent"]},{"country":"Vanuatu","code":"VU","timezones":["Pacific/Efate"]},{"country":"Vatican City","code":"VA","timezones":["Europe/Vatican"]},{"country":"Venezuela","code":"VE","timezones":["America/Caracas"]},{"country":"Vietnam","code":"VN","timezones":["Asia/Ho_Chi_Minh"]},{"country":"Yemen","code":"YE","timezones":["Asia/Aden"]},{"country":"Zambia","code":"ZM","timezones":["Africa/Lusaka"]},{"country":"Zimbabwe","code":"ZW","timezones":["Africa/Harare"]}];
 
 
 /* ==================================================
-   COUNTRY DATA
-   Loaded from REST COUNTRIES API
-
-   This gives:
-   - ALL countries
-   - Country names
-   - Capitals
-   - ISO codes
-   - ALL timezone identifiers supplied
+   ELEMENTS
 ================================================== */
 
-async function loadCountries(){
+const countrySearch =
+    document.getElementById("countrySearch");
 
-    const list =
-        document.getElementById("countryList");
+const countryList =
+    document.getElementById("countryList");
 
-    list.innerHTML =
-        '<div class="loading">Loading all countries...</div>';
+const selectedCountry =
+    document.getElementById("selectedCountry");
 
-    try{
+let activeCountry = null;
 
-        const response =
-            await fetch(
-                "https://restcountries.com/v3.1/all?fields=name,capital,cca2,timezones"
-            );
-
-        if(!response.ok){
-            throw new Error();
-        }
-
-        const data =
-            await response.json();
-
-
-        countries =
-            data
-            .map(function(item){
-
-                return {
-
-                    country:
-                        item.name?.common ||
-                        "Unknown",
-
-                    official:
-                        item.name?.official ||
-                        "",
-
-                    capital:
-                        Array.isArray(item.capital)
-                        ? item.capital[0]
-                        : "N/A",
-
-                    code:
-                        item.cca2 || "",
-
-                    timezones:
-                        Array.isArray(item.timezones)
-                        ? item.timezones
-                        : []
-
-                };
-
-            })
-            .filter(function(item){
-
-                return item.country &&
-                       item.timezones.length;
-
-            })
-            .sort(function(a,b){
-
-                return a.country.localeCompare(
-                    b.country
-                );
-
-            });
-
-
-        filterCountries();
-
-        detectLocalLocation();
-
-    }
-    catch(error){
-
-        list.innerHTML =
-            '<div class="error">'+
-            'Could not load country database. '+
-            'Please check your internet connection.'+
-            '</div>';
-
-        detectLocalLocation();
-
-    }
-
-}
+let worldIntervals = [];
 
 
 /* ==================================================
-   LOCAL LOCATION DETECTION
+   TIMEZONE -> COUNTRY
+   Used for LOCAL TIME
 ================================================== */
 
-async function detectLocalLocation(){
+function findCountryByTimezone(zone){
 
-    /*
-       First try IP location.
-       This identifies the visitor's country.
-    */
+    for(const country of countries){
 
-    try{
+        if(country.timezones.includes(zone)){
 
-        const response =
-            await fetch(
-                "https://ipapi.co/json/"
-            );
-
-        if(!response.ok){
-            throw new Error();
-        }
-
-        const location =
-            await response.json();
-
-
-        const countryCode =
-            location.country_code;
-
-
-        const matched =
-            countries.find(function(item){
-
-                return item.code === countryCode;
-
-            });
-
-
-        if(matched){
-
-            updateLocalClock(
-                matched,
-                localTimezone
-            );
-
-            return;
-
-        }
-
-    }
-    catch(error){
-
-        // Fallback below
-
-    }
-
-
-    /*
-       Fallback:
-       Use browser's timezone.
-    */
-
-    const matchedTimezone =
-        findCountryByTimezone(
-            localTimezone
-        );
-
-
-    if(matchedTimezone){
-
-        updateLocalClock(
-            matchedTimezone.country,
-            localTimezone
-        );
-
-    }
-    else{
-
-        updateLocalClock(
-            null,
-            localTimezone
-        );
-
-    }
-
-}
-
-
-/* ==================================================
-   FIND COUNTRY USING TIMEZONE
-================================================== */
-
-function findCountryByTimezone(timezone){
-
-    for(
-        const country of countries
-    ){
-
-        if(
-            country.timezones.includes(
-                timezone
-            )
-        ){
-
-            return {
-                country:country,
-                timezone:timezone
-            };
+            return country;
 
         }
 
@@ -1085,25 +52,31 @@ function findCountryByTimezone(timezone){
 
 
 /* ==================================================
-   LOCAL CLOCK
+   LOCAL TIME
+   NO API
 ================================================== */
 
-function updateLocalClock(
-    country,
-    timezone
-){
+function updateLocalClock(){
+
+    const zone =
+        Intl.DateTimeFormat()
+        .resolvedOptions()
+        .timeZone;
+
+    const country =
+        findCountryByTimezone(zone);
+
 
     function render(){
 
-        const now =
-            new Date();
+        const now = new Date();
 
 
         const time =
             new Intl.DateTimeFormat(
                 "en-US",
                 {
-                    timeZone:timezone,
+                    timeZone:zone,
                     hour:"numeric",
                     minute:"2-digit",
                     second:"2-digit",
@@ -1116,7 +89,7 @@ function updateLocalClock(
             new Intl.DateTimeFormat(
                 "en-US",
                 {
-                    timeZone:timezone,
+                    timeZone:zone,
                     weekday:"long",
                     year:"numeric",
                     month:"long",
@@ -1125,62 +98,32 @@ function updateLocalClock(
             ).format(now);
 
 
-        const offset =
-            getGMTOffset(
-                now,
-                timezone
-            );
+        document.getElementById("clock")
+            .textContent = time;
 
 
-        document.getElementById(
-            "clock"
-        ).textContent = time;
+        document.getElementById("date")
+            .textContent = date;
 
 
-        document.getElementById(
-            "date"
-        ).textContent = date;
+        document.getElementById("localLocation")
+            .textContent =
+            country
+            ? "📍 "+country.country
+            : "📍 Local time";
 
 
-        if(country){
-
-            document.getElementById(
-                "localLocation"
-            ).textContent =
-                "📍 "+
-                country.country+
-                " — "+
-                country.capital;
-
-
-        }
-        else{
-
-            document.getElementById(
-                "localLocation"
-            ).textContent =
-                "📍 Local location";
-
-        }
-
-
-        document.getElementById(
-            "localZone"
-        ).textContent =
-            "Time zone: "+
-            timezone+
-            " • "+
-            offset;
+        document.getElementById("localZone")
+            .textContent =
+            "Time zone: "+zone+
+            " • "+getGMTOffset(now,zone);
 
     }
 
 
     render();
 
-    setInterval(
-        render,
-        1000
-    );
+    setInterval(render,1000);
 
 }
 
@@ -1193,74 +136,44 @@ function openCountryList(){
 
     filterCountries();
 
-    document.getElementById(
-        "countryList"
-    ).style.display = "block";
+    countryList.style.display =
+        "block";
 
 }
 
 
 function filterCountries(){
 
-    const search =
-        document.getElementById(
-            "countrySearch"
-        );
-
-    const list =
-        document.getElementById(
-            "countryList"
-        );
-
-
     const query =
-        search.value
+        countrySearch.value
         .toLowerCase()
         .trim();
 
 
-    if(!countries.length){
-
-        list.innerHTML =
-            '<div class="loading">'+
-            'Loading countries...'+
-            '</div>';
-
-        list.style.display =
-            "block";
-
-        return;
-
-    }
-
-
     const filtered =
         countries.filter(
-            function(item){
+            country => {
 
                 return (
 
-                    item.country
+                    country.country
                     .toLowerCase()
                     .includes(query)
 
                     ||
 
-                    item.official
+                    country.code
                     .toLowerCase()
                     .includes(query)
 
                     ||
 
-                    item.capital
-                    .toLowerCase()
-                    .includes(query)
-
-                    ||
-
-                    item.code
-                    .toLowerCase()
-                    .includes(query)
+                    country.timezones
+                    .some(zone =>
+                        zone
+                        .toLowerCase()
+                        .includes(query)
+                    )
 
                 );
 
@@ -1268,59 +181,44 @@ function filterCountries(){
         );
 
 
-    list.innerHTML = "";
+    countryList.innerHTML = "";
 
 
-    filtered.forEach(
-        function(item){
+    filtered.forEach(country => {
 
-            const option =
-                document.createElement(
-                    "div"
-                );
-
-            option.className =
-                "country-option";
+        const option =
+            document.createElement("div");
 
 
-            option.innerHTML =
-                "🌎 <strong>"+
-                escapeHTML(
-                    item.country
-                )+
-                "</strong>"+
-                "<small>"+
-                escapeHTML(
-                    item.capital
-                )+
-                " • "+
-                item.timezones.length+
-                " timezone"+
-                (
-                    item.timezones.length !== 1
-                    ? "s"
-                    : ""
-                )+
-                "</small>";
+        option.className =
+            "country-option";
 
 
-            option.onclick =
-                function(){
+        option.innerHTML =
+            "🌎 <b>"+
+            escapeHTML(country.country)+
+            "</b><br>"+
+            "<small>"+
+            country.timezones.length+
+            " timezone"+
+            (
+                country.timezones.length !== 1
+                ? "s"
+                : ""
+            )+
+            "</small>";
 
-                    selectCountry(item);
 
-                };
-
-
-            list.appendChild(
-                option
-            );
-
-        }
-    );
+        option.onclick =
+            () => selectCountry(country);
 
 
-    list.style.display =
+        countryList.appendChild(option);
+
+    });
+
+
+    countryList.style.display =
         filtered.length
         ? "block"
         : "none";
@@ -1334,169 +232,181 @@ function filterCountries(){
 
 function selectCountry(country){
 
-    selectedCountry =
+    activeCountry =
         country;
 
 
-    document.getElementById(
-        "countrySearch"
-    ).value =
+    countrySearch.value =
         country.country;
 
 
-    document.getElementById(
-        "countryList"
-    ).style.display =
+    countryList.style.display =
         "none";
 
 
-    document.getElementById(
-        "worldResults"
-    ).style.display =
+    selectedCountry.style.display =
         "block";
 
 
-    document.getElementById(
-        "worldResultsTitle"
-    ).textContent =
-        country.country+
-        " — "+
+    document.getElementById("countryName")
+        .textContent =
+        "🌎 "+country.country;
+
+
+    /*
+       We don't use only one timezone.
+
+       ALL timezone entries are shown.
+    */
+
+    const info =
+        document.getElementById("countryInfo");
+
+
+    info.innerHTML =
+        "<b>"+
         country.timezones.length+
-        " timezone"+
+        "</b> timezone"+
         (
             country.timezones.length !== 1
             ? "s"
             : ""
-        );
+        )+
+        " available";
 
 
-    renderCountryTimezones(
-        country
-    );
+    renderAllCountryTimezones(country);
 
 }
 
 
 /* ==================================================
-   RENDER ALL TIMEZONES OF COUNTRY
+   RENDER ALL TIMEZONES
 ================================================== */
 
-function renderCountryTimezones(country){
+function renderAllCountryTimezones(country){
 
-    const container =
+    const old =
         document.getElementById(
-            "timezoneResults"
+            "allTimezoneCards"
         );
 
 
-    container.innerHTML = "";
+    if(old){
+        old.remove();
+    }
+
+
+    const container =
+        document.createElement("div");
+
+
+    container.id =
+        "allTimezoneCards";
+
+
+    container.style.marginTop =
+        "15px";
 
 
     /*
-       IMPORTANT:
-
-       Every timezone supplied for the
-       country is displayed.
-
-       If a country has 20 timezone
-       entries, all 20 are displayed.
+       Create one card for EVERY timezone.
     */
 
     country.timezones.forEach(
-        function(timezone,index){
+        (zone,index) => {
 
             const card =
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
+
 
             card.className =
                 "timezone-card";
 
 
-            const placeName =
-                getTimezonePlace(
-                    timezone
-                );
-
-
             card.innerHTML = `
 
                 <div class="timezone-name">
-                    ${escapeHTML(placeName)}
+                    ${escapeHTML(
+                        getTimezonePlace(zone)
+                    )}
                 </div>
 
                 <div class="timezone-location">
-                    ${escapeHTML(timezone)}
+                    ${escapeHTML(zone)}
                 </div>
 
                 <div
                     class="timezone-time"
-                    id="world-time-${index}">
+                    id="tz-time-${index}">
                 </div>
 
                 <div
                     class="timezone-date"
-                    id="world-date-${index}">
+                    id="tz-date-${index}">
                 </div>
 
                 <div
                     class="timezone-offset"
-                    id="world-offset-${index}">
+                    id="tz-offset-${index}">
                 </div>
 
             `;
 
 
-            container.appendChild(
-                card
-            );
+            container.appendChild(card);
 
         }
     );
 
 
-    updateSelectedCountryTimes();
-
-
-    clearInterval(
-        worldTimer
+    selectedCountry.appendChild(
+        container
     );
 
 
-    worldTimer =
+    updateAllCountryTimes();
+
+
+    clearWorldIntervals();
+
+
+    const interval =
         setInterval(
-            updateSelectedCountryTimes,
+            updateAllCountryTimes,
             1000
         );
+
+
+    worldIntervals.push(interval);
 
 }
 
 
 /* ==================================================
-   UPDATE ALL SELECTED COUNTRY TIMEZONES
+   UPDATE ALL COUNTRY TIMEZONES
 ================================================== */
 
-function updateSelectedCountryTimes(){
+function updateAllCountryTimes(){
 
-    if(!selectedCountry){
+    if(!activeCountry){
         return;
     }
 
 
-    selectedCountry.timezones
+    const now =
+        new Date();
+
+
+    activeCountry.timezones
         .forEach(
-            function(timezone,index){
-
-                const now =
-                    new Date();
-
+            (zone,index) => {
 
                 const time =
                     new Intl.DateTimeFormat(
                         "en-US",
                         {
-                            timeZone:timezone,
+                            timeZone:zone,
                             hour:"numeric",
                             minute:"2-digit",
                             second:"2-digit",
@@ -1509,7 +419,7 @@ function updateSelectedCountryTimes(){
                     new Intl.DateTimeFormat(
                         "en-US",
                         {
-                            timeZone:timezone,
+                            timeZone:zone,
                             weekday:"long",
                             year:"numeric",
                             month:"long",
@@ -1518,53 +428,40 @@ function updateSelectedCountryTimes(){
                     ).format(now);
 
 
-                const offset =
-                    getGMTOffset(
-                        now,
-                        timezone
-                    );
-
-
                 const timeElement =
                     document.getElementById(
-                        "world-time-"+index
+                        "tz-time-"+index
                     );
 
 
                 const dateElement =
                     document.getElementById(
-                        "world-date-"+index
+                        "tz-date-"+index
                     );
 
 
                 const offsetElement =
                     document.getElementById(
-                        "world-offset-"+index
+                        "tz-offset-"+index
                     );
 
 
-                if(timeElement){
-
+                if(timeElement)
                     timeElement.textContent =
                         time;
 
-                }
 
-
-                if(dateElement){
-
+                if(dateElement)
                     dateElement.textContent =
                         date;
 
-                }
 
-
-                if(offsetElement){
-
+                if(offsetElement)
                     offsetElement.textContent =
-                        offset;
-
-                }
+                        getGMTOffset(
+                            now,
+                            zone
+                        );
 
             }
         );
@@ -1573,57 +470,46 @@ function updateSelectedCountryTimes(){
 
 
 /* ==================================================
+   CLEAR OLD INTERVALS
+================================================== */
+
+function clearWorldIntervals(){
+
+    worldIntervals.forEach(
+        interval =>
+            clearInterval(interval)
+    );
+
+    worldIntervals = [];
+
+}
+
+
+/* ==================================================
    TIMEZONE PLACE NAME
 ================================================== */
 
-function getTimezonePlace(timezone){
+function getTimezonePlace(zone){
 
-    /*
-       Converts:
-
-       America/New_York
-       ->
-       New York
-
-       Asia/Kolkata
-       ->
-       Kolkata
-
-       Europe/London
-       ->
-       London
-    */
-
-    const parts =
-        timezone.split("/");
+    let name =
+        zone.split("/").pop();
 
 
-    if(parts.length < 2){
-
-        return timezone;
-
-    }
-
-
-    let place =
-        parts[parts.length-1];
-
-
-    place =
-        place.replace(
+    name =
+        name.replace(
             /_/g,
             " "
         );
 
 
-    place =
-        place.replace(
+    name =
+        name.replace(
             /-/g,
             " "
         );
 
 
-    return place;
+    return name;
 
 }
 
@@ -1651,23 +537,15 @@ function getGMTOffset(
 
         const part =
             parts.find(
-                function(p){
-
-                    return p.type ===
-                        "timeZoneName";
-
-                }
+                p =>
+                    p.type ===
+                    "timeZoneName"
             );
 
 
-        if(!part){
-
-            return "GMT";
-
-        }
-
-
-        return part.value;
+        return part
+            ? part.value
+            : "GMT";
 
     }
     catch{
@@ -1680,12 +558,12 @@ function getGMTOffset(
 
 
 /* ==================================================
-   CLOSE COUNTRY LIST
+   CLOSE SEARCH
 ================================================== */
 
 document.addEventListener(
     "click",
-    function(event){
+    event => {
 
         if(
             !event.target.closest(
@@ -1693,9 +571,7 @@ document.addEventListener(
             )
         ){
 
-            document.getElementById(
-                "countryList"
-            ).style.display =
+            countryList.style.display =
                 "none";
 
         }
@@ -1774,7 +650,7 @@ notes.value =
 
 notes.addEventListener(
     "input",
-    function(){
+    () => {
 
         localStorage.setItem(
             "salmanNotes",
@@ -1819,7 +695,7 @@ function renderTodos(){
 
 
     todos.forEach(
-        function(todo,index){
+        (todo,index) => {
 
             const div =
                 document.createElement(
@@ -1840,7 +716,7 @@ function renderTodos(){
 
                 <input
                     type="checkbox"
-                    ${todo.done?"checked":""}
+                    ${todo.done ? "checked" : ""}
                     onchange="toggleTodo(${index})">
 
                 <span>
@@ -1856,9 +732,7 @@ function renderTodos(){
             `;
 
 
-            list.appendChild(
-                div
-            );
+            list.appendChild(div);
 
         }
     );
@@ -1878,16 +752,13 @@ function addTodo(){
         input.value.trim();
 
 
-    if(!text){
+    if(!text)
         return;
-    }
 
 
     todos.push({
-
         text:text,
         done:false
-
     });
 
 
@@ -1903,11 +774,8 @@ function addTodo(){
 
 function todoEnter(event){
 
-    if(event.key === "Enter"){
-
+    if(event.key === "Enter")
         addTodo();
-
-    }
 
 }
 
@@ -1927,10 +795,7 @@ function toggleTodo(index){
 
 function deleteTodo(index){
 
-    todos.splice(
-        index,
-        1
-    );
+    todos.splice(index,1);
 
 
     saveTodos();
@@ -2040,59 +905,42 @@ function updateTimer(){
             timeLeft / 60
         )
         .toString()
-        .padStart(
-            2,
-            "0"
-        );
+        .padStart(2,"0");
 
 
     const seconds =
-        (
-            timeLeft % 60
-        )
+        (timeLeft % 60)
         .toString()
-        .padStart(
-            2,
-            "0"
-        );
+        .padStart(2,"0");
 
 
     document.getElementById(
         "timerDisplay"
     ).textContent =
-        minutes+
-        ":"+
-        seconds;
+        minutes+":"+seconds;
 
 }
 
 
 function startTimer(){
 
-    if(timer){
+    if(timer)
         return;
-    }
 
 
     timer =
         setInterval(
-            function(){
+            () => {
 
-                if(
-                    timeLeft <= 0
-                ){
+                if(timeLeft <= 0){
 
-                    clearInterval(
-                        timer
-                    );
+                    clearInterval(timer);
 
                     timer = null;
-
 
                     alert(
                         "⏰ Time's up!"
                     );
-
 
                     return;
 
@@ -2112,9 +960,7 @@ function startTimer(){
 
 function pauseTimer(){
 
-    clearInterval(
-        timer
-    );
+    clearInterval(timer);
 
     timer = null;
 
@@ -2123,9 +969,7 @@ function pauseTimer(){
 
 function resetTimer(){
 
-    clearInterval(
-        timer
-    );
+    clearInterval(timer);
 
     timer = null;
 
@@ -2151,16 +995,13 @@ function googleSearch(){
         ).value.trim();
 
 
-    if(!query){
+    if(!query)
         return;
-    }
 
 
     window.open(
         "https://www.google.com/search?q="+
-        encodeURIComponent(
-            query
-        ),
+        encodeURIComponent(query),
         "_blank"
     );
 
@@ -2169,11 +1010,8 @@ function googleSearch(){
 
 function googleEnter(event){
 
-    if(event.key === "Enter"){
-
+    if(event.key === "Enter")
         googleSearch();
-
-    }
 
 }
 
@@ -2185,19 +1023,14 @@ function googleEnter(event){
 function focusSection(id){
 
     const element =
-        document.getElementById(
-            id
-        );
+        document.getElementById(id);
 
 
     if(element){
 
         element.scrollIntoView({
-
             behavior:"smooth",
-
             block:"center"
-
         });
 
     }
@@ -2208,11 +1041,8 @@ function focusSection(id){
 function showAll(){
 
     window.scrollTo({
-
         top:0,
-
         behavior:"smooth"
-
     });
 
 }
@@ -2230,8 +1060,7 @@ function escapeHTML(text){
         );
 
 
-    div.textContent =
-        text;
+    div.textContent = text;
 
 
     return div.innerHTML;
@@ -2240,12 +1069,16 @@ function escapeHTML(text){
 
 
 /* ==================================================
-   START
+   START LOCAL CLOCK
 ================================================== */
 
-loadCountries();
+updateLocalClock();
+
+
+/* ==================================================
+   START COUNTRY SEARCH
+================================================== */
+
+filterCountries();
 
 </script>
-
-</body>
-    </html>
