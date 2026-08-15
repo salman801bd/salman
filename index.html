@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>MyTube</title>
+<title>MyAI</title>
 
 <style>
 *{
@@ -15,612 +15,607 @@
 }
 
 body{
-    background:#f5f5f5;
+    background:#fff;
     color:#111;
+    height:100vh;
+    overflow:hidden;
 }
-
-/* HEADER */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:65px;
-
-    background:white;
-
-    display:flex;
-    align-items:center;
-    gap:25px;
-
-    padding:0 20px;
-
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
-
-    z-index:1000;
-}
-
-.logo{
-    color:red;
-    font-size:27px;
-    font-weight:bold;
-}
-
-.search{
-    flex:1;
-    max-width:650px;
-    display:flex;
-}
-
-.search input{
-    flex:1;
-
-    height:42px;
-
-    padding:0 15px;
-
-    border:1px solid #ccc;
-    border-radius:22px 0 0 22px;
-
-    outline:none;
-
-    font-size:15px;
-}
-
-.search button{
-    width:60px;
-
-    border:none;
-
-    background:#eee;
-
-    border-radius:0 22px 22px 0;
-
-    cursor:pointer;
-
-    font-size:18px;
-}
-
-.search button:hover{
-    background:#ddd;
-}
-
 
 /* SIDEBAR */
 
 .sidebar{
     position:fixed;
-
-    top:65px;
     left:0;
-
-    width:210px;
-    height:calc(100vh - 65px);
-
-    background:white;
-
-    padding:15px 10px;
-
+    top:0;
+    width:260px;
+    height:100vh;
+    background:#f7f7f8;
+    padding:12px;
     border-right:1px solid #ddd;
+    z-index:1000;
 }
 
-.sidebar button{
+.new-chat{
     width:100%;
-
-    border:none;
-    background:white;
-
-    text-align:left;
-
-    padding:13px 15px;
-
+    padding:12px;
+    background:#fff;
+    border:1px solid #ddd;
     border-radius:8px;
-
-    font-size:15px;
-
     cursor:pointer;
+    text-align:left;
+    font-size:14px;
 }
 
-.sidebar button:hover{
+.new-chat:hover{
     background:#eee;
 }
 
+/* MAIN */
 
-/* CONTENT */
-
-main{
-    margin-left:210px;
-
-    padding:90px 25px 30px;
+.main{
+    margin-left:260px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
+/* HEADER */
 
-/* PLAYER */
+.header{
+    height:60px;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    border-bottom:1px solid #eee;
+}
 
-.player{
-    width:100%;
-    max-width:1000px;
-
-    margin:0 auto 30px;
-
-    background:black;
-
+.menu{
     display:none;
-}
-
-.player iframe{
-    width:100%;
-
-    aspect-ratio:16/9;
-
-    border:0;
-
-    display:block;
-}
-
-
-/* SEARCH RESULTS */
-
-.results{
-    width:100%;
-    max-width:1100px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(auto-fill,minmax(280px,1fr));
-
-    gap:22px;
-}
-
-.video-card{
-    background:white;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
+    border:none;
+    background:none;
+    font-size:24px;
     cursor:pointer;
-
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
-
-    transition:.2s;
 }
 
-.video-card:hover{
-    transform:translateY(-3px);
-
-    box-shadow:0 5px 15px rgba(0,0,0,.18);
-}
-
-.thumbnail{
-    width:100%;
-
-    aspect-ratio:16/9;
-
-    object-fit:cover;
-
-    display:block;
-}
-
-.video-info{
-    padding:12px;
-}
-
-.video-title{
-    font-size:16px;
-
+.logo{
+    font-size:20px;
     font-weight:bold;
-
-    line-height:1.4;
-
-    display:-webkit-box;
-
-    -webkit-line-clamp:2;
-
-    -webkit-box-orient:vertical;
-
-    overflow:hidden;
 }
 
-.channel{
-    color:#666;
+/* CHAT */
 
-    font-size:13px;
-
-    margin-top:8px;
+.chat-container{
+    flex:1;
+    overflow-y:auto;
+    padding:30px 20px 150px;
 }
 
+.chat{
+    max-width:850px;
+    margin:auto;
+}
 
-/* MESSAGE */
+.welcome{
+    text-align:center;
+    margin-top:18vh;
+}
+
+.welcome h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.welcome p{
+    color:#777;
+}
 
 .message{
-    text-align:center;
-
-    color:#666;
-
-    padding:50px 10px;
-
-    font-size:16px;
+    display:flex;
+    gap:14px;
+    margin-bottom:28px;
+    line-height:1.6;
 }
 
+.avatar{
+    width:32px;
+    height:32px;
+    min-width:32px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#111;
+    color:#fff;
+    font-size:11px;
+}
+
+.user{
+    background:#ddd;
+    color:#111;
+}
+
+.text{
+    flex:1;
+    white-space:pre-wrap;
+    word-break:break-word;
+}
+
+/* INPUT */
+
+.input-area{
+    position:fixed;
+    left:260px;
+    right:0;
+    bottom:0;
+    padding:30px 20px 15px;
+    background:linear-gradient(transparent,#fff 30%);
+}
+
+.input-box{
+    max-width:850px;
+    margin:auto;
+    display:flex;
+    align-items:flex-end;
+    background:white;
+    border:1px solid #ccc;
+    border-radius:18px;
+    padding:8px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+textarea{
+    flex:1;
+    border:none;
+    outline:none;
+    resize:none;
+    padding:10px;
+    font-size:15px;
+    max-height:140px;
+}
+
+.send{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.send:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.note{
+    text-align:center;
+    font-size:11px;
+    color:#888;
+    margin-top:7px;
+}
 
 /* MOBILE */
 
 @media(max-width:700px){
 
-    header{
-        height:115px;
-
-        padding:10px 12px;
-
-        display:flex;
-
-        flex-wrap:wrap;
-
-        gap:8px;
-    }
-
-    .logo{
-        font-size:23px;
-    }
-
-    .search{
-        width:100%;
-        max-width:none;
-    }
-
     .sidebar{
-        top:115px;
-
-        width:100%;
-        height:48px;
-
-        padding:4px 7px;
-
-        display:flex;
-
-        overflow-x:auto;
-
-        border-right:none;
-
-        border-bottom:1px solid #ddd;
+        transform:translateX(-100%);
+        transition:.2s;
     }
 
-    .sidebar button{
-        width:auto;
-
-        white-space:nowrap;
-
-        padding:8px 13px;
-
-        font-size:13px;
+    .sidebar.open{
+        transform:translateX(0);
     }
 
-    main{
+    .main{
         margin-left:0;
-
-        padding:175px 10px 25px;
     }
 
-    .results{
-        grid-template-columns:1fr;
-
-        gap:16px;
+    .header{
+        height:58px;
+        gap:12px;
     }
 
-    .video-card{
-        border-radius:8px;
+    .menu{
+        display:block;
     }
 
-    .player{
-        margin-bottom:20px;
+    .input-area{
+        left:0;
+        padding:25px 10px 12px;
     }
 
-}
-
-
-/* SMALL MOBILE */
-
-@media(max-width:380px){
-
-    main{
-        padding-left:6px;
-        padding-right:6px;
+    .chat-container{
+        padding:20px 12px 145px;
     }
 
-    .search input{
+    .welcome h1{
+        font-size:25px;
+    }
+
+    .message{
         font-size:14px;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
-
-
-<!-- HEADER -->
-
-<header>
-
-    <div class="logo">
-        MyTube
-    </div>
-
-    <div class="search">
-
-        <input
-            id="searchInput"
-            type="text"
-            placeholder="Search YouTube..."
-        >
-
-        <button onclick="searchYouTube()">
-            🔍
-        </button>
-
-    </div>
-
-</header>
-
-
 
 <!-- SIDEBAR -->
 
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
 
-    <button onclick="home()">
-        🏠 Home
-    </button>
-
-    <button onclick="searchTrending()">
-        🔥 Trending
-    </button>
-
-    <button onclick="showMessage('Subscriptions')">
-        📺 Subscriptions
-    </button>
-
-    <button onclick="showMessage('Library')">
-        📚 Library
+    <button class="new-chat" onclick="newChat()">
+        ＋ New chat
     </button>
 
 </div>
 
 
-
 <!-- MAIN -->
 
-<main>
+<div class="main">
+
+    <header class="header">
+
+        <button class="menu" onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <div class="logo">
+            MyAI
+        </div>
+
+    </header>
 
 
-    <!-- VIDEO PLAYER -->
+    <div class="chat-container" id="container">
 
-    <div class="player" id="player">
+        <div class="welcome" id="welcome">
 
-        <iframe
-            id="youtubePlayer"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+            <h1>
+                How can I help you?
+            </h1>
+
+            <p>
+                Ask me anything.
+            </p>
+
+        </div>
+
+        <div class="chat" id="chat"></div>
 
     </div>
 
 
+    <div class="input-area">
 
-    <!-- RESULTS -->
+        <div class="input-box">
 
-    <div
-        class="results"
-        id="results">
+            <textarea
+                id="input"
+                rows="1"
+                placeholder="Message MyAI..."
+                onkeydown="keyDown(event)">
+            </textarea>
+
+            <button
+                class="send"
+                id="send"
+                onclick="sendMessage()">
+
+                ↑
+
+            </button>
+
+        </div>
+
+        <div class="note">
+            MyAI may make mistakes. Check important information.
+        </div>
+
     </div>
 
-
-    <div
-        class="message"
-        id="message">
-
-        Search for a YouTube video above.
-
-    </div>
-
-
-</main>
-
+</div>
 
 
 <script>
 
 /*
 ==================================================
-IMPORTANT
+PUT YOUR API KEY HERE
 ==================================================
 
-এখানে তোমার YouTube Data API v3 key বসাও।
+IMPORTANT:
+This single-file method exposes your API key
+to anyone who opens the website.
 
-Example:
-
-const API_KEY = "AIzaSyXXXXXXXXXXXXXXXXXXXX";
+For testing only.
 
 ==================================================
 */
 
-const API_KEY = "AlzaSyC277sdi6zQKQiEIZLj0Es_ZyOba1pzy3c";
+const API_KEY = "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";
 
 
-/* SEARCH YOUTUBE */
+/*
+==================================================
+AI MODEL
+==================================================
+*/
 
-async function searchYouTube(){
+const MODEL = "gpt-4o-mini";
 
-    const query =
-        document.getElementById("searchInput").value.trim();
 
-    if(!query){
+/*
+==================================================
+CHAT MEMORY
+==================================================
+*/
+
+let messages = [];
+
+
+/*
+==================================================
+SEND MESSAGE
+==================================================
+*/
+
+async function sendMessage(){
+
+    const input =
+        document.getElementById("input");
+
+    const send =
+        document.getElementById("send");
+
+    const text =
+        input.value.trim();
+
+    if(!text || send.disabled){
         return;
     }
 
-    const results =
-        document.getElementById("results");
 
-    const message =
-        document.getElementById("message");
+    document
+    .getElementById("welcome")
+    .style.display="none";
 
-    const player =
-        document.getElementById("player");
 
-    player.style.display = "none";
+    addMessage(
+        "You",
+        text,
+        true
+    );
 
-    results.innerHTML = "";
 
-    message.style.display = "block";
+    messages.push({
+        role:"user",
+        content:text
+    });
 
-    message.innerText = "Searching YouTube...";
+
+    input.value="";
+
+    send.disabled=true;
+
+
+    const loading =
+        addMessage(
+            "AI",
+            "Thinking...",
+            false
+        );
 
 
     try{
 
-        const url =
-        "https://www.googleapis.com/youtube/v3/search" +
-
-        "?part=snippet" +
-
-        "&type=video" +
-
-        "&maxResults=24" +
-
-        "&q=" +
-        encodeURIComponent(query) +
-
-        "&key=" +
-        API_KEY;
-
-
         const response =
-            await fetch(url);
+        await fetch(
+            "https://api.openai.com/v1/chat/completions",
+            {
+                method:"POST",
+
+                headers:{
+                    "Content-Type":
+                        "application/json",
+
+                    "Authorization":
+                        "Bearer " + API_KEY
+                },
+
+                body:JSON.stringify({
+
+                    model:MODEL,
+
+                    messages:messages,
+
+                    temperature:0.7
+
+                })
+            }
+        );
 
 
         const data =
             await response.json();
 
 
-        if(data.error){
+        if(!response.ok){
 
-            message.innerText =
-                "YouTube API error: " +
-                data.error.message;
+            throw new Error(
+                data.error?.message ||
+                "API request failed"
+            );
 
-            return;
         }
 
 
-        results.innerHTML = "";
-
-        message.style.display = "none";
-
-
-        data.items.forEach(item => {
-
-            const videoId =
-                item.id.videoId;
-
-            const title =
-                item.snippet.title;
-
-            const channel =
-                item.snippet.channelTitle;
-
-            const thumbnail =
-                item.snippet.thumbnails.medium.url;
+        const answer =
+            data.choices[0]
+            .message
+            .content;
 
 
-            const card =
-                document.createElement("div");
-
-            card.className =
-                "video-card";
+        loading.textContent =
+            answer;
 
 
-            card.innerHTML = `
+        messages.push({
 
-                <img
-                    class="thumbnail"
-                    src="${thumbnail}"
-                    alt=""
-                >
+            role:"assistant",
 
-                <div class="video-info">
-
-                    <div class="video-title">
-                        ${escapeHTML(title)}
-                    </div>
-
-                    <div class="channel">
-                        ${escapeHTML(channel)}
-                    </div>
-
-                </div>
-
-            `;
-
-
-            card.onclick =
-                function(){
-
-                    playVideo(videoId);
-
-                };
-
-
-            results.appendChild(card);
+            content:answer
 
         });
 
 
     }catch(error){
 
-        message.style.display = "block";
-
-        message.innerText =
-            "Something went wrong.";
+        loading.textContent =
+            "Error: " + error.message;
 
         console.error(error);
+
+    }
+
+
+    send.disabled=false;
+
+
+    scrollBottom();
+
+}
+
+
+/*
+==================================================
+ADD MESSAGE
+==================================================
+*/
+
+function addMessage(
+    name,
+    text,
+    isUser
+){
+
+    const chat =
+        document.getElementById("chat");
+
+
+    const message =
+        document.createElement("div");
+
+    message.className="message";
+
+
+    const avatar =
+        document.createElement("div");
+
+    avatar.className =
+        isUser
+        ? "avatar user"
+        : "avatar";
+
+
+    avatar.textContent =
+        isUser ? "You" : "AI";
+
+
+    const content =
+        document.createElement("div");
+
+    content.className="text";
+
+    content.textContent=text;
+
+
+    message.appendChild(avatar);
+
+    message.appendChild(content);
+
+    chat.appendChild(message);
+
+
+    scrollBottom();
+
+
+    return content;
+
+}
+
+
+/*
+==================================================
+ENTER KEY
+==================================================
+*/
+
+function keyDown(event){
+
+    if(
+        event.key==="Enter" &&
+        !event.shiftKey
+    ){
+
+        event.preventDefault();
+
+        sendMessage();
 
     }
 
 }
 
 
+/*
+==================================================
+NEW CHAT
+==================================================
+*/
 
-/* PLAY VIDEO */
+function newChat(){
 
-function playVideo(videoId){
+    messages=[];
 
-    const player =
-        document.getElementById("player");
-
-    const iframe =
-        document.getElementById("youtubePlayer");
-
-
-    iframe.src =
-        "https://www.youtube.com/embed/" +
-        videoId +
-        "?autoplay=1";
+    document
+    .getElementById("chat")
+    .innerHTML="";
 
 
-    player.style.display =
-        "block";
+    document
+    .getElementById("welcome")
+    .style.display="block";
 
 
-    window.scrollTo({
+    document
+    .getElementById("input")
+    .value="";
 
-        top:0,
+
+    closeMenu();
+
+}
+
+
+/*
+==================================================
+SCROLL
+==================================================
+*/
+
+function scrollBottom(){
+
+    const container =
+        document.getElementById("container");
+
+    container.scrollTo({
+
+        top:container.scrollHeight,
 
         behavior:"smooth"
 
@@ -629,101 +624,30 @@ function playVideo(videoId){
 }
 
 
+/*
+==================================================
+MOBILE MENU
+==================================================
+*/
 
-/* ENTER KEY SEARCH */
-
-document
-.getElementById("searchInput")
-.addEventListener("keydown",function(event){
-
-    if(event.key === "Enter"){
-
-        searchYouTube();
-
-    }
-
-});
-
-
-
-/* HOME */
-
-function home(){
+function toggleMenu(){
 
     document
-    .getElementById("player")
-    .style.display = "none";
-
-    document
-    .getElementById("results")
-    .innerHTML = "";
-
-    const message =
-        document.getElementById("message");
-
-    message.style.display = "block";
-
-    message.innerText =
-        "Search for a YouTube video above.";
+    .getElementById("sidebar")
+    .classList.toggle("open");
 
 }
 
 
-
-/* TRENDING */
-
-function searchTrending(){
+function closeMenu(){
 
     document
-    .getElementById("searchInput")
-    .value = "trending";
-
-    searchYouTube();
-
-}
-
-
-
-/* OTHER MENU */
-
-function showMessage(name){
-
-    document
-    .getElementById("player")
-    .style.display = "none";
-
-    document
-    .getElementById("results")
-    .innerHTML = "";
-
-    const message =
-        document.getElementById("message");
-
-    message.style.display = "block";
-
-    message.innerText =
-        name + " is not connected yet.";
-
-}
-
-
-
-/* SECURITY */
-
-function escapeHTML(text){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        text;
-
-    return div.innerHTML;
+    .getElementById("sidebar")
+    .classList.remove("open");
 
 }
 
 </script>
-
 
 </body>
 </html>
