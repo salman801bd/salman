@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>LifeHub</title>
+<title>SALMAN</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -39,16 +40,19 @@ body{
     transition:.2s;
 }
 
-/* HEADER */
+
+/* ================= HEADER ================= */
 
 header{
     height:65px;
+
     position:fixed;
     top:0;
     left:0;
     right:0;
 
     background:var(--card);
+
     border-bottom:1px solid var(--border);
 
     display:flex;
@@ -75,16 +79,19 @@ header{
     height:40px;
 
     border:1px solid var(--border);
+
     background:var(--card);
     color:var(--text);
 
     border-radius:9px;
 
     cursor:pointer;
+
     font-size:18px;
 }
 
-/* SIDEBAR */
+
+/* ================= SIDEBAR ================= */
 
 .sidebar{
     position:fixed;
@@ -108,8 +115,8 @@ header{
     width:100%;
 
     border:0;
-    background:transparent;
 
+    background:transparent;
     color:var(--text);
 
     text-align:left;
@@ -130,14 +137,15 @@ header{
     background:var(--bg);
 }
 
-/* MAIN */
+
+/* ================= MAIN ================= */
 
 main{
     margin-left:220px;
 
     padding:90px 25px 30px;
 
-    max-width:1300px;
+    max-width:1350px;
 }
 
 .page-title{
@@ -153,7 +161,8 @@ main{
     margin-top:5px;
 }
 
-/* GRID */
+
+/* ================= GRID ================= */
 
 .grid{
     display:grid;
@@ -164,7 +173,8 @@ main{
     gap:18px;
 }
 
-/* CARD */
+
+/* ================= CARD ================= */
 
 .card{
     background:var(--card);
@@ -180,31 +190,127 @@ main{
 
 .card h2{
     font-size:18px;
+
     margin-bottom:15px;
 }
 
-/* CLOCK */
+
+/* ================= CLOCK ================= */
 
 .clock{
     font-size:38px;
+
     font-weight:bold;
 }
 
 .date{
     color:var(--muted);
+
     margin-top:5px;
 }
 
-/* TODO */
 
-.todo-input{
-    display:flex;
-    gap:8px;
+/* ================= WORLD TIME ================= */
+
+.world-search{
+    position:relative;
+    margin-bottom:12px;
 }
 
-input,
+.world-search input{
+    width:100%;
+
+    padding:11px 13px;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+    color:var(--text);
+
+    border-radius:9px;
+
+    outline:none;
+}
+
+.country-list{
+    max-height:180px;
+
+    overflow-y:auto;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    background:var(--card);
+
+    display:none;
+}
+
+.country-option{
+    padding:10px 12px;
+
+    cursor:pointer;
+
+    border-bottom:1px solid var(--border);
+
+    font-size:14px;
+}
+
+.country-option:last-child{
+    border-bottom:0;
+}
+
+.country-option:hover{
+    background:var(--bg);
+}
+
+.selected-country{
+    display:none;
+
+    margin-top:12px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:var(--bg);
+
+    border:1px solid var(--border);
+}
+
+.country-name{
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+}
+
+.country-info{
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+.country-time{
+    margin-top:10px;
+
+    font-size:28px;
+
+    font-weight:bold;
+}
+
+
+/* ================= NOTES ================= */
+
 textarea{
     width:100%;
+
+    min-height:180px;
+
+    resize:vertical;
 
     border:1px solid var(--border);
 
@@ -218,9 +324,30 @@ textarea{
     outline:none;
 }
 
-textarea{
-    min-height:180px;
-    resize:vertical;
+
+/* ================= TODO ================= */
+
+.todo-input{
+    display:flex;
+
+    gap:8px;
+}
+
+input{
+    border:1px solid var(--border);
+
+    background:var(--card);
+    color:var(--text);
+
+    border-radius:8px;
+
+    padding:11px;
+
+    outline:none;
+}
+
+.todo-input input{
+    width:100%;
 }
 
 .primary{
@@ -228,8 +355,7 @@ textarea{
 
     background:var(--primary);
 
-    color:
-        var(--bg);
+    color:var(--bg);
 
     border-radius:8px;
 
@@ -262,18 +388,24 @@ textarea{
 
 .todo.done span{
     text-decoration:line-through;
+
     color:var(--muted);
 }
 
 .delete{
     border:0;
+
     background:none;
+
     color:#e33;
+
     cursor:pointer;
+
     font-size:16px;
 }
 
-/* CALCULATOR */
+
+/* ================= CALCULATOR ================= */
 
 .calculator{
     max-width:350px;
@@ -281,6 +413,7 @@ textarea{
 
 .calc-display{
     width:100%;
+
     height:55px;
 
     margin-bottom:10px;
@@ -319,47 +452,68 @@ textarea{
     opacity:.7;
 }
 
-/* TIMER */
+
+/* ================= TIMER ================= */
 
 .timer{
     font-size:45px;
+
     font-weight:bold;
+
     text-align:center;
+
     padding:15px;
 }
 
 .timer-controls{
     display:flex;
+
     justify-content:center;
+
     gap:8px;
+
+    flex-wrap:wrap;
 }
 
 .timer-controls button{
     padding:10px 15px;
+
     border:1px solid var(--border);
+
     background:var(--bg);
+
     color:var(--text);
+
     border-radius:8px;
+
     cursor:pointer;
 }
 
-/* SEARCH */
+
+/* ================= SEARCH ================= */
 
 .search-box{
     display:flex;
+
     gap:8px;
+}
+
+.search-box input{
+    width:100%;
 }
 
 .search-box button{
     height:42px;
 }
 
-/* MOBILE */
+
+/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
     .sidebar{
         width:100%;
+
         height:55px;
 
         top:65px;
@@ -371,11 +525,13 @@ textarea{
         padding:6px;
 
         border-right:0;
+
         border-bottom:1px solid var(--border);
     }
 
     .nav{
         width:auto;
+
         white-space:nowrap;
 
         padding:9px 12px;
@@ -401,6 +557,10 @@ textarea{
         font-size:30px;
     }
 
+    .country-time{
+        font-size:25px;
+    }
+
 }
 
 @media(max-width:400px){
@@ -418,6 +578,7 @@ textarea{
     }
 
 }
+
 </style>
 </head>
 
@@ -425,12 +586,12 @@ textarea{
 <body>
 
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
     <div class="logo">
-        LifeHub
+        SALMAN
     </div>
 
     <div class="header-right">
@@ -447,7 +608,8 @@ textarea{
 </header>
 
 
-<!-- SIDEBAR -->
+
+<!-- ================= SIDEBAR ================= -->
 
 <nav class="sidebar">
 
@@ -455,6 +617,12 @@ textarea{
         class="nav active"
         onclick="showAll()">
         🏠 Dashboard
+    </button>
+
+    <button
+        class="nav"
+        onclick="focusSection('worldTime')">
+        🌎 World Time
     </button>
 
     <button
@@ -490,201 +658,256 @@ textarea{
 </nav>
 
 
-<!-- MAIN -->
+
+<!-- ================= MAIN ================= -->
 
 <main>
 
-    <div class="page-title">
 
-        <h1>
-            LifeHub
-        </h1>
+<div class="page-title">
 
-        <p>
-            Your simple all-in-one utility dashboard.
-        </p>
+    <h1>
+        SALMAN
+    </h1>
+
+    <p>
+        Your personal all-in-one utility dashboard.
+    </p>
+
+</div>
+
+
+
+<div class="grid">
+
+
+<!-- ================= LOCAL CLOCK ================= -->
+
+<section class="card">
+
+    <h2>🕐 Your Local Time</h2>
+
+    <div
+        class="clock"
+        id="clock">
+        12:00:00 AM
+    </div>
+
+    <div
+        class="date"
+        id="date">
+    </div>
+
+</section>
+
+
+
+<!-- ================= WORLD TIME ================= -->
+
+<section
+    class="card"
+    id="worldTime">
+
+    <h2>🌎 World Time</h2>
+
+    <div class="world-search">
+
+        <input
+            id="countrySearch"
+            placeholder="Search country or capital..."
+            autocomplete="off"
+            oninput="filterCountries()"
+            onclick="openCountryList()">
 
     </div>
 
 
-    <div class="grid">
+    <div
+        class="country-list"
+        id="countryList">
+    </div>
 
 
-        <!-- CLOCK -->
+    <div
+        class="selected-country"
+        id="selectedCountry">
 
-        <section class="card">
+        <div
+            class="country-name"
+            id="countryName">
+        </div>
 
-            <h2>🕐 Clock</h2>
+        <div
+            class="country-info"
+            id="countryInfo">
+        </div>
 
-            <div
-                class="clock"
-                id="clock">
-                00:00:00
-            </div>
-
-            <div
-                class="date"
-                id="date">
-            </div>
-
-        </section>
-
-
-
-        <!-- SEARCH -->
-
-        <section
-            class="card"
-            id="search">
-
-            <h2>🔎 Quick Search</h2>
-
-            <div class="search-box">
-
-                <input
-                    id="googleInput"
-                    placeholder="Search Google...">
-
-                <button
-                    class="primary"
-                    onclick="googleSearch()">
-                    Search
-                </button>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- NOTES -->
-
-        <section
-            class="card"
-            id="notes">
-
-            <h2>📝 Notes</h2>
-
-            <textarea
-                id="notesBox"
-                placeholder="Write your notes here...">
-            </textarea>
-
-        </section>
-
-
-
-        <!-- TODO -->
-
-        <section
-            class="card"
-            id="todo">
-
-            <h2>✅ To-Do List</h2>
-
-            <div class="todo-input">
-
-                <input
-                    id="todoInput"
-                    placeholder="Add a task..."
-                    onkeydown="todoEnter(event)">
-
-                <button
-                    class="primary"
-                    onclick="addTodo()">
-                    Add
-                </button>
-
-            </div>
-
-            <div
-                class="todo-list"
-                id="todoList">
-            </div>
-
-        </section>
-
-
-
-        <!-- CALCULATOR -->
-
-        <section
-            class="card calculator"
-            id="calculator">
-
-            <h2>🧮 Calculator</h2>
-
-            <input
-                class="calc-display"
-                id="calcDisplay"
-                readonly>
-
-            <div class="calc-buttons">
-
-                <button onclick="clearCalc()">C</button>
-                <button onclick="backCalc()">⌫</button>
-                <button onclick="addCalc('%')">%</button>
-                <button onclick="addCalc('/')">÷</button>
-
-                <button onclick="addCalc('7')">7</button>
-                <button onclick="addCalc('8')">8</button>
-                <button onclick="addCalc('9')">9</button>
-                <button onclick="addCalc('*')">×</button>
-
-                <button onclick="addCalc('4')">4</button>
-                <button onclick="addCalc('5')">5</button>
-                <button onclick="addCalc('6')">6</button>
-                <button onclick="addCalc('-')">−</button>
-
-                <button onclick="addCalc('1')">1</button>
-                <button onclick="addCalc('2')">2</button>
-                <button onclick="addCalc('3')">3</button>
-                <button onclick="addCalc('+')">+</button>
-
-                <button onclick="addCalc('0')">0</button>
-                <button onclick="addCalc('.')">.</button>
-                <button onclick="calculate()">=</button>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- TIMER -->
-
-        <section
-            class="card"
-            id="timer">
-
-            <h2>⏱️ 5-Minute Timer</h2>
-
-            <div
-                class="timer"
-                id="timerDisplay">
-                05:00
-            </div>
-
-            <div class="timer-controls">
-
-                <button onclick="startTimer()">
-                    ▶ Start
-                </button>
-
-                <button onclick="pauseTimer()">
-                    ⏸ Pause
-                </button>
-
-                <button onclick="resetTimer()">
-                    ↻ Reset
-                </button>
-
-            </div>
-
-        </section>
-
+        <div
+            class="country-time"
+            id="countryTime">
+        </div>
 
     </div>
+
+</section>
+
+
+
+<!-- ================= NOTES ================= -->
+
+<section
+    class="card"
+    id="notes">
+
+    <h2>📝 Notes</h2>
+
+    <textarea
+        id="notesBox"
+        placeholder="Write your notes here...">
+    </textarea>
+
+</section>
+
+
+
+<!-- ================= TODO ================= -->
+
+<section
+    class="card"
+    id="todo">
+
+    <h2>✅ To-Do List</h2>
+
+    <div class="todo-input">
+
+        <input
+            id="todoInput"
+            placeholder="Add a task..."
+            onkeydown="todoEnter(event)">
+
+        <button
+            class="primary"
+            onclick="addTodo()">
+            Add
+        </button>
+
+    </div>
+
+    <div
+        class="todo-list"
+        id="todoList">
+    </div>
+
+</section>
+
+
+
+<!-- ================= CALCULATOR ================= -->
+
+<section
+    class="card calculator"
+    id="calculator">
+
+    <h2>🧮 Calculator</h2>
+
+    <input
+        class="calc-display"
+        id="calcDisplay"
+        readonly>
+
+    <div class="calc-buttons">
+
+        <button onclick="clearCalc()">C</button>
+        <button onclick="backCalc()">⌫</button>
+        <button onclick="addCalc('%')">%</button>
+        <button onclick="addCalc('/')">÷</button>
+
+        <button onclick="addCalc('7')">7</button>
+        <button onclick="addCalc('8')">8</button>
+        <button onclick="addCalc('9')">9</button>
+        <button onclick="addCalc('*')">×</button>
+
+        <button onclick="addCalc('4')">4</button>
+        <button onclick="addCalc('5')">5</button>
+        <button onclick="addCalc('6')">6</button>
+        <button onclick="addCalc('-')">−</button>
+
+        <button onclick="addCalc('1')">1</button>
+        <button onclick="addCalc('2')">2</button>
+        <button onclick="addCalc('3')">3</button>
+        <button onclick="addCalc('+')">+</button>
+
+        <button onclick="addCalc('0')">0</button>
+        <button onclick="addCalc('.')">.</button>
+        <button onclick="calculate()">=</button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TIMER ================= -->
+
+<section
+    class="card"
+    id="timer">
+
+    <h2>⏱️ 5-Minute Timer</h2>
+
+    <div
+        class="timer"
+        id="timerDisplay">
+        05:00
+    </div>
+
+    <div class="timer-controls">
+
+        <button onclick="startTimer()">
+            ▶ Start
+        </button>
+
+        <button onclick="pauseTimer()">
+            ⏸ Pause
+        </button>
+
+        <button onclick="resetTimer()">
+            ↻ Reset
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GOOGLE SEARCH ================= -->
+
+<section
+    class="card"
+    id="search">
+
+    <h2>🔎 Quick Search</h2>
+
+    <div class="search-box">
+
+        <input
+            id="googleInput"
+            placeholder="Search Google..."
+            onkeydown="googleEnter(event)">
+
+        <button
+            class="primary"
+            onclick="googleSearch()">
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+
+</div>
 
 </main>
 
@@ -692,18 +915,386 @@ textarea{
 
 <script>
 
-/* ================= CLOCK ================= */
+
+/* ==================================================
+   COUNTRY / TIMEZONE DATABASE
+================================================== */
+
+const countries = [
+
+{
+country:"Bangladesh",
+capital:"Dhaka",
+tz:"Asia/Dhaka"
+},
+
+{
+country:"India",
+capital:"New Delhi",
+tz:"Asia/Kolkata"
+},
+
+{
+country:"Pakistan",
+capital:"Islamabad",
+tz:"Asia/Karachi"
+},
+
+{
+country:"Nepal",
+capital:"Kathmandu",
+tz:"Asia/Kathmandu"
+},
+
+{
+country:"Sri Lanka",
+capital:"Sri Jayawardenepura Kotte",
+tz:"Asia/Colombo"
+},
+
+{
+country:"Bhutan",
+capital:"Thimphu",
+tz:"Asia/Thimphu"
+},
+
+{
+country:"Maldives",
+capital:"Malé",
+tz:"Indian/Maldives"
+},
+
+{
+country:"United Arab Emirates",
+capital:"Abu Dhabi",
+tz:"Asia/Dubai"
+},
+
+{
+country:"Saudi Arabia",
+capital:"Riyadh",
+tz:"Asia/Riyadh"
+},
+
+{
+country:"Qatar",
+capital:"Doha",
+tz:"Asia/Qatar"
+},
+
+{
+country:"Kuwait",
+capital:"Kuwait City",
+tz:"Asia/Kuwait"
+},
+
+{
+country:"Oman",
+capital:"Muscat",
+tz:"Asia/Muscat"
+},
+
+{
+country:"Turkey",
+capital:"Ankara",
+tz:"Europe/Istanbul"
+},
+
+{
+country:"United Kingdom",
+capital:"London",
+tz:"Europe/London"
+},
+
+{
+country:"France",
+capital:"Paris",
+tz:"Europe/Paris"
+},
+
+{
+country:"Germany",
+capital:"Berlin",
+tz:"Europe/Berlin"
+},
+
+{
+country:"Italy",
+capital:"Rome",
+tz:"Europe/Rome"
+},
+
+{
+country:"Spain",
+capital:"Madrid",
+tz:"Europe/Madrid"
+},
+
+{
+country:"Russia",
+capital:"Moscow",
+tz:"Europe/Moscow"
+},
+
+{
+country:"United States",
+capital:"Washington, D.C.",
+tz:"America/New_York"
+},
+
+{
+country:"Canada",
+capital:"Ottawa",
+tz:"America/Toronto"
+},
+
+{
+country:"Mexico",
+capital:"Mexico City",
+tz:"America/Mexico_City"
+},
+
+{
+country:"Brazil",
+capital:"Brasília",
+tz:"America/Sao_Paulo"
+},
+
+{
+country:"Argentina",
+capital:"Buenos Aires",
+tz:"America/Argentina/Buenos_Aires"
+},
+
+{
+country:"Australia",
+capital:"Canberra",
+tz:"Australia/Sydney"
+},
+
+{
+country:"New Zealand",
+capital:"Wellington",
+tz:"Pacific/Auckland"
+},
+
+{
+country:"Japan",
+capital:"Tokyo",
+tz:"Asia/Tokyo"
+},
+
+{
+country:"China",
+capital:"Beijing",
+tz:"Asia/Shanghai"
+},
+
+{
+country:"South Korea",
+capital:"Seoul",
+tz:"Asia/Seoul"
+},
+
+{
+country:"Singapore",
+capital:"Singapore",
+tz:"Asia/Singapore"
+},
+
+{
+country:"Malaysia",
+capital:"Kuala Lumpur",
+tz:"Asia/Kuala_Lumpur"
+},
+
+{
+country:"Indonesia",
+capital:"Jakarta",
+tz:"Asia/Jakarta"
+},
+
+{
+country:"Thailand",
+capital:"Bangkok",
+tz:"Asia/Bangkok"
+},
+
+{
+country:"Philippines",
+capital:"Manila",
+tz:"Asia/Manila"
+},
+
+{
+country:"South Africa",
+capital:"Pretoria",
+tz:"Africa/Johannesburg"
+},
+
+{
+country:"Egypt",
+capital:"Cairo",
+tz:"Africa/Cairo"
+},
+
+{
+country:"Nigeria",
+capital:"Abuja",
+tz:"Africa/Lagos"
+},
+
+{
+country:"Kenya",
+capital:"Nairobi",
+tz:"Africa/Nairobi"
+},
+
+{
+country:"Morocco",
+capital:"Rabat",
+tz:"Africa/Casablanca"
+},
+
+{
+country:"Israel",
+capital:"Jerusalem",
+tz:"Asia/Jerusalem"
+},
+
+{
+country:"Iraq",
+capital:"Baghdad",
+tz:"Asia/Baghdad"
+},
+
+{
+country:"Iran",
+capital:"Tehran",
+tz:"Asia/Tehran"
+},
+
+{
+country:"Afghanistan",
+capital:"Kabul",
+tz:"Asia/Kabul"
+},
+
+{
+country:"Myanmar",
+capital:"Naypyidaw",
+tz:"Asia/Yangon"
+},
+
+{
+country:"Vietnam",
+capital:"Hanoi",
+tz:"Asia/Ho_Chi_Minh"
+},
+
+{
+country:"Portugal",
+capital:"Lisbon",
+tz:"Europe/Lisbon"
+},
+
+{
+country:"Greece",
+capital:"Athens",
+tz:"Europe/Athens"
+},
+
+{
+country:"Switzerland",
+capital:"Bern",
+tz:"Europe/Zurich"
+},
+
+{
+country:"Netherlands",
+capital:"Amsterdam",
+tz:"Europe/Amsterdam"
+},
+
+{
+country:"Sweden",
+capital:"Stockholm",
+tz:"Europe/Stockholm"
+},
+
+{
+country:"Norway",
+capital:"Oslo",
+tz:"Europe/Oslo"
+},
+
+{
+country:"Denmark",
+capital:"Copenhagen",
+tz:"Europe/Copenhagen"
+},
+
+{
+country:"Finland",
+capital:"Helsinki",
+tz:"Europe/Helsinki"
+},
+
+{
+country:"Ireland",
+capital:"Dublin",
+tz:"Europe/Dublin"
+},
+
+{
+country:"Ukraine",
+capital:"Kyiv",
+tz:"Europe/Kyiv"
+},
+
+{
+country:"Poland",
+capital:"Warsaw",
+tz:"Europe/Warsaw"
+},
+
+{
+country:"Czech Republic",
+capital:"Prague",
+tz:"Europe/Prague"
+},
+
+{
+country:"Austria",
+capital:"Vienna",
+tz:"Europe/Vienna"
+}
+
+];
+
+
+/* ==================================================
+   LOCAL CLOCK — 12 HOUR
+================================================== */
 
 function updateClock(){
 
-    const now = new Date();
+    const now=new Date();
 
     document.getElementById("clock")
-        .textContent =
-        now.toLocaleTimeString();
+        .textContent=
+        now.toLocaleTimeString(
+            undefined,
+            {
+                hour:"numeric",
+                minute:"2-digit",
+                second:"2-digit",
+                hour12:true
+            }
+        );
 
     document.getElementById("date")
-        .textContent =
+        .textContent=
         now.toLocaleDateString(
             undefined,
             {
@@ -713,6 +1304,7 @@ function updateClock(){
                 day:"numeric"
             }
         );
+
 }
 
 setInterval(updateClock,1000);
@@ -720,50 +1312,292 @@ setInterval(updateClock,1000);
 updateClock();
 
 
-/* ================= DARK MODE ================= */
+
+/* ==================================================
+   WORLD TIME SEARCH
+================================================== */
+
+const countrySearch=
+    document.getElementById("countrySearch");
+
+const countryList=
+    document.getElementById("countryList");
+
+
+function openCountryList(){
+
+    filterCountries();
+
+    countryList.style.display="block";
+
+}
+
+
+function filterCountries(){
+
+    const query=
+        countrySearch.value
+        .toLowerCase()
+        .trim();
+
+    const filtered=
+        countries.filter(function(item){
+
+            return(
+                item.country
+                .toLowerCase()
+                .includes(query)
+                ||
+                item.capital
+                .toLowerCase()
+                .includes(query)
+            );
+
+        });
+
+
+    countryList.innerHTML="";
+
+
+    filtered.forEach(function(item){
+
+        const option=
+            document.createElement("div");
+
+        option.className=
+            "country-option";
+
+        option.innerHTML=
+            "🌎 <b>"+
+            escapeHTML(item.country)+
+            "</b> — "+
+            escapeHTML(item.capital);
+
+        option.onclick=function(){
+
+            selectCountry(item);
+
+        };
+
+        countryList.appendChild(option);
+
+    });
+
+
+    countryList.style.display=
+        filtered.length ? "block":"none";
+
+}
+
+
+function selectCountry(item){
+
+    countrySearch.value=
+        item.country;
+
+    countryList.style.display=
+        "none";
+
+
+    document.getElementById(
+        "selectedCountry"
+    ).style.display="block";
+
+
+    document.getElementById(
+        "countryName"
+    ).textContent=
+        "🌎 "+item.country;
+
+
+    updateWorldTime(item);
+
+    setInterval(
+        function(){
+            updateWorldTime(item);
+        },
+        1000
+    );
+
+}
+
+
+function updateWorldTime(item){
+
+    const now=
+        new Date();
+
+
+    const time=
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone:item.tz,
+
+                hour:"numeric",
+                minute:"2-digit",
+                second:"2-digit",
+
+                hour12:true
+            }
+        ).format(now);
+
+
+    const date=
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone:item.tz,
+
+                weekday:"long",
+                year:"numeric",
+                month:"long",
+                day:"numeric"
+            }
+        ).format(now);
+
+
+    const offset=
+        getGMTOffset(
+            now,
+            item.tz
+        );
+
+
+    document.getElementById(
+        "countryInfo"
+    ).innerHTML=
+        "Capital: <b>"+
+        escapeHTML(item.capital)+
+        "</b><br>"+
+        "GMT: <b>"+
+        offset+
+        "</b><br>"+
+        "Date: <b>"+
+        date+
+        "</b>";
+
+
+    document.getElementById(
+        "countryTime"
+    ).textContent=
+        time;
+
+}
+
+
+function getGMTOffset(date,tz){
+
+    const parts=
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone:tz,
+
+                timeZoneName:"longOffset"
+            }
+        ).formatToParts(date);
+
+
+    const part=
+        parts.find(
+            p=>p.type==="timeZoneName"
+        );
+
+
+    if(!part) return "GMT";
+
+
+    return part.value
+        .replace("GMT","GMT");
+
+}
+
+
+/* Close country list */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            !event.target.closest(
+                ".world-search"
+            )
+        ){
+
+            countryList.style.display=
+                "none";
+
+        }
+
+    }
+);
+
+
+
+/* ==================================================
+   DARK MODE
+================================================== */
 
 function toggleDark(){
 
     document.body.classList.toggle("dark");
 
-    const dark =
-        document.body.classList.contains("dark");
+    const dark=
+        document.body.classList.contains(
+            "dark"
+        );
 
     localStorage.setItem(
         "darkMode",
         dark
     );
 
-    document.getElementById("themeBtn")
-        .textContent =
-        dark ? "☀️" : "🌙";
+    document.getElementById(
+        "themeBtn"
+    ).textContent=
+        dark ? "☀️":"🌙";
+
 }
 
 
-if(localStorage.getItem("darkMode")==="true"){
+if(
+    localStorage.getItem("darkMode")
+    ==="true"
+){
 
     document.body.classList.add("dark");
 
-    document.getElementById("themeBtn")
-        .textContent="☀️";
+    document.getElementById(
+        "themeBtn"
+    ).textContent="☀️";
 
 }
 
 
-/* ================= NOTES ================= */
 
-const notes =
-    document.getElementById("notesBox");
+/* ==================================================
+   NOTES
+================================================== */
 
-notes.value =
-    localStorage.getItem("lifeNotes") || "";
+const notes=
+    document.getElementById(
+        "notesBox"
+    );
+
+notes.value=
+    localStorage.getItem(
+        "salmanNotes"
+    ) || "";
+
 
 notes.addEventListener(
     "input",
     function(){
 
         localStorage.setItem(
-            "lifeNotes",
+            "salmanNotes",
             notes.value
         );
 
@@ -771,18 +1605,23 @@ notes.addEventListener(
 );
 
 
-/* ================= TODO ================= */
 
-let todos =
+/* ==================================================
+   TODO
+================================================== */
+
+let todos=
     JSON.parse(
-        localStorage.getItem("lifeTodos") || "[]"
+        localStorage.getItem(
+            "salmanTodos"
+        ) || "[]"
     );
 
 
 function saveTodos(){
 
     localStorage.setItem(
-        "lifeTodos",
+        "salmanTodos",
         JSON.stringify(todos)
     );
 
@@ -791,8 +1630,10 @@ function saveTodos(){
 
 function renderTodos(){
 
-    const list =
-        document.getElementById("todoList");
+    const list=
+        document.getElementById(
+            "todoList"
+        );
 
     list.innerHTML="";
 
@@ -800,19 +1641,25 @@ function renderTodos(){
     todos.forEach(
         function(todo,index){
 
-            const div =
-                document.createElement("div");
+            const div=
+                document.createElement(
+                    "div"
+                );
 
-            div.className =
-                "todo" +
-                (todo.done ? " done" : "");
+            div.className=
+                "todo"+
+                (
+                    todo.done
+                    ? " done"
+                    : ""
+                );
 
 
-            div.innerHTML = `
+            div.innerHTML=`
 
                 <input
                     type="checkbox"
-                    ${todo.done ? "checked" : ""}
+                    ${todo.done?"checked":""}
                     onchange="toggleTodo(${index})">
 
                 <span>
@@ -837,22 +1684,29 @@ function renderTodos(){
 
 function addTodo(){
 
-    const input =
-        document.getElementById("todoInput");
+    const input=
+        document.getElementById(
+            "todoInput"
+        );
 
-    const text =
+    const text=
         input.value.trim();
 
     if(!text) return;
 
+
     todos.push({
+
         text:text,
         done:false
+
     });
+
 
     input.value="";
 
     saveTodos();
+
     renderTodos();
 
 }
@@ -861,7 +1715,9 @@ function addTodo(){
 function todoEnter(event){
 
     if(event.key==="Enter"){
+
         addTodo();
+
     }
 
 }
@@ -869,10 +1725,11 @@ function todoEnter(event){
 
 function toggleTodo(index){
 
-    todos[index].done =
+    todos[index].done=
         !todos[index].done;
 
     saveTodos();
+
     renderTodos();
 
 }
@@ -883,26 +1740,19 @@ function deleteTodo(index){
     todos.splice(index,1);
 
     saveTodos();
+
     renderTodos();
 
 }
 
 
-function escapeHTML(text){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent=text;
-
-    return div.innerHTML;
-
-}
-
 renderTodos();
 
 
-/* ================= CALCULATOR ================= */
+
+/* ==================================================
+   CALCULATOR
+================================================== */
 
 function addCalc(value){
 
@@ -924,12 +1774,12 @@ function clearCalc(){
 
 function backCalc(){
 
-    const display =
+    const display=
         document.getElementById(
             "calcDisplay"
         );
 
-    display.value =
+    display.value=
         display.value.slice(0,-1);
 
 }
@@ -937,28 +1787,34 @@ function backCalc(){
 
 function calculate(){
 
-    const display =
+    const display=
         document.getElementById(
             "calcDisplay"
         );
 
     try{
 
-        const expression =
+        const expression=
             display.value;
 
-        if(!/^[0-9+\-*/%.() ]+$/.test(expression)){
+        if(
+            !/^[0-9+\-*/%.() ]+$/
+            .test(expression)
+        ){
+
             throw new Error();
+
         }
 
-        display.value =
+        display.value=
             Function(
-                '"use strict";return (' +
-                expression +
+                '"use strict";return ('+
+                expression+
                 ')'
             )();
 
-    }catch{
+    }
+    catch{
 
         display.value="Error";
 
@@ -967,28 +1823,36 @@ function calculate(){
 }
 
 
-/* ================= TIMER ================= */
+
+/* ==================================================
+   TIMER
+================================================== */
 
 let timeLeft=300;
+
 let timer=null;
 
 
 function updateTimer(){
 
-    const minutes =
-        Math.floor(timeLeft/60)
+    const minutes=
+        Math.floor(
+            timeLeft/60
+        )
         .toString()
         .padStart(2,"0");
 
-    const seconds =
+
+    const seconds=
         (timeLeft%60)
         .toString()
         .padStart(2,"0");
 
+
     document.getElementById(
         "timerDisplay"
-    ).textContent =
-        minutes + ":" + seconds;
+    ).textContent=
+        minutes+":"+seconds;
 
 }
 
@@ -997,7 +1861,8 @@ function startTimer(){
 
     if(timer) return;
 
-    timer =
+
+    timer=
         setInterval(
             function(){
 
@@ -1007,11 +1872,14 @@ function startTimer(){
 
                     timer=null;
 
-                    alert("⏰ Time's up!");
+                    alert(
+                        "⏰ Time's up!"
+                    );
 
                     return;
 
                 }
+
 
                 timeLeft--;
 
@@ -1049,38 +1917,60 @@ function resetTimer(){
 updateTimer();
 
 
-/* ================= GOOGLE SEARCH ================= */
+
+/* ==================================================
+   GOOGLE SEARCH
+================================================== */
 
 function googleSearch(){
 
-    const query =
+    const query=
         document.getElementById(
             "googleInput"
         ).value.trim();
 
     if(!query) return;
 
+
     window.open(
-        "https://www.google.com/search?q=" +
+        "https://www.google.com/search?q="+
         encodeURIComponent(query),
+
         "_blank"
     );
 
 }
 
 
-/* ================= NAVIGATION ================= */
+function googleEnter(event){
+
+    if(event.key==="Enter"){
+
+        googleSearch();
+
+    }
+
+}
+
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
 
 function focusSection(id){
 
-    const element =
+    const element=
         document.getElementById(id);
 
     if(element){
 
         element.scrollIntoView({
+
             behavior:"smooth",
+
             block:"center"
+
         });
 
     }
@@ -1091,9 +1981,29 @@ function focusSection(id){
 function showAll(){
 
     window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
     });
+
+}
+
+
+
+/* ==================================================
+   SECURITY
+================================================== */
+
+function escapeHTML(text){
+
+    const div=
+        document.createElement("div");
+
+    div.textContent=text;
+
+    return div.innerHTML;
 
 }
 
