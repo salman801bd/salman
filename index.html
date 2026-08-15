@@ -1,68 +1,117 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমার ওয়েবসাইট</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f4f4;
-        }
-        header {
-            background: #007BFF;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background: #333;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        section {
-            padding: 30px;
-            text-align: center;
-        }
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyTube</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+body{
+    background:#f9f9f9;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    background:#fff;
+    position:fixed;
+    top:0;
+    width:100%;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+.logo{
+    color:red;
+    font-size:28px;
+    font-weight:bold;
+}
+.search input{
+    width:400px;
+    padding:8px;
+}
+.sidebar{
+    width:200px;
+    position:fixed;
+    top:60px;
+    left:0;
+    height:100%;
+    background:#fff;
+    padding:20px;
+}
+.sidebar a{
+    display:block;
+    text-decoration:none;
+    color:#000;
+    padding:10px 0;
+}
+.content{
+    margin-left:220px;
+    margin-top:80px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+}
+.video{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 5px rgba(0,0,0,.2);
+}
+.video img{
+    width:100%;
+}
+.video h3{
+    padding:10px;
+}
+</style>
+
 </head>
 <body>
 
 <header>
-    <h1>আমার ওয়েবসাইটে স্বাগতম</h1>
-    <p>এটি একটি সাধারণ HTML ওয়েবসাইট</p>
+    <div class="logo">MyTube</div>
+    <div class="search">
+        <input type="text" placeholder="Search">
+    </div>
 </header>
 
-<nav>
-    <a href="#">হোম</a>
-    <a href="#">আমাদের সম্পর্কে</a>
-    <a href="#">সেবা</a>
-    <a href="#">যোগাযোগ</a>
-</nav>
+<div class="sidebar">
+    <a href="#">🏠 Home</a>
+    <a href="#">🔥 Trending</a>
+    <a href="#">📺 Subscriptions</a>
+    <a href="#">📚 Library</a>
+</div>
 
-<section>
-    <h2>স্বাগতম!</h2>
-    <p>আপনার ওয়েবসাইটের কনটেন্ট এখানে লিখুন।</p>
-</section>
+<div class="content">
 
-<footer>
-    &copy; 2026 আমার ওয়েবসাইট | সর্বস্বত্ব সংরক্ষিত
-</footer>
+<div class="video">
+<img src="https://via.placeholder.com/400x220" alt="">
+<h3>Video Title 1</h3>
+</div>
+
+<div class="video">
+<img src="https://via.placeholder.com/400x220" alt="">
+<h3>Video Title 2</h3>
+</div>
+
+<div class="video">
+<img src="https://via.placeholder.com/400x220" alt="">
+<h3>Video Title 3</h3>
+</div>
+
+<div class="video">
+<img src="https://via.placeholder.com/400x220" alt="">
+<h3>Video Title 4</h3>
+</div>
+
+</div>
 
 </body>
 </html>
